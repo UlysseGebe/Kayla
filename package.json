@@ -1,39 +1,43 @@
 {
-  "name": "kayla",
-  "private": true,
+  "name": "kayla-landing",
   "version": "0.1.0",
-  "description": "A Strapi application to manage Kayla app",
+  "private": true,
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
-    "strapi": "strapi"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "knex": "0.21.18",
-    "pg": "^8.7.3",
-    "pg-connection-string": "^2.5.0",
-    "sqlite3": "5.0.0",
-    "strapi": "3.6.9",
-    "strapi-admin": "3.6.9",
-    "strapi-connector-bookshelf": "3.6.9",
-    "strapi-plugin-content-manager": "3.6.9",
-    "strapi-plugin-content-type-builder": "3.6.9",
-    "strapi-plugin-email": "3.6.9",
-    "strapi-plugin-i18n": "3.6.9",
-    "strapi-plugin-upload": "3.6.9",
-    "strapi-plugin-users-permissions": "3.6.9",
-    "strapi-utils": "3.6.9"
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
   },
-  "author": {
-    "name": "Ulysse"
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3"
   },
-  "strapi": {
-    "uuid": "6e04bfa4-a9ab-4458-bf50-95d293ec8736"
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/vue3-essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {}
   },
-  "engines": {
-    "node": ">=10.16.0 <=14.x.x",
-    "npm": "^6.0.0"
-  },
-  "license": "MIT"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
 }
