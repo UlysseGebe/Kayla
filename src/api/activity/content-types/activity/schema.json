@@ -93,7 +93,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::wish-tag.wish-tag",
-      "inversedBy": "activities"
+      "mappedBy": "activities"
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "wish-tag",
     "pluralName": "wish-tags",
-    "displayName": "wish_tag"
+    "displayName": "Wish_tag",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
