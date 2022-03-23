@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_range_prices",
+  "info": {
+    "displayName": "Price",
+    "icon": "euro-sign"
+  },
+  "options": {},
+  "attributes": {
+    "minimum": {
+      "type": "integer",
+      "min": 0
+    },
+    "maximum": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}

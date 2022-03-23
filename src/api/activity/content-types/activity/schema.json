@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "activities",
+  "info": {
+    "singularName": "activity",
+    "pluralName": "activities",
+    "displayName": "Activity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "range": {
+      "type": "dynamiczone",
+      "components": [
+        "range.child",
+        "range.distance",
+        "range.price",
+        "range.duration"
+      ]
+    },
+    "weather": {
+      "type": "enumeration",
+      "enum": [
+        "Ensoleillé"
+      ]
+    },
+    "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "door": {
+      "type": "enumeration",
+      "enum": [
+        "Non spécifié",
+        "Intérieur",
+        "Extérieur"
+      ],
+      "default": "Non spécifié"
+    },
+    "schedule": {
+      "type": "boolean",
+      "default": false
+    },
+    "goal": {
+      "type": "enumeration",
+      "enum": [
+        "Non spécifié",
+        "S'amuser",
+        "Apprendre"
+      ],
+      "default": "Non spécifié"
+    },
+    "eco_score": {
+      "type": "decimal",
+      "min": 0,
+      "max": 5,
+      "default": 0,
+      "required": false
+    },
+    "Steps": {
+      "type": "dynamiczone",
+      "components": [
+        "etapes.etape"
+      ],
+      "min": 0
+    },
+    "materials": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::material.material",
+      "inversedBy": "activities"
+    },
+    "type_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-tag.type-tag",
+      "inversedBy": "activities"
+    },
+    "wish_tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::wish-tag.wish-tag",
+      "inversedBy": "activities"
+    }
+  }
+}

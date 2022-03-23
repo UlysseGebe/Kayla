@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "wish_tags",
+  "info": {
+    "singularName": "wish-tag",
+    "pluralName": "wish-tags",
+    "displayName": "wish_tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "inversedBy": "wish_tags"
+    }
+  }
+}

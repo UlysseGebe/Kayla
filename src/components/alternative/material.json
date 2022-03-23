@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_alternative_materials",
+  "info": {
+    "displayName": "Material",
+    "icon": "tools",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "material": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::material.material"
+    }
+  }
+}

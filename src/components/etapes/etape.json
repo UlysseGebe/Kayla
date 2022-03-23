@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_etapes_etapes",
+  "info": {
+    "displayName": "Etape",
+    "icon": "walking"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "media": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

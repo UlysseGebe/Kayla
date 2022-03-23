@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_range_children",
+  "info": {
+    "displayName": "Child",
+    "icon": "child"
+  },
+  "options": {},
+  "attributes": {
+    "minimum": {
+      "type": "integer",
+      "min": 0
+    },
+    "maximum": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}

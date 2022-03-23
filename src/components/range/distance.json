@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_range_distances",
+  "info": {
+    "displayName": "Distance",
+    "icon": "map-marked-alt"
+  },
+  "options": {},
+  "attributes": {
+    "minimum": {
+      "type": "integer",
+      "min": 0
+    },
+    "maximum": {
+      "type": "integer",
+      "min": 0
+    }
+  }
+}
