@@ -2291,6 +2291,9 @@
                                                               }
                                                             }
                                                           },
+                                                          "url": {
+                                                            "type": "string"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -2436,6 +2439,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "url": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -5037,6 +5043,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -5182,6 +5191,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -5586,6 +5598,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "url": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -7919,6 +7934,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -8064,6 +8082,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -10574,6 +10595,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -10719,6 +10743,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -11134,6 +11161,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "url": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",

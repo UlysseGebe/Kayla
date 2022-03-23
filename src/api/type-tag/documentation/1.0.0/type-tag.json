@@ -1470,6 +1470,9 @@
                                                 }
                                               }
                                             },
+                                            "url": {
+                                              "type": "string"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -3302,6 +3305,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -5101,6 +5107,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -6841,6 +6850,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "url": {
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",

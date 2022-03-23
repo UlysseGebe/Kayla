@@ -20,8 +20,8 @@
       "components": [
         "range.child",
         "range.distance",
-        "range.price",
-        "range.duration"
+        "range.duration",
+        "range.price"
       ]
     },
     "weather": {
@@ -94,6 +94,10 @@
       "relation": "manyToMany",
       "target": "api::wish-tag.wish-tag",
       "mappedBy": "activities"
+    },
+    "url": {
+      "type": "string",
+      "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
     }
   }
 }

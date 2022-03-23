@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-03-23T17:56:37.603Z"
+    "x-generation-date": "2022-03-23T18:09:21.597Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -2341,6 +2341,9 @@
                                                               }
                                                             }
                                                           },
+                                                          "url": {
+                                                            "type": "string"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -2486,6 +2489,9 @@
                                     }
                                   }
                                 }
+                              },
+                              "url": {
+                                "type": "string"
                               },
                               "createdAt": {
                                 "type": "string",
@@ -5087,6 +5093,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -5232,6 +5241,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -5636,6 +5648,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "url": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -7969,6 +7984,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -8114,6 +8132,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -10624,6 +10645,9 @@
                                                             }
                                                           }
                                                         },
+                                                        "url": {
+                                                          "type": "string"
+                                                        },
                                                         "createdAt": {
                                                           "type": "string",
                                                           "format": "date-time"
@@ -10769,6 +10793,9 @@
                                   }
                                 }
                               }
+                            },
+                            "url": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -11184,6 +11211,9 @@
                           ],
                           "example": "string or id"
                         }
+                      },
+                      "url": {
+                        "type": "string"
                       },
                       "createdAt": {
                         "type": "string",
@@ -12831,6 +12861,9 @@
                                                                         }
                                                                       }
                                                                     }
+                                                                  },
+                                                                  "url": {
+                                                                    "type": "string"
                                                                   },
                                                                   "createdAt": {
                                                                     "type": "string",
@@ -14699,6 +14732,9 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "url": {
+                                                                  "type": "string"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -16559,6 +16595,9 @@
                                                                     }
                                                                   }
                                                                 },
+                                                                "url": {
+                                                                  "type": "string"
+                                                                },
                                                                 "createdAt": {
                                                                   "type": "string",
                                                                   "format": "date-time"
@@ -18334,6 +18373,9 @@
                                                                       }
                                                                     }
                                                                   }
+                                                                },
+                                                                "url": {
+                                                                  "type": "string"
                                                                 },
                                                                 "createdAt": {
                                                                   "type": "string",
@@ -20426,6 +20468,9 @@
                                                 }
                                               }
                                             },
+                                            "url": {
+                                              "type": "string"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -22258,6 +22303,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -24057,6 +24105,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -25797,6 +25848,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "url": {
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -27786,6 +27840,9 @@
                                                 }
                                               }
                                             },
+                                            "url": {
+                                              "type": "string"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -29618,6 +29675,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -31417,6 +31477,9 @@
                                               }
                                             }
                                           },
+                                          "url": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -33157,6 +33220,9 @@
                                                 }
                                               }
                                             }
+                                          },
+                                          "url": {
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
