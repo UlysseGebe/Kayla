@@ -24,12 +24,6 @@
         "range.price"
       ]
     },
-    "weather": {
-      "type": "enumeration",
-      "enum": [
-        "Ensoleillé"
-      ]
-    },
     "thumbnail": {
       "type": "media",
       "multiple": false,
@@ -98,6 +92,11 @@
     "url": {
       "type": "string",
       "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
+    },
+    "weather_select": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::weather.weather"
     }
   }
 }

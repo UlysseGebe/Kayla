@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "weathers",
+  "info": {
+    "singularName": "weather",
+    "pluralName": "weathers",
+    "displayName": "weather"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
