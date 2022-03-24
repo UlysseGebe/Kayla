@@ -93,10 +93,11 @@
       "type": "string",
       "regex": "^(?:http(s)?:\\/\\/)?[\\w.-]+(?:\\.[\\w\\.-]+)+[\\w\\-\\._~:/?#[\\]@!\\$&'\\(\\)\\*\\+,;=.]+$"
     },
-    "weather_select": {
+    "weather_selects": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::weather.weather"
+      "relation": "manyToMany",
+      "target": "api::weather.weather",
+      "inversedBy": "activities"
     }
   }
 }
