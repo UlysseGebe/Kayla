@@ -1,0 +1,14 @@
+{
+  "name": "landing",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-matomo": "^0.1.0",
+    "klaro-gridsome": "^1.0.3"
+  }
+}
