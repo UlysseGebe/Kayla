@@ -6,7 +6,6 @@
       </strong>
       <nav class="nav">
         <g-link class="nav__link" to="/">Home</g-link>
-        <g-link class="nav__link" to="/about/">About</g-link>
       </nav>
     </header>
     <slot/>
@@ -21,22 +20,48 @@ query {
 }
 </static-query>
 
+<script>
+export default {
+  metaInfo: {
+    htmlAttrs: {
+      lang: 'fr',
+      // amp: true
+    },
+    // bodyAttrs: {
+    //   class: ['dark-mode', 'mobile']
+    // }
+  }
+}
+</script>
+
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
+
+:root {
+  --Light-Color: #58445B;
+  --Dark-Color: #FFF;
+  --Bold-Color: #4587A8;
+  --Placeholde: rgba(117, 112, 149, 0.5);
+  --Main-Font: "Manrope", Arial, sans-serif;
+  --Second-Front: "Avenir", Arial, sans-serif;
+}
+
 body {
-  font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family: var(--Main-Font);
   margin:0;
   padding:0;
   line-height: 1.5;
 }
 
 .layout {
-  max-width: 760px;
+  max-width: 100vw;
   margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* padding-left: 20px;
+  padding-right: 20px; */
 }
 
 .header {
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;

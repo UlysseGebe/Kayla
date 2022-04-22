@@ -5,12 +5,13 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Kayla',
+  siteLanguage: "fr",
   plugins: [
     {
       use: 'gridsome-plugin-matomo',
       options: {
-        host: 'https://hetic.ulyssegebe.fr/',
+        host: 'https://hetic.ulyssegebe.fr',
         siteId: 1
       }
     },
