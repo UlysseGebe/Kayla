@@ -1,8 +1,16 @@
 <template>
   <Layout>
     <Hero />
-    <!-- <Stat />
-    <Footer/> -->
+    <div class="papillon">
+      <g-image class="papillonContent" alt="papillon" src="~/assets/images/Papillon-trianée.svg" fit="inside" width="360" height="300" />
+    </div>
+    <Stat />
+    <WhatIs />
+    <div class="sep01">&nbsp;</div>
+    <Avis />
+    <Newsletter />
+    <Download />
+    <Footer/>
   </Layout>
 </template>
 
@@ -10,6 +18,7 @@
 import Hero from '~/components/Hero.vue'
 import Stat from '~/components/Stat.vue'
 import WhatIs from '~/components/WhatIs.vue'
+import Avis from '~/components/Avis.vue'
 import Newsletter from '~/components/Newsletter.vue'
 import Download from '~/components/Download.vue'
 import Footer from '~/components/Footer.vue'
@@ -18,6 +27,7 @@ export default {
     Hero,
     Stat,
     WhatIs,
+    Avis,
     Newsletter,
     Download,
     Footer,
@@ -28,5 +38,20 @@ export default {
 <style>
 .home-links a {
   margin-right: 1rem;
+}
+
+.papillon {
+  position: relative;
+  width: 100%;
+}
+
+.papillon .papillonContent {
+  position: relative;
+  left: 15%;
+}
+
+.sep01 {
+  visibility: hidden;
+  height: 120px;
 }
 </style>

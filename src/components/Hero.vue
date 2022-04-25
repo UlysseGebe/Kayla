@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="image">
-      <g-image alt="kayla phone" src="~/assets/images/kayla_phone.png" fit="inside" width="521" height="605" />
+      <g-image alt="kayla phone" src="~/assets/images/kayla_phone.svg" fit="inside" width="360" height="495" />
     </div>
   </div>
 </template>
@@ -23,18 +23,15 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-image: url('../assets/images/nuage_crop.svg');
-  background-repeat: no-repeat;
-  background-size: 800px;
-  background-position: 0 0;
   min-height: calc(100vh - 80px);
   padding: 40px 0;
+  margin: 0 auto;
+  width: 85%;
 }
 
 .hero .text {
   display: flex;
-  justify-content: center;
-  width: 60%;
+  justify-content: flex-start;
 }
 
 .hero .image {
@@ -44,27 +41,32 @@ export default {
 }
 
 .hero .text .content {
-  max-width: 655px;
+  max-width: 730px;
+  font-family: "Avenir", Arial, sans-serif;
 }
 
 .hero h1 {
-  font-size: 60px;
+  font-style: normal;
   font-weight: 800;
+  font-size: 60px;
   line-height: 80px;
   letter-spacing: -0.03em;
+  color: #55A5CA;
 }
 
 .hero h1 span {
-  font-size: 60px;
-  font-weight: 700;
+  font-size: 100px;
+  font-weight: 400;
   line-height: 80px;
   letter-spacing: -0.03em;
+  color: #005B85;
+  font-family: "Cream Cake", Comic Sans, sans-serif;
 }
 
 .hero h2 {
-  font-size: 28px;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 28px;
   line-height: 48px;
+  color: #55A5CA;
 }
 </style>
