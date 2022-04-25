@@ -3,7 +3,7 @@
   <div class="download">
     <g-image class="famille" alt="famille" src="~/assets/images/famille.png" fit="inside" width="1440" />
     <div class="ctaZone">
-      <h3>Si vous êtes intéressé <br/> téléchargez notre application  <span>!</span></h3>
+      <h3>Téléchargez notre application <br> et bénéficiez de l’offre d’essai <span>!</span></h3>
       <p>Une occasion unique pour vous faire gagner du temps !</p>
       <div class="stores">
         <a href="#" class="apple">
