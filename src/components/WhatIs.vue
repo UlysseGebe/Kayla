@@ -110,6 +110,7 @@ export default {
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -136,6 +137,35 @@ line-height: 37px;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;
-  transform: translateY(-60%);
+  transform: translateY(-50%);
+}
+
+.whatis .cards .card {
+  aspect-ratio: 39 / 37.5;
+}
+
+.whatis .cards .card[index="2"] {
+  aspect-ratio: 39 / 36.5;
+}
+</style>
+
+<style>
+@media screen and (max-width: 1160px) {
+  .whatis .cards .card span {
+    padding: 0 25px;
+    margin: 14px 0 0 0;
+  }
+  .whatis .icone {
+    transform: scale(0.8) translateY(-50%);
+  }
+}
+@media screen and (max-width: 1050px) {
+  .whatis .cards .card span {
+    padding: 0 12px;
+    margin: 8px 0 0 0;
+  }
+  .whatis .icone {
+    transform: scale(0.7) translateY(-50%);
+  }
 }
 </style>

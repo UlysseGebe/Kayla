@@ -101,3 +101,38 @@ body {
   text-transform: uppercase;
 }
 </style>
+
+<style>
+@media screen and (max-width: 1160px) {
+  .cards .card {
+    width: 350px !important;
+    height: auto !important;
+  }
+
+  .cards .card * {
+    transform: scale(0.9);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .cards .card {
+    width: 300px !important;
+    height: auto !important;
+  }
+
+  .cards .card * {
+    transform: scale(0.8);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards .card {
+    width: 250px !important;
+    height: auto !important;
+  }
+
+  .cards .card * {
+    transform: scale(0.7);
+  }
+}
+</style>

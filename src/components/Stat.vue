@@ -58,6 +58,7 @@ export default {
   justify-content: center;
   left: 0;
   right: 0;
+  width: 100%;
   top: -5%;
 }
 
@@ -78,6 +79,7 @@ export default {
   text-align: center;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: contain;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,6 +93,14 @@ export default {
   line-height: 100px;
   text-align: center;
   margin: 0
+}
+
+.stat .cards .card {
+  aspect-ratio: 39 / 37;
+}
+
+.stat .cards .card[index="1"] {
+  aspect-ratio: 39 / 38;
 }
 
 .stat .cards .card[index="0"] { color: #116992 }
@@ -109,5 +119,20 @@ export default {
 
 .coloriage {
   width: 100%;
+}
+</style>
+
+<style>
+@media screen and (max-width: 1160px) {
+  .stat .cards .card span {
+    padding: 0 25px;
+    margin: 8px 0 0 0;
+  }
+}
+@media screen and (max-width: 1050px) {
+  .stat .cards .card span {
+    padding: 0 12px;
+    margin: 4px 0 0 0;
+  }
 }
 </style>

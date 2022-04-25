@@ -83,3 +83,11 @@ export default {
   margin-top: -24px;
 }
 </style>
+
+<style>
+@media screen and (max-width: 960px) {
+  .download .ctaZone .stores a img {
+    width: 175px
+  }
+}
+</style>

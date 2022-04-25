@@ -32,6 +32,8 @@ export default {
 .hero .text {
   display: flex;
   justify-content: flex-start;
+  width: 55%;
+  padding-right: 5%;
 }
 
 .hero .image {
@@ -41,7 +43,7 @@ export default {
 }
 
 .hero .text .content {
-  max-width: 730px;
+  max-width: 720px;
   font-family: "Avenir", Arial, sans-serif;
 }
 
@@ -55,6 +57,7 @@ export default {
 }
 
 .hero h1 span {
+  display: inline-block;
   font-size: 100px;
   font-weight: 400;
   line-height: 80px;
@@ -68,5 +71,16 @@ export default {
   font-size: 28px;
   line-height: 48px;
   color: #55A5CA;
+}
+</style>
+
+<style>
+@media screen and (max-width: 960px) {
+  .hero .image img {
+    width: 275px !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  
 }
 </style>

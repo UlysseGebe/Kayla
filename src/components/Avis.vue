@@ -67,6 +67,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
+  background-size: contain;
   flex-direction: column;
   justify-content: center;
   align-items: center;
