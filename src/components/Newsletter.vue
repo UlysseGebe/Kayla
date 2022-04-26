@@ -1,16 +1,24 @@
 <template>
   <div class="newsletter">
     <h2>Gardons contact</h2>
-    <form action="">
+    <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7RfE/MUX" width="100%"></iframe>
+    <!-- <form action="https://api.mailjet.com/v3/REST/contactslist/15489/managecontact" method="POST">
+      <input type="hidden" name="Action" value="addnoforce">
       <input type="email" name="email" id="email" placeholder="sandra.rousseau@laposte.fr">
       <input type="submit" value="Envoyer">
-    </form>
+    </form> -->
   </div>
 </template>
 
 <script>
+import axios from 'axios';
 export default {
-    name: "Newsletter"
+    name: "Newsletter",
+    beforeMount () {
+      let externalScript = document.createElement('script')
+      externalScript.setAttribute('src', 'https://app.mailjet.com/statics/js/iframeResizer.min.js')
+      document.head.appendChild(externalScript)
+    },
 }
 </script>
 
@@ -38,7 +46,7 @@ export default {
   color: #58445B;
 }
 
-.newsletter form {
+.newsletter iframe {
   margin-top: 35px;
   margin-bottom: 80px;
 }
