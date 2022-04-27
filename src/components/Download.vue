@@ -35,6 +35,7 @@ export default {
 }
 
 .download .ctaZone {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,6 +45,30 @@ export default {
   width: calc(70% - 2em);
   margin-top: -7%;
   padding: 0 2em;
+}
+
+.download .ctaZone::before {
+  content: '';
+  position: absolute;
+  width: 10.813em;
+  height: 10.188em;
+  background-image: url('../assets/images/Soleil.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: -5.5em;
+  bottom: 10%;
+}
+
+.download .ctaZone::after {
+  content: '';
+  position: absolute;
+  width: 3.375em;
+  height: 7.75em;
+  background-image: url('../assets/images/Glace.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: -2em;
+  bottom: calc(50% - 7.75em);
 }
 
 .download .ctaZone h3 {
@@ -74,6 +99,44 @@ export default {
 
 .download .ctaZone .stores a {
   margin: 0 2.625em;
+  position: relative;
+  display: inline-block;
+}
+
+.download .ctaZone .stores a:first-child::before {
+  content: '';
+  position: absolute;
+  width: 3.75em;
+  height: 3em;
+  background-image: url('../assets/images/Scotch1.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -1.25em;
+  left: -1.25em;
+}
+
+.download .ctaZone .stores a:first-child::after {
+  content: '';
+  position: absolute;
+  width: 3em;
+  height: 2.5em;
+  background-image: url('../assets/images/Scotch2.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: -1.25em;
+  right: -1.25em;
+}
+
+.download .ctaZone .stores a:last-child::before {
+  content: '';
+  position: absolute;
+  width: 5.813em;
+  height: 1.438em;
+  background-image: url('../assets/images/Scotch3.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -0.75em;
+  left: calc(50% - 5.813em/2);
 }
 
 @media screen and (max-width: 767px) {
@@ -94,5 +157,7 @@ export default {
 
 .download .koala {
   margin-top: -1.5em;
+  position: relative;
+  z-index: 2;
 }
 </style>

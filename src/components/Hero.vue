@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="image">
-      <img alt="kayla phone" src="../assets/images/kayla_phone.svg" fit="inside" style="width:22.5em;height:30.938em;">
+      <img alt="kayla phone" src="../assets/images/kayla_phone.svg" fit="inside" style="width:18.04em;height:30.982em;">
     </div>
   </div>
 </template>
@@ -38,9 +38,22 @@ export default {
 
 .hero .text {
   display: flex;
+  position: relative;
   justify-content: flex-start;
   width: 57.5%;
   padding-right: 2.5%;
+}
+
+.hero .text::before {
+  content: '';
+  position: absolute;
+  width: 3.5em;
+  height: 1.75em;
+  background-image: url('../assets/images/Bonbon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 40%;
+  top: -2em;
 }
 
 .hero .image {
@@ -73,12 +86,25 @@ export default {
 }
 
 .hero h1 {
+  position: relative;
   font-style: normal;
   font-weight: 800;
   font-size: 3.75em;
   line-height: 1.25em;
   letter-spacing: -0.03em;
   color: #55A5CA;
+}
+
+.hero .text .content h1::before {
+  content: '';
+  position: absolute;
+  width: 0.625em;
+  height: 0.9em;
+  background-image: url('../assets/images/Fleur.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: 0;
+  bottom: 0;
 }
 
 .hero h1 span {
@@ -91,9 +117,22 @@ export default {
 }
 
 .hero h2 {
+  position: relative;
   font-weight: 500;
   font-size: 1.75em;
   line-height: 1.5em;
   color: #55A5CA;
+}
+
+.hero .text .content h2::before {
+  content: '';
+  position: absolute;
+  width: 1.19em;
+  height: 1.19em;
+  background-image: url('../assets/images/Feuille.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: -2em;
+  top: 35%;
 }
 </style>

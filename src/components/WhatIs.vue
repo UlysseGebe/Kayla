@@ -77,6 +77,18 @@ export default {
 }
 
 .whatis .cards [index="0"] { color: #9B01A8 }
+.whatis .cards [index="0"]::before {
+  content: '';
+  position: absolute;
+  width: 3.75em;
+  height:3.75em;
+  background-image: url('../assets/images/Coeur.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -1.7em;
+  left: 0;
+}
+
 .whatis .cards [index="1"] {
   margin-top: -1.25em;
   color: #4295BB;
@@ -106,6 +118,18 @@ export default {
   background-size: contain;
   right: -6.25em;
   top: -4.25em;
+}
+
+.whatis .cards [index="2"]::before {
+  content: '';
+  position: absolute;
+  width: 2.5em;
+  height: 3.125em;
+  background-image: url('../assets/images/Coccinelle.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 25%;
+  right: -10%;
 }
 
 .whatis .cards .card {

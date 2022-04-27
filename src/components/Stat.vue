@@ -80,6 +80,18 @@ export default {
   bottom: 30%;
 }
 
+.stat .cards .card[index="2"]::before {
+  content: '';
+  position: absolute;
+  width: 3.375em;
+  height: 3em;
+  background-image: url('../assets/images/Fleur2.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  right: -1.75em;
+  bottom: -1em;
+}
+
 .stat .cards .card {
   position: relative;
   text-align: center;

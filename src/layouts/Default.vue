@@ -101,6 +101,13 @@ body {
   line-height: 1.688em;
   text-transform: uppercase;
 }
+
+.mob {
+  display: none;
+}
+.desk {
+  display: block;
+}
 </style>
 
 <style>
@@ -122,7 +129,12 @@ body {
 
 @media screen and (max-width: 767px) {
   body { font-size: 16px }
-  /* body { font-size: 16px } */
+  .mob {
+    display: block;
+  }
+  .desk {
+    display: none;
+  }
   .header {
     padding: 2.625em 2.563em;
   }
