@@ -28,8 +28,8 @@
     <div class="sep02 desk">&nbsp;</div>
     <div class="sep02 mob">&nbsp;</div>
     <Avis />
-    <Newsletter />
     <Download />
+    <Newsletter />
     <Footer />
     <div class="coupe2">
       <img
