@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="image">
-      <g-image alt="kayla phone" src="~/assets/images/kayla_phone.svg" fit="inside" width="360" height="495" />
+      <img alt="kayla phone" src="../assets/images/kayla_phone.svg" fit="inside" style="width:22.5em;height:30.938em;">
     </div>
   </div>
 </template>
@@ -23,8 +23,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 80px);
-  padding: 40px 0;
+  min-height: calc(100vh - 5em);
+  padding: 2.5em 0;
   margin: 0 auto;
   width: 85%;
 }
@@ -32,8 +32,8 @@ export default {
 .hero .text {
   display: flex;
   justify-content: flex-start;
-  width: 55%;
-  padding-right: 5%;
+  width: 57.5%;
+  padding-right: 2.5%;
 }
 
 .hero .image {
@@ -43,24 +43,23 @@ export default {
 }
 
 .hero .text .content {
-  max-width: 720px;
+  max-width: 45em;
   font-family: "Avenir", Arial, sans-serif;
 }
 
 .hero h1 {
   font-style: normal;
   font-weight: 800;
-  font-size: 60px;
-  line-height: 80px;
+  font-size: 3.75em;
+  line-height: 1.25em;
   letter-spacing: -0.03em;
   color: #55A5CA;
 }
 
 .hero h1 span {
   display: inline-block;
-  font-size: 100px;
+  font-size: 1.75em;
   font-weight: 400;
-  line-height: 80px;
   letter-spacing: -0.03em;
   color: #005B85;
   font-family: "Cream Cake", Comic Sans, sans-serif;
@@ -68,19 +67,8 @@ export default {
 
 .hero h2 {
   font-weight: 500;
-  font-size: 28px;
-  line-height: 48px;
+  font-size: 1.75em;
+  line-height: 1.5em;
   color: #55A5CA;
-}
-</style>
-
-<style>
-@media screen and (max-width: 960px) {
-  .hero .image img {
-    width: 275px !important;
-  }
-}
-@media screen and (max-width: 900px) {
-  
 }
 </style>

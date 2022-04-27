@@ -2,12 +2,10 @@
   <div class="avis">
     <h2>Ils nous font confiance</h2>
     <div class="cards">
-      <div v-for="(what, index) in whats" :key="index">
-        <div class="card" :index="index">
-          <g-image alt="userCard" :src="what.img" fit="inside" />
+        <div class="card" v-for="(avi, index) in avis" :key="index" :index="index">
+          <img :src="avi.img" alt="userCard" :style="{width: avi.width, height: avi.height}">
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -16,15 +14,21 @@ export default {
     name: "Avis",
     data() {
       return {
-        whats: [
+        avis: [
           {
             img: require('@/assets/images/User01.svg'),
+            width: "24.063em",
+            height: "18.813em"
           },
           {
             img: require('@/assets/images/User02.svg'),
+            width: "23.75em",
+            height: "18.938em"
           },
           {
             img: require('@/assets/images/User03.svg'),
+            width: "24.25em",
+            height: "19em"
           },
         ]
       }
@@ -43,22 +47,22 @@ export default {
   font-family: "Avenir", Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 45.1155px;
-  line-height: 75px;
+  font-size: 2.813em;
+  line-height: 1em;
   letter-spacing: -0.03em;
   color: #4587A8;
 }
 
 .avis .cards {
   position: relative;
-  margin-top: 68px;
+  margin-top: 4.25em;
   display: flex;
   flex-direction: row;
   justify-content: center;
   background-image: url("../assets/images/nuage.svg");
   background-size: 100%;
   background-repeat: no-repeat;
-  min-height: 419px;
+  min-height: 26.188em;
 }
 
 .avis .cards .card {
@@ -71,21 +75,5 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.avis .cards .card h3 {
-  font-weight: 800;
-  font-size: 20.375px;
-  line-height: 37px;
-  margin: 0
-}
-
-.avis .cards .card span {
-  font-weight: 500;
-  font-size: 16.6705px;
-  line-height: 37px;
-  display: block;
-  padding: 0 25px;
-  margin: 21px 0 0 0;
 }
 </style>

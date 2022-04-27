@@ -22,22 +22,22 @@ export default {
             num: "2h",
             text: "de <b>recherches en moins</b><br/>(par semaine)",
             img: require('@/assets/images/PostIt01.svg'),
-            width: "390px",
-            height: "370px"
+            width: "24.375em",
+            height: "23.125em"
           },
           {
             num: "2h",
             text: "<b>d’activité familiale</b> en plus<br/>(par semaine)",
             img: require('@/assets/images/PostIt02.svg'),
-            width: "390px",
-            height: "380px"
+            width: "24.375em",
+            height: "23.75em"
           },
           {
             num: "100",
             text: "<b>parents</b> déjà <b>convaincus</b><br/>par notre application",
             img: require('@/assets/images/PostIt03.svg'),
-            width: "390px",
-            height: "370px"
+            width: "24.375em",
+            height: "23.125em"
           },
         ]
       }
@@ -65,12 +65,12 @@ export default {
 .stat .cards .card[index="0"]::before {
   content: '';
   position: absolute;
-  width: 81px;
-  height: 100px;
+  width: 5.063em;
+  height: 6.25em;
   background-image: url('../assets/images/Oiseau02.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  left: -60px;
+  left: -3.75em;
   bottom: 30%;
 }
 
@@ -89,8 +89,8 @@ export default {
   font-family: "Cream Cake", Comic Sans, sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 134.339px;
-  line-height: 100px;
+  font-size: 8.396em;
+  line-height: 0.75em;
   text-align: center;
   margin: 0
 }
@@ -110,29 +110,14 @@ export default {
 .stat .cards .card span {
   font-family: var(--Main-Font);
   font-weight: 500;
-  font-size: 21.4942px;
-  line-height: 36px;
+  font-size: 1.343em;
+  line-height: 1.5em;
   display: block;
-  padding: 0 35px;
-  margin: 12px 0 0 0;
+  padding: 0 2.188em;
+  margin: 0.75em 0 0 0;
 }
 
 .coloriage {
   width: 100%;
-}
-</style>
-
-<style>
-@media screen and (max-width: 1160px) {
-  .stat .cards .card span {
-    padding: 0 25px;
-    margin: 8px 0 0 0;
-  }
-}
-@media screen and (max-width: 1050px) {
-  .stat .cards .card span {
-    padding: 0 12px;
-    margin: 4px 0 0 0;
-  }
 }
 </style>

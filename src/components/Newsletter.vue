@@ -1,17 +1,11 @@
 <template>
   <div class="newsletter">
     <h2>Gardons contact</h2>
-    <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7RfE/MUX" width="100%"></iframe>
-    <!-- <form action="https://api.mailjet.com/v3/REST/contactslist/15489/managecontact" method="POST">
-      <input type="hidden" name="Action" value="addnoforce">
-      <input type="email" name="email" id="email" placeholder="sandra.rousseau@laposte.fr">
-      <input type="submit" value="Envoyer">
-    </form> -->
+    <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7RfE/MVQ" width="100%"></iframe>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 export default {
     name: "Newsletter",
     beforeMount () {
@@ -32,14 +26,14 @@ export default {
   background-size: 75%;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 450px;
+  min-height: 28.125em;
 }
 
 .newsletter h2 {
   font-family: "Avenir", Arial, sans-serif;
   font-style: normal;
   font-weight: 800;
-  font-size: 60px;
+  font-size: 3.75em;
   display: flex;
   align-items: center;
   letter-spacing: -0.03em;
@@ -47,37 +41,7 @@ export default {
 }
 
 .newsletter iframe {
-  margin-top: 35px;
-  margin-bottom: 80px;
-}
-
-.newsletter input[type="email"] {
-  border: none;
-  width: 460px;
-  height: 57px;
-  background: #FFFFFF;
-  box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.09);
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 35px;
-  letter-spacing: -0.02em;
-  padding-left: 27px;
-  padding-right: 27px;
-}
-
-.newsletter input[type="submit"] {
-  border: none;
-  width: 176px;
-  height: 57px;
-  color: #FFF;
-  background: #5A475D;
-  border-radius: 20px;
-  margin-left: 18px;
-  cursor: pointer;
-}
-
-.newsletter ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(117, 112, 149, 0.5);
+  margin-top: 2.188em;
+  margin-bottom: 5em;
 }
 </style>

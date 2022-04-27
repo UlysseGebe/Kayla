@@ -7,14 +7,14 @@
       <p>Une occasion unique pour vous faire gagner du temps !</p>
       <div class="stores">
         <a href="#" class="apple">
-          <img src="../assets/images/App_Store.svg" alt="Aplle Store" width="250">
+          <img src="../assets/images/App_Store.svg" alt="Aplle Store" style="width:15.625em">
         </a>
         <a href="#" class="google">
-          <img src="../assets/images/Google_Play.svg" alt="Google Play" width="250">
+          <img src="../assets/images/Google_Play.svg" alt="Google Play" style="width:15.625em">
         </a>
       </div>
     </div>
-    <g-image class="koala" alt="Koala" src="~/assets/images/Koala.svg" />
+    <img class="koala" alt="Koala" src="../assets/images/Koala.svg" style="width:12.813em;height:12.375em;" />
   </div>
 </template>
 
@@ -39,40 +39,40 @@ export default {
   flex-direction: column;
   align-items: center;
   background: #FFFFFF;
-  box-shadow: 0px 3px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.188em 2.25em rgba(0, 0, 0, 0.08);
   border-radius: 24px;
   width: 70%;
   margin-top: -7%;
 }
 
 .download .ctaZone h3 {
-  margin: 58px 0 18px 0;
+  margin: 2em 0 0.5em 0;
   font-style: normal;
   font-weight: 800;
-  font-size: 40px;
-  line-height: 60px;
+  font-size: 2.5em;
+  line-height: 1.5em;
   text-align: center;
   letter-spacing: -0.03em;
   color: #58445B;
 }
 
 .download .ctaZone p {
-  margin: 0 0 27px 0;
+  margin: 0 0 1.5em 0;
   font-style: normal;
   font-weight: 500;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 1.25em;
+  line-height: 1.75em;
   text-align: center;
   letter-spacing: -0.02em;
   color: #64607D;
 }
 
 .download .ctaZone .stores {
-  margin-bottom: 42px;
+  margin-bottom: 2.625em;
 }
 
 .download .ctaZone .stores a {
-  margin: 0 42px;
+  margin: 0 2.625em;
 }
 
 .download .famille {
@@ -80,14 +80,6 @@ export default {
 }
 
 .download .koala {
-  margin-top: -24px;
-}
-</style>
-
-<style>
-@media screen and (max-width: 960px) {
-  .download .ctaZone .stores a img {
-    width: 175px
-  }
+  margin-top: -1.5em;
 }
 </style>

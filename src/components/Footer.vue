@@ -4,13 +4,13 @@
     <g-link to="/" class="siteName">{{ $static.metadata.siteName }}</g-link>
     <div class="socials-links">
       <a href="#" target="_blank">
-        <img src="../assets/images/linkedin.svg" alt="" width="20" height="20">
+        <img src="../assets/images/linkedin.svg" alt="" style="width:1.25em;height:1.25em;">
       </a>
       <a href="#" target="_blank">
-        <img src="../assets/images/messenger.svg" alt="" width="20" height="20">
+        <img src="../assets/images/messenger.svg" alt="" style="width:1.25em;height:1.25em;">
       </a>
       <a href="#" target="_blank">
-        <img src="../assets/images/twitter.svg" alt="" width="20" height="20">
+        <img src="../assets/images/twitter.svg" alt="" style="width:1.25em;height:1.25em;">
       </a>
     </div>
   </footer>
@@ -36,10 +36,10 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 70px 121px;
+  padding: 4.375em 7.563em;
 }
 
 .socials-links a:nth-child(2) {
-  margin: 0 16px;
+  margin: 0 1em;
 }
 </style>

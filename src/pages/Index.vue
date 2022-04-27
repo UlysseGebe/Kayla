@@ -2,7 +2,8 @@
   <Layout>
     <Hero />
     <div class="papillon">
-      <g-image class="papillonContent" alt="papillon" src="~/assets/images/Papillon-trianée.svg" fit="inside" width="360" height="300" />
+      <!-- <g-image class="papillonContent" alt="papillon" src="~/assets/images/Papillon-trianée.svg" fit="inside" width="360" height="300" /> -->
+      <img class="papillonContent" alt="papillon" src="../assets/images/Papillon-trianée.svg" style="width:22.5em;height:18.75em;" />
     </div>
     <Stat />
     <WhatIs />
@@ -52,6 +53,6 @@ export default {
 
 .sep01 {
   visibility: hidden;
-  height: 120px;
+  height: 11.25em;
 }
 </style>

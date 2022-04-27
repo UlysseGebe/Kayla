@@ -6,13 +6,13 @@
       </strong>
       <div class="socials-links">
         <a href="#" target="_blank">
-          <img src="../assets/images/linkedin.svg" alt="" width="20" height="20">
+          <img src="../assets/images/linkedin.svg" alt="" style="width:1.25em;height:1.25em;">
         </a>
         <a href="#" target="_blank">
-          <img src="../assets/images/messenger.svg" alt="" width="20" height="20">
+          <img src="../assets/images/messenger.svg" alt="" style="width:1.25em;height:1.25em;">
         </a>
         <a href="#" target="_blank">
-          <img src="../assets/images/twitter.svg" alt="" width="20" height="20">
+          <img src="../assets/images/twitter.svg" alt="" style="width:1.25em;height:1.25em;">
         </a>
       </div>
     </header>
@@ -64,14 +64,15 @@ body {
   font-family: var(--Main-Font);
   margin:0;
   padding:0;
-  line-height: 1.5;
+  line-height: 1.5px;
+  font-size: 16px;
 }
 
 .layout {
   max-width: 100vw;
   margin: 0 auto;
-  /* padding-left: 20px;
-  padding-right: 20px; */
+  /* padding-left: 1.25em;
+  padding-right: 1.25em; */
 }
 
 .header {
@@ -83,11 +84,11 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 42px 121px;
+  padding: 2.625em 7.563em;
 }
 
 .nav__link {
-  margin-left: 20px;
+  margin-left: 1.25em;
 }
 
 .siteName {
@@ -96,43 +97,30 @@ body {
   font-family: var(--Main-Font);
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 1.25em;
+  line-height: 1.688em;
   text-transform: uppercase;
 }
 </style>
 
 <style>
-@media screen and (max-width: 1160px) {
-  .cards .card {
-    width: 350px !important;
-    height: auto !important;
-  }
-
-  .cards .card * {
-    transform: scale(0.9);
-  }
+@media screen and (min-width: 1051px) and (max-width: 1160px) {
+  body { font-size: 14px }
 }
 
-@media screen and (max-width: 1050px) {
-  .cards .card {
-    width: 300px !important;
-    height: auto !important;
-  }
-
-  .cards .card * {
-    transform: scale(0.8);
-  }
+@media screen and (min-width: 901px) and (max-width: 1050px) {
+  body { font-size: 12px }
 }
 
-@media screen and (max-width: 900px) {
-  .cards .card {
-    width: 250px !important;
-    height: auto !important;
-  }
+@media screen and (min-width: 801px) and (max-width: 900px) {
+  body { font-size: 10px }
+}
 
-  .cards .card * {
-    transform: scale(0.7);
-  }
+@media screen and (min-width: 768px) and (max-width: 800px) {
+  body { font-size: 8px }
+}
+
+@media screen and (max-width: 767px) {
+  body { font-size: 8px }
 }
 </style>
