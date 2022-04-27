@@ -151,4 +151,20 @@ export default {
 .whatis .cards .card[index="2"] {
   aspect-ratio: 39 / 36.5;
 }
+
+@media screen and (max-width: 767px) {
+  .whatis .cards [index="1"] {
+    margin: 2.5em 0;
+  }
+  .whatis .cards [index="1"]::before {
+    top: -2.25em;
+    bottom: initial;
+    transform: rotate(90deg);
+  }
+  .whatis .cards [index="1"]::after {
+    top: initial;
+    bottom: -1.25em;
+    transform: rotate(90deg);
+  }
+}
 </style>

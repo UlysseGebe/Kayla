@@ -60,6 +60,7 @@ export default {
   flex-direction: row;
   justify-content: center;
   background-image: url("../assets/images/nuage.svg");
+  background-position: center;
   background-size: 100%;
   background-repeat: no-repeat;
   min-height: 26.188em;

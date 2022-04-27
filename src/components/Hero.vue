@@ -32,6 +32,7 @@ export default {
 @media screen and (max-width: 767px) and (orientation:portrait) {
   .hero {
     min-height: fit-content;
+    flex-direction: column;
   }
 }
 
@@ -46,6 +47,24 @@ export default {
   display: flex;
   justify-content: flex-end;
   width: 40%;
+}
+
+@media screen and (max-width: 767px) {
+  .hero {
+    min-height: fit-content;
+    flex-direction: column;
+  }
+
+  .hero .text {
+    width: 100%;
+    padding-right: 0;
+    justify-content: center;
+  }
+
+  .hero .image {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .hero .text .content {

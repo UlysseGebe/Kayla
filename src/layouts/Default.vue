@@ -121,30 +121,49 @@ body {
 }
 
 @media screen and (max-width: 767px) {
-  body { font-size: 8px }
+  body { font-size: 16px }
+  /* body { font-size: 16px } */
+  .header {
+    padding: 2.625em 2.563em;
+  }
+  footer {
+    padding: 2.625em 2.563em !important;
+  }
+
+  .cards {
+    flex-direction: column !important;
+    position: relative !important;
+    align-items: center;
+  }
+  .coloriage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
+  }
 }
 
 @media screen and (max-width: 600px) {
-  body { font-size: 6.75px }
+  body { font-size: 15px }
 }
 
 @media screen and (max-width: 500px) {
-  body { font-size: 6px }
+  body { font-size: 14px }
 }
 
 @media screen and (max-width: 450px) {
-  body { font-size: 5px }
+  body { font-size: 13px }
 }
 
 @media screen and (max-width: 400px) {
-  body { font-size: 4px }
+  body { font-size: 12px }
 }
 
 @media screen and (max-width: 350px) {
-  body { font-size: 3px }
+  body { font-size: 11px }
 }
 
 @media screen and (max-width: 300px) {
-  body { font-size: 2px }
+  body { font-size: 10px }
 }
 </style>

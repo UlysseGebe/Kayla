@@ -41,8 +41,9 @@ export default {
   background: #FFFFFF;
   box-shadow: 0 0.188em 2.25em rgba(0, 0, 0, 0.08);
   border-radius: 24px;
-  width: 70%;
+  width: calc(70% - 2em);
   margin-top: -7%;
+  padding: 0 2em;
 }
 
 .download .ctaZone h3 {
@@ -73,6 +74,18 @@ export default {
 
 .download .ctaZone .stores a {
   margin: 0 2.625em;
+}
+
+@media screen and (max-width: 767px) {
+  .download .ctaZone .stores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .download .ctaZone .stores a:first-of-type {
+    margin-bottom: 1em;
+  }
 }
 
 .download .famille {

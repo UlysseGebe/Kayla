@@ -1,11 +1,9 @@
 <template>
   <div class="stat">
     <div class="cards">
-      <div v-for="(stat, index) in stats" :key="index">
-        <div class="card" :index="index" :style="{backgroundImage: 'url('+stat.img+')', width: stat.width, height: stat.height}">
-          <h3>{{stat.num}}</h3>
-          <span v-html="stat.text"></span>
-        </div>
+      <div class="card" v-for="(stat, index) in stats" :key="index" :index="index" :style="{backgroundImage: 'url('+stat.img+')', width: stat.width, height: stat.height}">
+        <h3>{{stat.num}}</h3>
+        <span v-html="stat.text"></span>
       </div>
     </div>
       <g-image class="coloriage" alt="Coloriage" src="~/assets/images/Coloriage.png" fit="inside" width="1440" />

@@ -1,7 +1,9 @@
 <template>
   <div class="newsletter">
     <h2>Gardons contact</h2>
-    <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7RfE/MVQ" width="100%"></iframe>
+    <div class="iframe">
+      <iframe class="mj-w-res-iframe" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://app.mailjet.com/widget/iframe/7RfE/MVQ" width="100%"></iframe>
+    </div>
   </div>
 </template>
 
@@ -40,8 +42,15 @@ export default {
   color: #58445B;
 }
 
-.newsletter iframe {
+.newsletter .iframe {
   margin-top: 2.188em;
   margin-bottom: 5em;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.newsletter .iframe iframe {
+  height: 13.6em;
 }
 </style>
