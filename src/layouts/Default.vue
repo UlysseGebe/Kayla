@@ -123,4 +123,28 @@ body {
 @media screen and (max-width: 767px) {
   body { font-size: 8px }
 }
+
+@media screen and (max-width: 600px) {
+  body { font-size: 6.75px }
+}
+
+@media screen and (max-width: 500px) {
+  body { font-size: 6px }
+}
+
+@media screen and (max-width: 450px) {
+  body { font-size: 5px }
+}
+
+@media screen and (max-width: 400px) {
+  body { font-size: 4px }
+}
+
+@media screen and (max-width: 350px) {
+  body { font-size: 3px }
+}
+
+@media screen and (max-width: 300px) {
+  body { font-size: 2px }
+}
 </style>
