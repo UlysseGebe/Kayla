@@ -61,7 +61,7 @@ export default {
 }
 
 @media screen and (max-width: 767px) {
-  .cards {
+  .stat .cards {
     background-image: url("../assets/images/Coloriage.png");
     background-position: center;
     background-repeat: no-repeat;
