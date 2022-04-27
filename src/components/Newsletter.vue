@@ -52,5 +52,6 @@ export default {
 
 .newsletter .iframe iframe {
   height: 13.6em;
+  overflow: initial;
 }
 </style>
