@@ -23,10 +23,16 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 5em);
-  padding: 2.5em 0;
+  min-height: calc(100vh - 10em);
+  padding: 5em 0;
   margin: 0 auto;
   width: 85%;
+}
+
+@media screen and (max-width: 767px) and (orientation:portrait) {
+  .hero {
+    min-height: fit-content;
+  }
 }
 
 .hero .text {
