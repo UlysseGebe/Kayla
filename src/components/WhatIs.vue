@@ -93,7 +93,15 @@ export default {
   margin-top: -1.25em;
   color: #4295BB;
 }
-.whatis .cards [index="2"] { color: #6CA33B}
+.whatis .cards [index="2"] {color: #6CA33B}
+
+.whatis .cards [index="2"] h3 {
+  padding-left:2em;
+}
+.whatis .cards [index="2"] span {
+  padding-left: 3.5em !important;
+  max-width: 15em;
+}
 
 
 .whatis .cards [index="1"]::before {
