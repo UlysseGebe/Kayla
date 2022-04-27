@@ -60,6 +60,14 @@ export default {
   top: -5%;
 }
 
+@media screen and (max-width: 767px) {
+  .cards {
+    background-image: url("../assets/images/Coloriage.png");
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+
 .stat .cards .card[index="0"]::before {
   content: '';
   position: absolute;

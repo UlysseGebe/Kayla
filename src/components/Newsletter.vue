@@ -47,7 +47,7 @@ export default {
   margin-bottom: 5em;
   display: flex;
   justify-content: center;
-  width: 100%;
+  width: 90%;
 }
 
 .newsletter .iframe iframe {

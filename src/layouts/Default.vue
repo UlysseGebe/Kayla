@@ -134,12 +134,10 @@ body {
     flex-direction: column !important;
     position: relative !important;
     align-items: center;
+    background-size: cover !important;
   }
   .coloriage {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: -1;
+    display: none;
   }
 }
 
