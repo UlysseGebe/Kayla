@@ -53,7 +53,8 @@
       "enum": [
         "Non spécifié",
         "S'amuser",
-        "Apprendre"
+        "Apprendre",
+        "Apprendre et s'amuser"
       ],
       "default": "Non spécifié"
     },
