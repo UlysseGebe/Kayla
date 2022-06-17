@@ -567,7 +567,8 @@
                                                                     "enum": [
                                                                       "Non spécifié",
                                                                       "S'amuser",
-                                                                      "Apprendre"
+                                                                      "Apprendre",
+                                                                      "Apprendre et s'amuser"
                                                                     ]
                                                                   },
                                                                   "eco_score": {
@@ -2521,7 +2522,8 @@
                                                                   "enum": [
                                                                     "Non spécifié",
                                                                     "S'amuser",
-                                                                    "Apprendre"
+                                                                    "Apprendre",
+                                                                    "Apprendre et s'amuser"
                                                                   ]
                                                                 },
                                                                 "eco_score": {
@@ -4468,7 +4470,8 @@
                                                                   "enum": [
                                                                     "Non spécifié",
                                                                     "S'amuser",
-                                                                    "Apprendre"
+                                                                    "Apprendre",
+                                                                    "Apprendre et s'amuser"
                                                                   ]
                                                                 },
                                                                 "eco_score": {
@@ -6331,7 +6334,8 @@
                                                                   "enum": [
                                                                     "Non spécifié",
                                                                     "S'amuser",
-                                                                    "Apprendre"
+                                                                    "Apprendre",
+                                                                    "Apprendre et s'amuser"
                                                                   ]
                                                                 },
                                                                 "eco_score": {
