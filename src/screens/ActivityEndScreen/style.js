@@ -7,29 +7,6 @@ export default StyleSheet.create({
     backgroundColor: "#F8FDFF",
     padding: 16,
   },
-  top: {
-    position: "relative",
-    paddingRight: 10,
-    paddingLeft: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-  },
-  return: {
-    fontSize: 16,
-    letterSpacing: -0.29,
-    justifyContent: "center",
-  },
-  returnIcon: {
-    marginLeft: "auto",
-    marginRight: "auto",
-  },
-  returnText: {
-    color: "#005B85",
-    fontWeight: "900",
-    fontSize: 16,
-    letterSpacing: -0.297948,
-  },
   background: {
     width,
     height,
@@ -51,6 +28,22 @@ export default StyleSheet.create({
     fontWeight: "500",
     color: "#005B85",
   },
+  imgContainer: {
+    backgroundColor: "#005B85",
+    margin: 26,
+    width: 322,
+    height: 173,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 12,
+  },
+  imgText: {
+    color: "#FFFFFF",
+    fontWeight: "500",
+    fontSize: 14,
+    lineHeight: 18,
+  },
+  img: { width: 322, height: 173, borderRadius: 12 },
   text: {
     marginTop: 16,
     marginBottom: 80,
@@ -60,33 +53,7 @@ export default StyleSheet.create({
     fontWeight: "400",
     color: "#005B85",
   },
-  statContainer: {
-    padding: 16,
-    flexDirection: "row",
-    justifyContent: "space-around",
-  },
-  stat: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-  statIcon: {
-    marginRight: 8,
-  },
-  statText: {
-    color: "#3586AB",
-  },
-  descriptionContainer: { padding: 16 },
-  description: { color: "#005B85" },
-  matContainer: {
-    margin: 16,
-    padding: 9,
-    backgroundColor: "#E7F6FD",
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
-    shadowOpacity: 0.08,
-    shadowRadius: 20,
-  },
-  start: {
+  finish: {
     justifyContent: "center",
     width: 255,
     height: 48,
@@ -96,10 +63,57 @@ export default StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "#005B85",
   },
-  startText: {
+  finishText: {
     color: "#FFFFFF",
     fontSize: 16,
     lineHeight: 21.86,
     fontWeight: "900",
+  },
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.3)",
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    padding: 16,
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  modalButtons: {
+    flexDirection: "row",
+  },
+  modalButton: {
+    borderRadius: 50,
+    elevation: 2,
+    width: 120,
+    height: 48,
+    margin: 10,
+    alignItems: "center",
+    justifyContent: "center",
+    borderColor: "#005B85",
+    borderWidth: 1.5,
+  },
+  modalButtonClose: {
+    backgroundColor: "#E05457",
+    borderWidth: 0,
+  },
+  modalButtonText: {
+    color: "white",
+    fontWeight: "bold",
+  },
+  modalText: {
+    marginBottom: 15,
+    textAlign: "center",
   },
 });

@@ -1,16 +1,26 @@
-import { View, Image, Text } from "react-native";
+import { View, Image, Text, Pressable } from "react-native";
 import Styles from "./style";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CardSmallComponent() {
+  const navigation = useNavigation();
   return (
-    <View style={Styles.container}>
-      <View>
-        <Image source={require("../../assets/images/preview.png")} />
+    <Pressable
+      style={Styles.container}
+      onPress={() => navigation.navigate("Activity")}
+    >
+      <View style={Styles.imageContainer}>
+        <Image
+          style={Styles.image}
+          source={require("../../assets/images/preview.png")}
+        />
       </View>
-      <View>
-        <Text>DIY: faire une tête de dragon</Text>
-        <Text>Il y a 1 mois</Text>
+      <View style={Styles.textContainer}>
+        <Text numberOfLines={1} style={Styles.title}>
+          DIY: faire une tête de dragon
+        </Text>
+        <Text style={Styles.date}>Il y a 1 mois</Text>
       </View>
-    </View>
+    </Pressable>
   );
 }

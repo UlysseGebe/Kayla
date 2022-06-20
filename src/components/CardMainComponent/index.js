@@ -2,14 +2,17 @@ import React, { useState } from "react";
 import { View, Image, Text, Pressable } from "react-native";
 import Styles from "./style";
 import Icon from "../CustomIcon";
+import { useNavigation } from "@react-navigation/native";
 
 export default function CardMainComponent() {
+  const navigation = useNavigation();
   const [favorite, setFavorite] = useState(false);
   const handleFavorite = () => {
+    console.log("ok");
     setFavorite(!favorite);
   };
   return (
-    <View style={Styles.container}>
+    <Pressable style={Styles.container} onPress={() => navigation.navigate("Activity")}>
       <View style={Styles.imageContainer}>
         <Pressable onPress={handleFavorite} style={Styles.imageIcon}>
           <Icon icon="eye" size={22} color="#90BDD0" />
@@ -20,7 +23,7 @@ export default function CardMainComponent() {
         />
       </View>
       <View style={Styles.textContainer}>
-        <Text style={Styles.title}>Aquarium DIY</Text>
+        <Text numberOfLines={1} style={Styles.title}>Aquarium DIY</Text>
         <View style={Styles.statContainer}>
           <View style={Styles.stat}>
             <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
@@ -36,6 +39,6 @@ export default function CardMainComponent() {
           </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }

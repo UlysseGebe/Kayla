@@ -50,6 +50,14 @@ const StepsScreen = ({ route, navigation }) => {
     setCurrentSlideIndex(currentIndex);
   };
 
+  const goToSlide = (id) => {
+    if (id - currentSlideIndex != 0) {
+      const offset = id * width;
+      setCurrentSlideIndex(id);
+      ref?.current.scrollToOffset({ offset });
+    }
+  };
+
   const goToPrevSlide = () => {
     const prevSlideIndex = currentSlideIndex - 1;
     if (prevSlideIndex != slides.length) {
@@ -80,7 +88,9 @@ const StepsScreen = ({ route, navigation }) => {
             title="Retour"
             style={Styles.return}
             onPress={
-              currentSlideIndex == 0 ? () => setModalVisible(true) : goToPrevSlide
+              currentSlideIndex == 0
+                ? () => setModalVisible(true)
+                : goToPrevSlide
             }
           >
             <Icon
@@ -113,7 +123,7 @@ const StepsScreen = ({ route, navigation }) => {
       <View style={Styles.nav}>
         {slides.map((slide, index) => {
           return (
-            <View style={Styles.navContainer}>
+            <View key={index} style={Styles.navContainer}>
               {index == 0 ? null : (
                 <Text
                   style={[
@@ -126,7 +136,8 @@ const StepsScreen = ({ route, navigation }) => {
                   ]}
                 ></Text>
               )}
-              <View
+              <Pressable
+                onPress={() => goToSlide(index)}
                 style={[
                   Styles.navNumberContainer,
                   {
@@ -141,14 +152,13 @@ const StepsScreen = ({ route, navigation }) => {
                   style={[
                     Styles.navNumber,
                     {
-                      color:
-                        index <= currentSlideIndex ? "#FFF" : "#AECCDA",
+                      color: index <= currentSlideIndex ? "#FFF" : "#AECCDA",
                     },
                   ]}
                 >
                   {slide.id}
                 </Text>
-              </View>
+              </Pressable>
             </View>
           );
         })}
@@ -180,7 +190,7 @@ const StepsScreen = ({ route, navigation }) => {
               style={Styles.btn}
               onPress={
                 currentSlideIndex == slides.length - 1
-                  ? () => setModalVisible(true)
+                  ? () => navigation.navigate("ActivityEnd", {itemId: 0})
                   : goToNextSlide
               }
             >
@@ -213,7 +223,9 @@ const StepsScreen = ({ route, navigation }) => {
                 style={Styles.modalButton}
                 onPress={() => setModalVisible(!modalVisible)}
               >
-                <Text style={[Styles.modalButtonText, {color: "#005B85"}]}>Annuler</Text>
+                <Text style={[Styles.modalButtonText, { color: "#005B85" }]}>
+                  Annuler
+                </Text>
               </Pressable>
               <Pressable
                 style={[Styles.modalButton, Styles.modalButtonClose]}

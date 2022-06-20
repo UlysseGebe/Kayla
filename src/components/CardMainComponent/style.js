@@ -1,4 +1,5 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+const { width, height } = Dimensions.get("window");
 
 export default StyleSheet.create({
   container: {
@@ -10,6 +11,7 @@ export default StyleSheet.create({
     shadowOpacity: 0.08,
     shadowRadius: 20,
     borderRadius: 12,
+    margin: (width - 343) / 2
   },
   imageContainer: {
     width: "100%",
@@ -26,6 +28,8 @@ export default StyleSheet.create({
     zIndex: 1,
   },
   image: {
+    width: 343,
+    height: 135,
     position:"absolute",
     bottom: 0,
   },
