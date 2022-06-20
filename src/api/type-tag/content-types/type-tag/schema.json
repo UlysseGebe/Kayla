@@ -4,10 +4,11 @@
   "info": {
     "singularName": "type-tag",
     "pluralName": "type-tags",
-    "displayName": "Type_tag"
+    "displayName": "Type_tag",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {

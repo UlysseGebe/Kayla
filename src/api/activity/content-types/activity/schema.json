@@ -98,7 +98,7 @@
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::weather.weather",
-      "inversedBy": "activities"
+      "mappedBy": "activities"
     }
   }
 }
