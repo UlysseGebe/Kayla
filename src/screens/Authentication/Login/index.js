@@ -1,19 +1,34 @@
-import React from "react";
-import { View, StatusBar, Pressable, TextInput, Image } from "react-native";
-import { Headline, Paragraph, Button, Snackbar, Portal } from "react-native-paper";
+import React, { useState } from "react";
+import {
+  View,
+  StatusBar,
+  Pressable,
+  TextInput,
+  Text,
+  Image,
+} from "react-native";
+import {
+  Headline,
+  Paragraph,
+  Button,
+  Snackbar,
+  Portal,
+} from "react-native-paper";
 import UserModel from "../../../models/UserModel";
 import useTogglePasswordVisibility from "../useTogglePasswordVisibility";
-import CustomIcon from '../../../components/CustomIcon'
+import Icon from "../../../components/CustomIcon";
 import Styles from "./style";
 
-
-const Login = ({navigation}) => {
-  const { passwordVisibility, rightIcon, handlePasswordVisibility } = useTogglePasswordVisibility();
-  const [identifier, setIdentifier] = React.useState("");
-  const [password, setPassword] = React.useState("");
-  const [visible, setVisible] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
-  const [error, setError] = React.useState(false);
+const Login = ({ navigation }) => {
+  const { passwordVisibility, rightIcon, handlePasswordVisibility } =
+    useTogglePasswordVisibility();
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const [visible, setVisible] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
+  const [isFocusedEmail, setIsFocusedEmail] = useState(Styles.input);
+  const [isFocusedPWD, setIsFocusedPWD] = useState(Styles.input);
 
   const validateInput = () => {
     let errors = false;
@@ -50,91 +65,99 @@ const Login = ({navigation}) => {
 
   return (
     <View style={Styles.base}>
-      <Image source={require('../../../assets/images/background.png')} style={Styles.background} />
-        <>
-          <StatusBar backgroundColor="transparent" barStyle="dark-content" />
-          <Button title="Retour" onPress={() => navigation.goBack()}>
-            <CustomIcon
-              name={rightIcon}
-              size={22}
-              color="#90BDD0"
-            />
-            Retour
-          </Button>
-        </>
+      <Image
+        source={require("../../../assets/images/background.png")}
+        style={Styles.background}
+      />
+      <View style={Styles.top}>
+        <Pressable
+          title="Retour"
+          style={Styles.return}
+          onPress={() => navigation.goBack()}
+        >
+          <Icon style={Styles.returnIcon} icon="fleche" size={30} color="#005B85" />
+          <Text style={Styles.returnText}>Retour</Text>
+        </Pressable>
+      </View>
 
-        <View style={Styles.header}>
-          <Headline style={Styles.appTitle}>Se connecter</Headline>
-          <Paragraph style={Styles.appDesc}>
-            Entrez votre adresse mail et votre mot de passe pour vous connecter
-          </Paragraph>
-        </View>
+      <View style={Styles.header}>
+        <Headline style={Styles.appTitle}>Se connecter</Headline>
+        <Paragraph style={Styles.appDesc}>
+          Entrez votre adresse mail et votre mot de passe pour vous connecter
+        </Paragraph>
+      </View>
 
-        <>
-          <View style={Styles.divider} />
+      <>
+        <View style={Styles.divider} />
+        <TextInput
+          style={isFocusedEmail}
+          onChangeText={(text) => setIdentifier(text)}
+          onFocus={() => setIsFocusedEmail(Styles.input_focused)}
+          onBlur={() => setIsFocusedEmail(Styles.input)}
+          label="Adresse mail"
+          autoComplete="email"
+          keyboardType="email-address"
+          textContentType="emailAddress"
+          placeholder="Adresse mail"
+          placeholderTextColor="#AECCDA"
+        >
+          {identifier}
+        </TextInput>
+      </>
+
+      <>
+        <View style={Styles.divider} />
+        <View style={Styles.inputPwdContainer}>
           <TextInput
-            style={Styles.input}
-            onChangeText={(text) => setIdentifier(text)}
-            label="Adresse mail"
-            autoComplete="email"
-            keyboardType="email-address"
-            textContentType="emailAddress"
-            placeholder="Adresse mail"
-            placeholderTextColor="#90BDD0"
-          >
-            {identifier}
-          </TextInput>
-        </>
-
-        <>
-          <View style={Styles.divider} />
-          <TextInput
-            style={Styles.input}
+            style={isFocusedPWD}
             onChangeText={(text) => setPassword(text)}
+            onFocus={() => setIsFocusedPWD(Styles.input_focused)}
+            onBlur={() => setIsFocusedPWD(Styles.input)}
             label="Mot de passe"
             placeholder="Mot de passe"
             autoComplete="password"
             textContentType="password"
-            placeholderTextColor="#90BDD0"
+            placeholderTextColor="#AECCDA"
             secureTextEntry={passwordVisibility}
           >
             {password}
           </TextInput>
-          <Pressable onPress={handlePasswordVisibility}>
-            <CustomIcon
-              name={rightIcon}
-              size={22}
-              color="#90BDD0"
-            />
+          <Pressable onPress={handlePasswordVisibility} style={Styles.inputEye}>
+            <Icon icon={rightIcon} size={22} color="#90BDD0" />
           </Pressable>
-        </>
+        </View>
+      </>
 
-        <>
-          <View style={Styles.divider} />
-          <Button
-            loading={loading}
-            disabled={loading}
-            style={Styles.connexion}
-            onPress={() => authenticateUser()}
-            mode="contained"
-          >
-            Connexion
-          </Button>
-          <View style={Styles.divider} />
-          <View style={Styles.divider} />
-        </>
+      <>
+        <View style={Styles.divider} />
+        <Pressable
+          loading={loading}
+          disabled={loading}
+          style={Styles.connexion}
+          onPress={() => authenticateUser()}
+          mode="contained"
+        >
+          <Text style={Styles.connexionText}>Connexion</Text>
+        </Pressable>
+        <Pressable
+          onPress={() => navigation.navigate("Login")}
+          style={Styles.lost}
+        >
+          <Text style={Styles.lostText}>Mot de passe oublié ?</Text>
+        </Pressable>
+      </>
 
-        <>
-          {/**
-           * We use a portal component to render
-           * the snackbar on top of everything else
-           * */}
-          <Portal>
-            <Snackbar visible={visible} onDismiss={() => setVisible(false)}>
-              {error}
-            </Snackbar>
-          </Portal>
-        </>
+      <>
+        {/**
+         * We use a portal component to render
+         * the snackbar on top of everything else
+         * */}
+        <Portal>
+          <Snackbar visible={visible} onDismiss={() => setVisible(false)}>
+            {error}
+          </Snackbar>
+        </Portal>
+      </>
     </View>
   );
 };

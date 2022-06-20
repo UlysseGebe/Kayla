@@ -67,7 +67,14 @@ export default StyleSheet.create({
   inputPwdContainer: {
     position: "relative",
   },
+  inputContainer: {
+    position: "relative",
+  },
   inputEye: {
+    position: "absolute",
+    right: 0,
+  },
+  validate: {
     position: "absolute",
     right: 0,
   },
@@ -88,7 +95,6 @@ export default StyleSheet.create({
     paddingRight: 84,
     paddingLeft: 84,
     borderRadius: 50,
-    backgroundColor: "#90BDD0",
   },
   connexionText: {
     color: "#FFFFFF",

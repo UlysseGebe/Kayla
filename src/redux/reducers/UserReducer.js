@@ -24,6 +24,10 @@ const UserReducer = (state = defaultState, action) => {
       };
     }
 
+    case "USER_CREATE": {
+      return defaultState;
+    }
+
     case "USER_DELETE": {
       return defaultState;
     }

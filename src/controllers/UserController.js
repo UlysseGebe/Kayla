@@ -46,6 +46,42 @@ export const login = async (user) => {
 /**
  * @param {UserModel} user
  */
+export const register = async (user) => {
+  const requestConfig = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: user.name,
+      last_name: user.last_name,
+      identifier: user.identifier,
+      email: user.identifier,
+      zip_code: user.zip_code,
+      password: user.password,
+    }),
+  };
+
+  try {
+    const response = await fetch(`${url}/auth/local/register`, requestConfig);
+    const json = await response.json();
+
+    if (json.error) {
+      return false;
+    }
+
+    // saveUser(json.jwt, json.user);
+
+    return true;
+  } catch (err) {
+    alert(err);
+    return false;
+  }
+};
+
+/**
+ * @param {UserModel} user
+ */
 export const logout = async (user) => {
   deleteUser();
 };

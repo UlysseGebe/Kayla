@@ -1,27 +1,50 @@
 import { StyleSheet, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
-const COLORS = { primary: "#282534", white: "#fff" };
 export default StyleSheet.create({
   main: {
     flex: 1,
     backgroundColor: "#F8FDFF",
     justifyContent: "center",
   },
+  top: {
+    position: "relative",
+    height: height * 0.1,
+    left: 10,
+  },
+  topContent: {
+    position: "absolute",
+    zIndex: 1,
+    left: 10,
+  },
+  return: {
+    fontSize: 16,
+    letterSpacing: -0.29,
+  },
+  returnIcon: {
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  returnText: {
+    color: "#005B85",
+    fontWeight: "900",
+    fontSize: 16,
+    letterSpacing: -0.297948,
+  },
   background: {
     width,
     height,
     position: "absolute",
   },
-  appTitle: {
-    marginBottom: 17,
+  title: {
+    marginBottom: 20,
     textAlign: "center",
-    fontSize: 32,
+    fontSize: 20,
     lineHeight: 35,
     fontWeight: "800",
     color: "#3586AB",
   },
-  subTitle: {
+  subtitle: {
     marginTop: 17,
     marginBottom: 16,
     textAlign: "center",
@@ -39,13 +62,23 @@ export default StyleSheet.create({
     fontWeight: "400",
     color: "#005B85",
   },
+  inputInt: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    width: "100%",
+    marginTop: 20,
+    marginBottom: 20,
+    paddingRight: 24,
+    paddingLeft: 24,
+  },
   bottom: {
     position: "absolute",
     left: 0,
     right: 0,
     bottom: 48,
   },
-  start: {
+  btn: {
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 14,
@@ -57,17 +90,17 @@ export default StyleSheet.create({
     borderRadius: 50,
     backgroundColor: "#005B85",
   },
-  startText: {
+  btnText: {
     color: "#FFFFFF",
     fontWeight: "900",
     fontSize: 16,
   },
-  connection: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: 14,
-    marginBottom: 14,
-  },
+  // btn: {
+  //   marginLeft: "auto",
+  //   marginRight: "auto",
+  //   marginTop: 14,
+  //   marginBottom: 14,
+  // },
   connectionText: {
     color: "#005B85",
     fontWeight: "900",

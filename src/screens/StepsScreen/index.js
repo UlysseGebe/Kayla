@@ -1,16 +1,231 @@
-import { StatusBar } from "expo-status-bar";
-import { Button, Text, View } from "react-native";
-import Styles from "./style";
+import React, { useState, useRef } from "react";
+import {
+  Image,
+  FlatList,
+  View,
+  Pressable,
+  Text,
+  Modal,
+  SafeAreaView,
+  StatusBar,
+  TouchableOpacity,
+  Dimensions,
+} from "react-native";
+import NumericInput from "react-native-numeric-input";
+import SelectMultiple from "react-native-select-multiple";
+import Icon from "../../components/CustomIcon";
 
-export default function StepsScreen({ navigation }) {
+const { width, height } = Dimensions.get("window");
+
+import slides from "./slides.js";
+import Styles from "./style.js";
+
+const Slide = ({ item }) => {
   return (
-    <View style={Styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
-      />
+    <View
+      style={{
+        justifyContent: "flex-start",
+        alignItems: "center",
+        width: width,
+        padding: 16,
+      }}
+    >
+      <View>
+        <Image source={item.image} />
+        <Text>{item.text}</Text>
+      </View>
     </View>
   );
-}
+};
+
+const StepsScreen = ({ route, navigation }) => {
+  const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [modalVisible, setModalVisible] = useState(false);
+  const ref = useRef();
+  const { itemId } = route.params;
+
+  const updateCurrentSlideIndex = (e) => {
+    const contentOffsetX = e.nativeEvent.contentOffset.x;
+    const currentIndex = Math.round(contentOffsetX / width);
+    setCurrentSlideIndex(currentIndex);
+  };
+
+  const goToPrevSlide = () => {
+    const prevSlideIndex = currentSlideIndex - 1;
+    if (prevSlideIndex != slides.length) {
+      const offset = prevSlideIndex * width;
+      ref?.current.scrollToOffset({ offset });
+      setCurrentSlideIndex(currentSlideIndex - 1);
+    }
+  };
+
+  const goToNextSlide = () => {
+    const nextSlideIndex = currentSlideIndex + 1;
+    if (nextSlideIndex != slides.length) {
+      const offset = nextSlideIndex * width;
+      ref?.current.scrollToOffset({ offset });
+      setCurrentSlideIndex(currentSlideIndex + 1);
+    }
+  };
+
+  return (
+    <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FDFF" }}>
+      <Image
+        source={require("../../assets/images/background.png")}
+        style={Styles.background}
+      />
+      <View style={Styles.top}>
+        <View>
+          <Pressable
+            title="Retour"
+            style={Styles.return}
+            onPress={
+              currentSlideIndex == 0 ? () => setModalVisible(true) : goToPrevSlide
+            }
+          >
+            <Icon
+              style={Styles.returnIcon}
+              icon="fleche"
+              size={30}
+              color="#005B85"
+            />
+            <Text style={Styles.returnText}>Retour</Text>
+          </Pressable>
+        </View>
+        <View>
+          <Text style={Styles.title}>Title</Text>
+        </View>
+        <View>
+          <Pressable
+            title="Favorite"
+            style={Styles.return}
+            onPress={() => navigation.goBack()}
+          >
+            <Icon
+              style={Styles.returnIcon}
+              icon="star"
+              size={40}
+              color="#005B85"
+            />
+          </Pressable>
+        </View>
+      </View>
+      <View style={Styles.nav}>
+        {slides.map((slide, index) => {
+          return (
+            <View style={Styles.navContainer}>
+              {index == 0 ? null : (
+                <Text
+                  style={[
+                    Styles.navTrait,
+                    {
+                      width: width / slides.length - 30,
+                      backgroundColor:
+                        index <= currentSlideIndex ? "#005B85" : "#AECCDA",
+                    },
+                  ]}
+                ></Text>
+              )}
+              <View
+                style={[
+                  Styles.navNumberContainer,
+                  {
+                    borderColor:
+                      index <= currentSlideIndex ? "#005B85" : "#AECCDA",
+                    backgroundColor:
+                      index <= currentSlideIndex ? "#005B85" : "transparent",
+                  },
+                ]}
+              >
+                <Text
+                  style={[
+                    Styles.navNumber,
+                    {
+                      color:
+                        index <= currentSlideIndex ? "#FFF" : "#AECCDA",
+                    },
+                  ]}
+                >
+                  {slide.id}
+                </Text>
+              </View>
+            </View>
+          );
+        })}
+      </View>
+      <FlatList
+        ref={ref}
+        onMomentumScrollEnd={updateCurrentSlideIndex}
+        contentContainerStyles={{ height: height * 0.8 }}
+        showsHorizontalScrollIndicator={false}
+        scrollEnabled={false}
+        horizontal
+        data={slides}
+        pagingEnabled
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => <Slide item={item} />}
+      />
+      <View
+        style={{
+          height: height * 0.1,
+          justifyContent: "center",
+          paddingHorizontal: 20,
+        }}
+      >
+        {/* Render buttons */}
+        <View style={{ marginBottom: 20 }}>
+          <View>
+            <TouchableOpacity
+              activeOpacity={0.8}
+              style={Styles.btn}
+              onPress={
+                currentSlideIndex == slides.length - 1
+                  ? () => setModalVisible(true)
+                  : goToNextSlide
+              }
+            >
+              <Text style={Styles.btnText}>
+                {currentSlideIndex == slides.length - 1
+                  ? "Terminer l’activité"
+                  : "Prochaine étape"}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          Alert.alert("Modal has been closed.");
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View style={Styles.centeredView}>
+          <View style={Styles.modalView}>
+            <Text style={Styles.modalText}>Quitter l’activité</Text>
+            <Text style={Styles.modalText}>
+              Si vous confirmez, vous reviendrez à la page de l’activité
+            </Text>
+            <View style={Styles.modalButtons}>
+              <Pressable
+                style={Styles.modalButton}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={[Styles.modalButtonText, {color: "#005B85"}]}>Annuler</Text>
+              </Pressable>
+              <Pressable
+                style={[Styles.modalButton, Styles.modalButtonClose]}
+                onPress={() => navigation.goBack()}
+              >
+                <Text style={Styles.modalButtonText}>Je confirme</Text>
+              </Pressable>
+            </View>
+          </View>
+        </View>
+      </Modal>
+    </SafeAreaView>
+  );
+};
+export default StepsScreen;
