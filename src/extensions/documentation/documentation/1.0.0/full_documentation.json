@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-06-20T07:38:38.961Z"
+    "x-generation-date": "2022-06-21T15:44:35.424Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -194,7 +194,8 @@
                   "Non spécifié",
                   "S'amuser",
                   "Apprendre",
-                  "Apprendre et s'amuser"
+                  "Apprendre et s'amuser",
+                  "S'amuser et être créatif"
                 ]
               },
               "eco_score": {
@@ -781,7 +782,8 @@
                         "Non spécifié",
                         "S'amuser",
                         "Apprendre",
-                        "Apprendre et s'amuser"
+                        "Apprendre et s'amuser",
+                        "S'amuser et être créatif"
                       ]
                     },
                     "eco_score": {
@@ -1719,7 +1721,8 @@
                                                     "Non spécifié",
                                                     "S'amuser",
                                                     "Apprendre",
-                                                    "Apprendre et s'amuser"
+                                                    "Apprendre et s'amuser",
+                                                    "S'amuser et être créatif"
                                                   ]
                                                 },
                                                 "eco_score": {
@@ -3376,7 +3379,8 @@
                       "Non spécifié",
                       "S'amuser",
                       "Apprendre",
-                      "Apprendre et s'amuser"
+                      "Apprendre et s'amuser",
+                      "S'amuser et être créatif"
                     ]
                   },
                   "eco_score": {
@@ -4314,7 +4318,8 @@
                                                   "Non spécifié",
                                                   "S'amuser",
                                                   "Apprendre",
-                                                  "Apprendre et s'amuser"
+                                                  "Apprendre et s'amuser",
+                                                  "S'amuser et être créatif"
                                                 ]
                                               },
                                               "eco_score": {
@@ -6089,7 +6094,8 @@
                                                             "Non spécifié",
                                                             "S'amuser",
                                                             "Apprendre",
-                                                            "Apprendre et s'amuser"
+                                                            "Apprendre et s'amuser",
+                                                            "S'amuser et être créatif"
                                                           ]
                                                         },
                                                         "eco_score": {
@@ -7783,7 +7789,8 @@
                                                           "Non spécifié",
                                                           "S'amuser",
                                                           "Apprendre",
-                                                          "Apprendre et s'amuser"
+                                                          "Apprendre et s'amuser",
+                                                          "S'amuser et être créatif"
                                                         ]
                                                       },
                                                       "eco_score": {
@@ -9426,7 +9433,8 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
-                                      "Apprendre et s'amuser"
+                                      "Apprendre et s'amuser",
+                                      "S'amuser et être créatif"
                                     ]
                                   },
                                   "eco_score": {
@@ -11085,7 +11093,8 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
-                                    "Apprendre et s'amuser"
+                                    "Apprendre et s'amuser",
+                                    "S'amuser et être créatif"
                                   ]
                                 },
                                 "eco_score": {
@@ -12756,7 +12765,8 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
-                                      "Apprendre et s'amuser"
+                                      "Apprendre et s'amuser",
+                                      "S'amuser et être créatif"
                                     ]
                                   },
                                   "eco_score": {
@@ -14415,7 +14425,8 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
-                                    "Apprendre et s'amuser"
+                                    "Apprendre et s'amuser",
+                                    "S'amuser et être créatif"
                                   ]
                                 },
                                 "eco_score": {
@@ -16086,7 +16097,8 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
-                                      "Apprendre et s'amuser"
+                                      "Apprendre et s'amuser",
+                                      "S'amuser et être créatif"
                                     ]
                                   },
                                   "eco_score": {
@@ -17745,7 +17757,8 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
-                                    "Apprendre et s'amuser"
+                                    "Apprendre et s'amuser",
+                                    "S'amuser et être créatif"
                                   ]
                                 },
                                 "eco_score": {
