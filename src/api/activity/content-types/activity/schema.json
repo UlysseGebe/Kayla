@@ -40,7 +40,8 @@
       "enum": [
         "Non spécifié",
         "Intérieur",
-        "Extérieur"
+        "Extérieur",
+        "Intérieur et extérieur"
       ],
       "default": "Non spécifié"
     },
@@ -54,7 +55,9 @@
         "Non spécifié",
         "S'amuser",
         "Apprendre",
+        "Être créatif",
         "Apprendre et s'amuser",
+        "Apprendre et être créatif",
         "S'amuser et être créatif"
       ],
       "default": "Non spécifié"

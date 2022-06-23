@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-06-21T15:44:35.424Z"
+    "x-generation-date": "2022-06-23T09:36:29.772Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -182,7 +182,8 @@
                 "enum": [
                   "Non spécifié",
                   "Intérieur",
-                  "Extérieur"
+                  "Extérieur",
+                  "Intérieur et extérieur"
                 ]
               },
               "schedule": {
@@ -194,7 +195,9 @@
                   "Non spécifié",
                   "S'amuser",
                   "Apprendre",
+                  "Être créatif",
                   "Apprendre et s'amuser",
+                  "Apprendre et être créatif",
                   "S'amuser et être créatif"
                 ]
               },
@@ -770,7 +773,8 @@
                       "enum": [
                         "Non spécifié",
                         "Intérieur",
-                        "Extérieur"
+                        "Extérieur",
+                        "Intérieur et extérieur"
                       ]
                     },
                     "schedule": {
@@ -782,7 +786,9 @@
                         "Non spécifié",
                         "S'amuser",
                         "Apprendre",
+                        "Être créatif",
                         "Apprendre et s'amuser",
+                        "Apprendre et être créatif",
                         "S'amuser et être créatif"
                       ]
                     },
@@ -1709,7 +1715,8 @@
                                                   "enum": [
                                                     "Non spécifié",
                                                     "Intérieur",
-                                                    "Extérieur"
+                                                    "Extérieur",
+                                                    "Intérieur et extérieur"
                                                   ]
                                                 },
                                                 "schedule": {
@@ -1721,7 +1728,9 @@
                                                     "Non spécifié",
                                                     "S'amuser",
                                                     "Apprendre",
+                                                    "Être créatif",
                                                     "Apprendre et s'amuser",
+                                                    "Apprendre et être créatif",
                                                     "S'amuser et être créatif"
                                                   ]
                                                 },
@@ -3367,7 +3376,8 @@
                     "enum": [
                       "Non spécifié",
                       "Intérieur",
-                      "Extérieur"
+                      "Extérieur",
+                      "Intérieur et extérieur"
                     ]
                   },
                   "schedule": {
@@ -3379,7 +3389,9 @@
                       "Non spécifié",
                       "S'amuser",
                       "Apprendre",
+                      "Être créatif",
                       "Apprendre et s'amuser",
+                      "Apprendre et être créatif",
                       "S'amuser et être créatif"
                     ]
                   },
@@ -4306,7 +4318,8 @@
                                                 "enum": [
                                                   "Non spécifié",
                                                   "Intérieur",
-                                                  "Extérieur"
+                                                  "Extérieur",
+                                                  "Intérieur et extérieur"
                                                 ]
                                               },
                                               "schedule": {
@@ -4318,7 +4331,9 @@
                                                   "Non spécifié",
                                                   "S'amuser",
                                                   "Apprendre",
+                                                  "Être créatif",
                                                   "Apprendre et s'amuser",
+                                                  "Apprendre et être créatif",
                                                   "S'amuser et être créatif"
                                                 ]
                                               },
@@ -6082,7 +6097,8 @@
                                                           "enum": [
                                                             "Non spécifié",
                                                             "Intérieur",
-                                                            "Extérieur"
+                                                            "Extérieur",
+                                                            "Intérieur et extérieur"
                                                           ]
                                                         },
                                                         "schedule": {
@@ -6094,7 +6110,9 @@
                                                             "Non spécifié",
                                                             "S'amuser",
                                                             "Apprendre",
+                                                            "Être créatif",
                                                             "Apprendre et s'amuser",
+                                                            "Apprendre et être créatif",
                                                             "S'amuser et être créatif"
                                                           ]
                                                         },
@@ -7777,7 +7795,8 @@
                                                         "enum": [
                                                           "Non spécifié",
                                                           "Intérieur",
-                                                          "Extérieur"
+                                                          "Extérieur",
+                                                          "Intérieur et extérieur"
                                                         ]
                                                       },
                                                       "schedule": {
@@ -7789,7 +7808,9 @@
                                                           "Non spécifié",
                                                           "S'amuser",
                                                           "Apprendre",
+                                                          "Être créatif",
                                                           "Apprendre et s'amuser",
+                                                          "Apprendre et être créatif",
                                                           "S'amuser et être créatif"
                                                         ]
                                                       },
@@ -9421,7 +9442,8 @@
                                     "enum": [
                                       "Non spécifié",
                                       "Intérieur",
-                                      "Extérieur"
+                                      "Extérieur",
+                                      "Intérieur et extérieur"
                                     ]
                                   },
                                   "schedule": {
@@ -9433,7 +9455,9 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
+                                      "Être créatif",
                                       "Apprendre et s'amuser",
+                                      "Apprendre et être créatif",
                                       "S'amuser et être créatif"
                                     ]
                                   },
@@ -11081,7 +11105,8 @@
                                   "enum": [
                                     "Non spécifié",
                                     "Intérieur",
-                                    "Extérieur"
+                                    "Extérieur",
+                                    "Intérieur et extérieur"
                                   ]
                                 },
                                 "schedule": {
@@ -11093,7 +11118,9 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
+                                    "Être créatif",
                                     "Apprendre et s'amuser",
+                                    "Apprendre et être créatif",
                                     "S'amuser et être créatif"
                                   ]
                                 },
@@ -12753,7 +12780,8 @@
                                     "enum": [
                                       "Non spécifié",
                                       "Intérieur",
-                                      "Extérieur"
+                                      "Extérieur",
+                                      "Intérieur et extérieur"
                                     ]
                                   },
                                   "schedule": {
@@ -12765,7 +12793,9 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
+                                      "Être créatif",
                                       "Apprendre et s'amuser",
+                                      "Apprendre et être créatif",
                                       "S'amuser et être créatif"
                                     ]
                                   },
@@ -14413,7 +14443,8 @@
                                   "enum": [
                                     "Non spécifié",
                                     "Intérieur",
-                                    "Extérieur"
+                                    "Extérieur",
+                                    "Intérieur et extérieur"
                                   ]
                                 },
                                 "schedule": {
@@ -14425,7 +14456,9 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
+                                    "Être créatif",
                                     "Apprendre et s'amuser",
+                                    "Apprendre et être créatif",
                                     "S'amuser et être créatif"
                                   ]
                                 },
@@ -16085,7 +16118,8 @@
                                     "enum": [
                                       "Non spécifié",
                                       "Intérieur",
-                                      "Extérieur"
+                                      "Extérieur",
+                                      "Intérieur et extérieur"
                                     ]
                                   },
                                   "schedule": {
@@ -16097,7 +16131,9 @@
                                       "Non spécifié",
                                       "S'amuser",
                                       "Apprendre",
+                                      "Être créatif",
                                       "Apprendre et s'amuser",
+                                      "Apprendre et être créatif",
                                       "S'amuser et être créatif"
                                     ]
                                   },
@@ -17745,7 +17781,8 @@
                                   "enum": [
                                     "Non spécifié",
                                     "Intérieur",
-                                    "Extérieur"
+                                    "Extérieur",
+                                    "Intérieur et extérieur"
                                   ]
                                 },
                                 "schedule": {
@@ -17757,7 +17794,9 @@
                                     "Non spécifié",
                                     "S'amuser",
                                     "Apprendre",
+                                    "Être créatif",
                                     "Apprendre et s'amuser",
+                                    "Apprendre et être créatif",
                                     "S'amuser et être créatif"
                                   ]
                                 },
