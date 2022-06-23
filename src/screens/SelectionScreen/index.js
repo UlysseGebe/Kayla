@@ -22,7 +22,6 @@ import Styles from "./style.js";
 const Slide = ({ item }) => {
   const [selectedFruits, setselectedFruits] = useState([]);
   const onSelectionsChange = (fruits) => {
-    console.log(fruits);
     setselectedFruits(fruits);
   };
   if (item.id == "1") {

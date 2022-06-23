@@ -11,7 +11,8 @@ export default StyleSheet.create({
     shadowOpacity: 0.08,
     shadowRadius: 20,
     borderRadius: 12,
-    margin: (width - 343) / 2
+    marginHorizontal: (width - 343) / 2,
+    marginBottom: 16,
   },
   imageContainer: {
     width: "100%",

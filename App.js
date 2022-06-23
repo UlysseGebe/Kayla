@@ -8,6 +8,9 @@ import { Provider } from "react-redux";
 import { store, persistor } from "./src/redux/Store";
 
 import HomeScreen from "./src/screens/HomeScreen";
+import FavoriteScreen from "./src/screens/FavoriteScreen";
+import CalendarScreen from "./src/screens/CalendarScreen";
+import ProfilScreen from "./src/screens/ProfilScreen";
 import ActivityScreen from "./src/screens/ActivityScreen";
 import ActivityEndScreen from "./src/screens/ActivityEndScreen";
 import StepsScreen from "./src/screens/StepsScreen";
@@ -60,8 +63,11 @@ export default function App() {
                     />
                   </>
                 )}
+                <Stack.Screen name="Profil" component={ProfilScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
+                <Stack.Screen name="Favorite" component={FavoriteScreen} />
                 <Stack.Screen name="Activity" component={ActivityScreen} />
+                <Stack.Screen name="Calendar" component={CalendarScreen} />
                 <Stack.Screen name="Login" component={LoginScreen} />
                 <Stack.Screen name="Register" component={RegisterScreen} />
                 <Stack.Screen
