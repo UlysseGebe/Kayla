@@ -1,5 +1,6 @@
 import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Provider as PaperProvider } from "react-native-paper";
@@ -19,8 +20,19 @@ import OnboardingScreen from "./src/screens/OnboardingScreen";
 import SelectionScreen from "./src/screens/SelectionScreen";
 import LoginScreen from "./src/screens/Authentication/Login";
 import RegisterScreen from "./src/screens/Authentication/Register";
+import Icon from "./src/components/CustomIcon";
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={HomeScreen} />
+      <Tab.Screen name="Favorite" component={FavoriteScreen} />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
@@ -41,49 +53,47 @@ export default function App() {
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <PaperProvider>
-          {isAppFirstLaunched != null && (
-            <NavigationContainer>
-              <Stack.Navigator
-                screenOptions={{
-                  header: () => null,
-                  cardStyle: {
-                    backgroundColor: "transparent",
-                  },
-                }}
-              >
-                {isAppFirstLaunched && (
-                  <>
-                    <Stack.Screen
-                      name="Onboarding"
-                      component={OnboardingScreen}
-                    />
-                    <Stack.Screen
-                      name="Selection"
-                      component={SelectionScreen}
-                    />
-                  </>
-                )}
-                <Stack.Screen name="Home" component={HomeScreen} />
-                <Stack.Screen name="Favorite" component={FavoriteScreen} />
-                <Stack.Screen name="Profil" component={ProfilScreen} />
-                <Stack.Screen name="Activity" component={ActivityScreen} />
-                <Stack.Screen name="Calendar" component={CalendarScreen} />
-                <Stack.Screen name="Login" component={LoginScreen} />
-                <Stack.Screen name="Register" component={RegisterScreen} />
-                <Stack.Screen
-                  name="Steps"
-                  component={StepsScreen}
-                  initialParams={{ itemId: 0 }}
-                />
-                <Stack.Screen name="ActivityEnd" component={ActivityEndScreen} />
-                <Stack.Screen
-                  name="Details"
-                  component={DetailsScreen}
-                  initialParams={{ itemId: 42 }}
-                />
-              </Stack.Navigator>
-            </NavigationContainer>
-          )}
+          <NavigationContainer>
+            <Stack.Navigator
+              initialRouteName={isAppFirstLaunched ? "Onboarding" : "Home"}
+              screenOptions={({ route }) => ({
+                header: () => null,
+                cardStyle: {
+                  backgroundColor: "transparent",
+                },
+                tabBarIcon: ({ focused, color, size }) => {
+                  let iconName;
+
+                  iconName = focused ? "eye" : "eye";
+
+                  return <Icon name={iconName} size={size} color={color} />;
+                },
+                tabBarActiveTintColor: "tomato",
+                tabBarInactiveTintColor: "gray",
+              })}
+            >
+              <Stack.Screen detachInactiveScreens={false} name="Onboarding" component={OnboardingScreen} />
+              <Stack.Screen name="Selection" component={SelectionScreen} />
+              <Stack.Screen name="Home" component={Tabs} />
+              <Stack.Screen name="Favorite" component={Tabs} />
+              <Stack.Screen name="Profil" component={ProfilScreen} />
+              <Stack.Screen name="Activity" component={ActivityScreen} />
+              <Stack.Screen name="Calendar" component={CalendarScreen} />
+              <Stack.Screen name="Login" component={LoginScreen} />
+              <Stack.Screen name="Register" component={RegisterScreen} />
+              <Stack.Screen
+                name="Steps"
+                component={StepsScreen}
+                initialParams={{ itemId: 0 }}
+              />
+              <Stack.Screen name="ActivityEnd" component={ActivityEndScreen} />
+              <Stack.Screen
+                name="Details"
+                component={DetailsScreen}
+                initialParams={{ itemId: 42 }}
+              />
+            </Stack.Navigator>
+          </NavigationContainer>
         </PaperProvider>
       </PersistGate>
     </Provider>
