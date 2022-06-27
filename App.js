@@ -63,9 +63,9 @@ export default function App() {
                     />
                   </>
                 )}
-                <Stack.Screen name="Profil" component={ProfilScreen} />
                 <Stack.Screen name="Home" component={HomeScreen} />
                 <Stack.Screen name="Favorite" component={FavoriteScreen} />
+                <Stack.Screen name="Profil" component={ProfilScreen} />
                 <Stack.Screen name="Activity" component={ActivityScreen} />
                 <Stack.Screen name="Calendar" component={CalendarScreen} />
                 <Stack.Screen name="Login" component={LoginScreen} />

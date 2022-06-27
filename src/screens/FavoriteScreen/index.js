@@ -15,8 +15,6 @@ const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import FilterComponent from "../../components/FilterComponent";
 import CardMainComponent from "../../components/CardMainComponent";
-import CardSmallComponent from "../../components/CardSmallComponent";
-import CardTopComponent from "../../components/CardTopComponent";
 
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 

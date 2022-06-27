@@ -13,6 +13,7 @@ import {
 } from "react-native";
 const { width, height } = Dimensions.get("window");
 import Styles from "./style";
+import FilterComponent from "../../components/FilterComponent";
 import CardMainComponent from "../../components/CardMainComponent";
 import CardSmallComponent from "../../components/CardSmallComponent";
 import CardTopComponent from "../../components/CardTopComponent";
@@ -33,6 +34,7 @@ export default function HomeScreen({ navigation }) {
         source={require("../../assets/images/background.png")}
         style={Styles.background}
       />
+      <FilterComponent />
       <ScrollView>
         <View>
           <Text style={Styles.subTitle}>Ton activité du jour !</Text>
