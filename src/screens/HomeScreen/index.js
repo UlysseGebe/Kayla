@@ -66,9 +66,9 @@ export default function HomeScreen({ navigation }) {
             })}
           </View>
         </View>
-        <View style={{ flexDirection: "column" }}>
+        {/* <View style={{ flexDirection: "column" }}>
           <Text style={Styles.subTitle}>Tes statistiques</Text>
-        </View>
+        </View> */}
         <View style={{ flexDirection: "column" }}>
           <Text style={Styles.subTitle}>Notre sélection</Text>
           <FlatList
@@ -91,16 +91,7 @@ export default function HomeScreen({ navigation }) {
             renderItem={({ item }) => <CardTopComponent item={item} />}
           />
         </View>
-        <Text>Open up App.js to start working on your app!</Text>
-        <StatusBar style="auto" />
-        <Button
-          title="Go to Activity"
-          onPress={() => navigation.navigate("Activity")}
-        />
-        <Button
-          title="Go to Login"
-          onPress={() => navigation.navigate("Login")}
-        />
+        <View style={{height: 100}}></View>
       </ScrollView>
     </SafeAreaView>
   );

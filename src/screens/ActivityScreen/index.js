@@ -8,6 +8,7 @@ import {
   View,
   Image,
   FlatList,
+  ScrollView,
   Dimensions,
 } from "react-native";
 import Icon from "../../components/CustomIcon";
@@ -74,7 +75,7 @@ const Slide = ({ item }) => {
 const Item = ({ item }) => {
   return (
     <View style={{ width: 103, marginBottom: 16 }}>
-      <Image source={item.image} style={{ width: 103, height: 48}}/>
+      <Image source={item.image} style={{ width: 103, height: 48 }} />
       <Text>item.name</Text>
     </View>
   );
@@ -129,67 +130,87 @@ export default function ActivityScreen({ navigation }) {
           </Pressable>
         </View>
       </View>
-      <View style={{ marginTop: 25, width: "100%", justifyContent: "center" }}>
-        <FlatList
-          ref={ref}
-          style={{
-            width: 343,
-            marginLeft: "auto",
-            marginRight: "auto",
-            borderRadius: 12,
-          }}
-          onMomentumScrollEnd={updateCurrentSlideIndex}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyles={{ width: "100%" }}
-          scrollEnabled={true}
-          horizontal
-          data={slides}
-          pagingEnabled={true}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Slide item={item} />}
-        />
-      </View>
-      <View style={Styles.statContainer}>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>30 min</Text>
-        </View>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>3 à 10 ans</Text>
-        </View>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>10 euros</Text>
-        </View>
-      </View>
-      <View style={Styles.descriptionContainer}>
-        <Text style={Styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-          ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </Text>
-      </View>
-      <View style={Styles.matContainer}>
-        <Text>Matériel nécessaire</Text>
-        <FlatList
-          columnWrapperStyle={{justifyContent: 'space-between'}}
-          data={items}
-          numColumns={3}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Item item={item} />}
-        />
-      </View>
-      <View>
-      <Pressable
-          style={Styles.start}
-          mode="contained"
-          onPress={() => navigation.navigate("Steps", {itemId: 0})}
+      <ScrollView>
+        <View
+          style={{ marginTop: 25, width: "100%", justifyContent: "center" }}
         >
-          <Text style={Styles.startText}>Commencer l’activité</Text>
-        </Pressable>
-      </View>
+          <FlatList
+            ref={ref}
+            style={{
+              width: 343,
+              marginLeft: "auto",
+              marginRight: "auto",
+              borderRadius: 12,
+            }}
+            onMomentumScrollEnd={updateCurrentSlideIndex}
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyles={{ width: "100%" }}
+            scrollEnabled={true}
+            horizontal
+            data={slides}
+            pagingEnabled={true}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <Slide item={item} />}
+          />
+        </View>
+        <View style={Styles.statContainer}>
+          <View style={Styles.stat}>
+            <Icon
+              style={Styles.statIcon}
+              icon="eye"
+              size={22}
+              color="#005B85"
+            />
+            <Text style={Styles.statText}>30 min</Text>
+          </View>
+          <View style={Styles.stat}>
+            <Icon
+              style={Styles.statIcon}
+              icon="eye"
+              size={22}
+              color="#005B85"
+            />
+            <Text style={Styles.statText}>3 à 10 ans</Text>
+          </View>
+          <View style={Styles.stat}>
+            <Icon
+              style={Styles.statIcon}
+              icon="eye"
+              size={22}
+              color="#005B85"
+            />
+            <Text style={Styles.statText}>10 euros</Text>
+          </View>
+        </View>
+        <View style={Styles.descriptionContainer}>
+          <Text style={Styles.description}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+            ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </Text>
+        </View>
+        <View style={Styles.matContainer}>
+          <Text>Matériel nécessaire</Text>
+          <FlatList
+            columnWrapperStyle={{ justifyContent: "space-between" }}
+            data={items}
+            numColumns={3}
+            keyExtractor={(item) => item.id}
+            renderItem={({ item }) => <Item item={item} />}
+          />
+        </View>
+        <View>
+          <Pressable
+            style={Styles.start}
+            mode="contained"
+            onPress={() => navigation.navigate("Steps", { itemId: 0 })}
+          >
+            <Text style={Styles.startText}>Commencer l’activité</Text>
+          </Pressable>
+        </View>
+        <View style={{ height: 100 }}></View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
