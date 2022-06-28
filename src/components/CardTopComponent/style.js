@@ -22,12 +22,14 @@ export default StyleSheet.create({
     marginLeft: 7,
     alignItems: "center",
     fontSize: 16,
+    fontFamily: "Avenir",
     color: "#005B85"
   },
   text: {
     color: "#005B85",
     marginVertical: 16,
     fontSize: 14,
+    fontFamily: "Avenir",
   },
   statContainer: {
     flexDirection: "row",
@@ -43,5 +45,6 @@ export default StyleSheet.create({
   statText: {
     color: "#3586AB",
     fontSize: 12,
+    fontFamily: "Avenir",
   }
 });

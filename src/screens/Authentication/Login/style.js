@@ -17,6 +17,7 @@ export default StyleSheet.create({
   },
   return: {
     fontSize: 16,
+    fontFamily: "Avenir",
     letterSpacing: -0.29,
   },
   returnIcon: {
@@ -27,6 +28,7 @@ export default StyleSheet.create({
     color: "#005B85",
     fontWeight: "900",
     fontSize: 16,
+    fontFamily: "Avenir",
     letterSpacing: -0.297948,
   },
   background: {
@@ -39,6 +41,7 @@ export default StyleSheet.create({
   },
   headline: {
     fontSize: 30,
+    fontFamily: "Avenir",
     color: "#005B85",
   },
   appDesc: {
@@ -53,6 +56,7 @@ export default StyleSheet.create({
     borderBottomWidth: 2,
     borderColor: "#AECCDA",
     fontSize: 18,
+    fontFamily: "Avenir",
     fontWeight: "900",
     paddingBottom: 5,
   },
@@ -60,6 +64,7 @@ export default StyleSheet.create({
     borderColor: "#005B85",
     color: "#005B85",
     fontSize: 18,
+    fontFamily: "Avenir",
     fontWeight: "900",
     paddingBottom: 5,
     borderBottomWidth: 2,
@@ -74,6 +79,7 @@ export default StyleSheet.create({
   appTitle: {
     textAlign: "center",
     fontSize: 35,
+    fontFamily: "Avenir",
     lineHeight: 35,
     fontWeight: "700",
     color: "#005B85",
@@ -93,6 +99,7 @@ export default StyleSheet.create({
   connexionText: {
     color: "#FFFFFF",
     fontSize: 16,
+    fontFamily: "Avenir",
     lineHeight: 21.86,
     fontWeight: "900",
   },
@@ -105,6 +112,7 @@ export default StyleSheet.create({
   lostText: {
     color: "#005B85",
     fontSize: 16,
+    fontFamily: "Avenir",
     lineHeight: 21.86,
     fontWeight: "900",
   },

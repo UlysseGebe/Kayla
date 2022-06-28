@@ -20,6 +20,7 @@ export default StyleSheet.create({
     lineHeight: 35,
     fontWeight: "800",
     color: "#3586AB",
+    fontFamily: "Avenir",
   },
   subTitle: {
     marginTop: 17,
@@ -29,6 +30,15 @@ export default StyleSheet.create({
     lineHeight: 35,
     fontWeight: "500",
     color: "#005B85",
+    fontFamily: "Avenir",
+  },
+  kaylaCont: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  kayla: {
+    textAlign: "center",
   },
   text: {
     marginTop: 16,
@@ -38,6 +48,7 @@ export default StyleSheet.create({
     lineHeight: 24,
     fontWeight: "400",
     color: "#005B85",
+    fontFamily: "Avenir",
   },
   bottom: {
     position: "absolute",
@@ -61,6 +72,7 @@ export default StyleSheet.create({
     color: "#FFFFFF",
     fontWeight: "900",
     fontSize: 16,
+    fontFamily: "Avenir",
   },
   connection: {
     marginLeft: "auto",
@@ -72,5 +84,6 @@ export default StyleSheet.create({
     color: "#005B85",
     fontWeight: "900",
     fontSize: 16,
+    fontFamily: "Avenir",
   },
 });

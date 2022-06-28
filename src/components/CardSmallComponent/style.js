@@ -37,6 +37,7 @@ export default StyleSheet.create({
   title: {
     color: "#005B85",
     fontSize: 14,
+    fontFamily: "Avenir",
   },
   date: {
     marginTop: 2,

@@ -27,6 +27,7 @@ export default StyleSheet.create({
   subTitle: {
     margin: 16,
     fontSize: 24,
+    fontFamily: "Avenir",
     lineHeight: 35,
     fontWeight: "500",
     color: "#005B85",

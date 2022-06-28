@@ -34,8 +34,8 @@ export default function HomeScreen({ navigation }) {
         source={require("../../assets/images/background.png")}
         style={Styles.background}
       />
-      <FilterComponent />
       <ScrollView>
+        <FilterComponent />
         <View>
           <Text style={Styles.subTitle}>Ton activité du jour !</Text>
           <FlatList

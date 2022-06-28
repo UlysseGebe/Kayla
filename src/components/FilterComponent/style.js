@@ -23,6 +23,7 @@ export default StyleSheet.create({
     alignItems: "center",
     color: "#005B85",
     fontSize: 14,
+    fontFamily: "Avenir",
     paddingLeft: 12,
     paddingRight: 34,
     fontWeight: "500",
@@ -65,6 +66,7 @@ export default StyleSheet.create({
   },
   headerText: {
     fontSize: 24,
+    fontFamily: "Avenir",
     marginHorizontal: 16,
   },
   listContainer: {
@@ -103,6 +105,7 @@ export default StyleSheet.create({
   objectP: {
     fontWeight: "900",
     fontSize: 24,
+    fontFamily: "Avenir",
     color: "#005B85",
   },
   objectText: {
@@ -110,6 +113,7 @@ export default StyleSheet.create({
     textAlign: "center",
     fontWeight: "500",
     fontSize: 16,
+    fontFamily: "Avenir",
     color: "#005B85",
   },
   inputObject: {
@@ -118,6 +122,7 @@ export default StyleSheet.create({
     alignItems: "center",
     color: "#005B85",
     fontSize: 14,
+    fontFamily: "Avenir",
     paddingLeft: 12,
     paddingRight: 34,
     fontWeight: "500",

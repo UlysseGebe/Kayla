@@ -261,6 +261,7 @@ const SelectionScreen = ({ navigation }) => {
                   style={{
                     fontWeight: "bold",
                     fontSize: 15,
+                    fontFamily: "Avenir",
                     color: "#005B85",
                     textAlign: "center",
                   }}

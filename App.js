@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState, useEffect } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -27,16 +27,35 @@ const Tab = createBottomTabNavigator();
 
 function Tabs() {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Favorite" component={FavoriteScreen} />
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        header: () => null,
+        cardStyle: {
+          backgroundColor: "transparent",
+        },
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          iconName = focused ? "eye" : "eye";
+
+          return <Icon name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "tomato",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen name="HomeTab" component={HomeScreen} />
+      <Tab.Screen name="CalendarTab" component={CalendarScreen} />
+      <Stack.Screen name="ActivityTab" component={ActivityScreen} />
+      <Tab.Screen name="FavoriteTab" component={FavoriteScreen} />
+      <Stack.Screen name="ProfilTab" component={ProfilScreen} />
     </Tab.Navigator>
   );
 }
 
 export default function App() {
-  const [isAppFirstLaunched, setIsAppFirstLaunched] = React.useState(null);
-  React.useEffect(async () => {
+  const [isAppFirstLaunched, setIsAppFirstLaunched] = useState(null);
+  useEffect(async () => {
     const appData = await AsyncStorage.getItem("isAppFirstLaunched");
     if (appData == null) {
       setIsAppFirstLaunched(true);
@@ -55,30 +74,25 @@ export default function App() {
         <PaperProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName={isAppFirstLaunched ? "Onboarding" : "Home"}
+              initialRouteName={!isAppFirstLaunched ? "Onboarding" : "Home"}
               screenOptions={({ route }) => ({
                 header: () => null,
                 cardStyle: {
                   backgroundColor: "transparent",
                 },
-                tabBarIcon: ({ focused, color, size }) => {
-                  let iconName;
-
-                  iconName = focused ? "eye" : "eye";
-
-                  return <Icon name={iconName} size={size} color={color} />;
-                },
-                tabBarActiveTintColor: "tomato",
-                tabBarInactiveTintColor: "gray",
               })}
             >
-              <Stack.Screen detachInactiveScreens={false} name="Onboarding" component={OnboardingScreen} />
+              <Stack.Screen
+                detachInactiveScreens={false}
+                name="Onboarding"
+                component={OnboardingScreen}
+              />
               <Stack.Screen name="Selection" component={SelectionScreen} />
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Favorite" component={Tabs} />
-              <Stack.Screen name="Profil" component={ProfilScreen} />
-              <Stack.Screen name="Activity" component={ActivityScreen} />
-              <Stack.Screen name="Calendar" component={CalendarScreen} />
+              <Stack.Screen name="Profil" component={Tabs} />
+              <Stack.Screen name="Activity" component={Tabs} />
+              <Stack.Screen name="Calendar" component={Tabs} />
               <Stack.Screen name="Login" component={LoginScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />
               <Stack.Screen

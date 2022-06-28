@@ -17,6 +17,7 @@ export default StyleSheet.create({
   },
   return: {
     fontSize: 16,
+    fontFamily: "Avenir",
     letterSpacing: -0.29,
     justifyContent: "center",
   },
@@ -28,6 +29,7 @@ export default StyleSheet.create({
     color: "#005B85",
     fontWeight: "900",
     fontSize: 16,
+    fontFamily: "Avenir",
     letterSpacing: -0.297948,
   },
   background: {
@@ -38,6 +40,7 @@ export default StyleSheet.create({
   title: {
     textAlign: "center",
     fontSize: 20,
+    fontFamily: "Avenir",
     lineHeight: 35,
     fontWeight: "800",
     color: "#3586AB",
@@ -47,6 +50,7 @@ export default StyleSheet.create({
     marginBottom: 16,
     textAlign: "center",
     fontSize: 24,
+    fontFamily: "Avenir",
     lineHeight: 35,
     fontWeight: "500",
     color: "#005B85",
@@ -56,6 +60,7 @@ export default StyleSheet.create({
     marginBottom: 80,
     textAlign: "center",
     fontSize: 20,
+    fontFamily: "Avenir",
     lineHeight: 24,
     fontWeight: "400",
     color: "#005B85",
@@ -99,6 +104,7 @@ export default StyleSheet.create({
   startText: {
     color: "#FFFFFF",
     fontSize: 16,
+    fontFamily: "Avenir",
     lineHeight: 21.86,
     fontWeight: "900",
   },

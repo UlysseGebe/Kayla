@@ -6,7 +6,6 @@ import {
   ScrollView,
   Pressable,
   Text,
-  View,
   Image,
   FlatList,
   Dimensions,
@@ -32,18 +31,22 @@ export default function FavoriteScreen({ navigation }) {
         source={require("../../assets/images/background.png")}
         style={Styles.background}
       />
-      <FilterComponent />
-      <View>
-        <Text style={Styles.subTitle}>Ton activité du jour !</Text>
-        <FlatList
-          ref={ref}
-          onMomentumScrollEnd={updateCurrentSlideIndex}
-          pagingEnabled
-          data={cards}
-          keyExtractor={(item) => "CardMain" + item.id}
-          renderItem={({ item }) => <CardMainComponent item={item} />}
-        />
-      </View>
+      <FlatList
+        ref={ref}
+        onMomentumScrollEnd={updateCurrentSlideIndex}
+        ListHeaderComponent={() => {
+          return (
+            <>
+              <FilterComponent />
+              <Text style={Styles.subTitle}>Ton activité du jour !</Text>
+            </>
+          );
+        }}
+        pagingEnabled
+        data={cards}
+        keyExtractor={(item) => "CardMain" + item.id}
+        renderItem={({ item }) => <CardMainComponent item={item} />}
+      />
     </SafeAreaView>
   );
 }

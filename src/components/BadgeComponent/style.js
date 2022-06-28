@@ -5,8 +5,8 @@ export default StyleSheet.create({
     width: 262,
     height: 119,
     backgroundColor: "#FFFFFF",
-    shadowColor: '#000',
-    shadowOffset: {width: 0, height: 4},
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.08,
     shadowRadius: 20,
     borderRadius: 12,
@@ -22,12 +22,14 @@ export default StyleSheet.create({
     marginLeft: 7,
     alignItems: "center",
     fontSize: 16,
-    color: "#005B85"
+    color: "#005B85",
+    fontFamily: "Avenir",
   },
   text: {
     color: "#005B85",
     marginVertical: 16,
     fontSize: 14,
+    fontFamily: "Avenir",
   },
   statContainer: {
     flexDirection: "row",
@@ -43,5 +45,6 @@ export default StyleSheet.create({
   statText: {
     color: "#3586AB",
     fontSize: 12,
-  }
+    fontFamily: "Avenir",
+  },
 });
