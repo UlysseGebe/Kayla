@@ -69,28 +69,29 @@ const Register = ({ navigation }) => {
   };
 
   const authenticateUser = async () => {
-    if (validateInput()) {
-      setLoading(true);
-      const user = new UserModel(
-        identifier,
-        password,
-        name,
-        last_name,
-        zip_code
-      );
+    navigation.navigate("Home")
+    // if (validateInput()) {
+    //   setLoading(true);
+    //   const user = new UserModel(
+    //     identifier,
+    //     password,
+    //     name,
+    //     last_name,
+    //     zip_code
+    //   );
 
-      try {
-        await user.register();
-      } catch (err) {
-        setError(err.message);
-        setVisible(true);
-        setLoading(false);
-      }
-    } else {
-      setError("Please fill out all *required fields");
-      setVisible(true);
-      setLoading(false);
-    }
+    //   try {
+    //     await user.register();
+    //   } catch (err) {
+    //     setError(err.message);
+    //     setVisible(true);
+    //     setLoading(false);
+    //   }
+    // } else {
+    //   setError("Please fill out all *required fields");
+    //   setVisible(true);
+    //   setLoading(false);
+    // }
   };
 
   return (

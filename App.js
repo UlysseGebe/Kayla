@@ -20,7 +20,7 @@ import OnboardingScreen from "./src/screens/OnboardingScreen";
 import SelectionScreen from "./src/screens/SelectionScreen";
 import LoginScreen from "./src/screens/Authentication/Login";
 import RegisterScreen from "./src/screens/Authentication/Register";
-import Icon from "./src/components/CustomIcon";
+import NavigationComponent from "./src/components/NavigationComponent";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -33,16 +33,8 @@ function Tabs() {
         cardStyle: {
           backgroundColor: "transparent",
         },
-        tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
-
-          iconName = focused ? "eye" : "eye";
-
-          return <Icon name={iconName} size={size} color={color} />;
-        },
-        tabBarActiveTintColor: "tomato",
-        tabBarInactiveTintColor: "gray",
       })}
+      tabBar={(props) => <NavigationComponent {...props} />}
     >
       <Tab.Screen name="HomeTab" component={HomeScreen} />
       <Tab.Screen name="CalendarTab" component={CalendarScreen} />
@@ -74,7 +66,7 @@ export default function App() {
         <PaperProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName={!isAppFirstLaunched ? "Onboarding" : "Home"}
+              initialRouteName={isAppFirstLaunched ? "Onboarding" : "Home"}
               screenOptions={({ route }) => ({
                 header: () => null,
                 cardStyle: {
