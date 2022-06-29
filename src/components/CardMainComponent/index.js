@@ -4,18 +4,26 @@ import Styles from "./style";
 import Icon from "../CustomIcon";
 import { useNavigation } from "@react-navigation/native";
 
-export default function CardMainComponent() {
+export default function CardMainComponent({ item }) {
   const navigation = useNavigation();
-  const [favorite, setFavorite] = useState(false);
-  const handleFavorite = () => {
-    console.log("ok");
-    setFavorite(!favorite);
-  };
+  let price = 0,
+    duration = 0;
+  item.range.forEach((element) => {
+    if (element.__component == "range.price") {
+      price = element;
+    }
+    if (element.__component == "range.duration") {
+      duration = element;
+    }
+  });
   return (
-    <Pressable style={Styles.container} onPress={() => navigation.navigate("Activity")}>
+    <Pressable
+      style={Styles.container}
+      onPress={() => navigation.navigate("ActivityTab", {itemId: item.id })}
+    >
       <View style={Styles.imageContainer}>
-        <Pressable onPress={handleFavorite} style={Styles.imageIcon}>
-          <Icon icon="eye" size={22} color="#90BDD0" />
+        <Pressable style={Styles.imageIcon}>
+          {/* <Icon icon="eye" size={22} color="#90BDD0" /> */}
         </Pressable>
         <Image
           style={Styles.image}
@@ -23,19 +31,40 @@ export default function CardMainComponent() {
         />
       </View>
       <View style={Styles.textContainer}>
-        <Text numberOfLines={1} style={Styles.title}>Aquarium DIY</Text>
+        <Text numberOfLines={1} style={Styles.title}>
+          {item.name}
+        </Text>
         <View style={Styles.statContainer}>
           <View style={Styles.stat}>
-            <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-            <Text style={Styles.statText}>30 min</Text>
+            <Icon
+              style={Styles.statIcon}
+              icon="time"
+              size={18}
+              color="#005B85"
+            />
+            <Text style={Styles.statText}>
+              {duration.maximum || duration.minimum} min
+            </Text>
           </View>
           <View style={Styles.stat}>
-            <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
+            <Icon
+              style={Styles.statIcon}
+              icon="personne"
+              size={20}
+              color="#005B85"
+            />
             <Text style={Styles.statText}>3 à 10 ans</Text>
           </View>
           <View style={Styles.stat}>
-            <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-            <Text style={Styles.statText}>10 euros</Text>
+            <Icon
+              style={Styles.statIcon}
+              icon="price"
+              size={18}
+              color="#005B85"
+            />
+            <Text style={Styles.statText}>
+              {price.maximum || price.minimum} euros
+            </Text>
           </View>
         </View>
       </View>

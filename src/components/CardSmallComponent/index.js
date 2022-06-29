@@ -2,12 +2,12 @@ import { View, Image, Text, Pressable } from "react-native";
 import Styles from "./style";
 import { useNavigation } from "@react-navigation/native";
 
-export default function CardSmallComponent() {
+export default function CardSmallComponent({ item }) {
   const navigation = useNavigation();
   return (
     <Pressable
       style={Styles.container}
-      onPress={() => navigation.navigate("Activity")}
+      onPress={() => navigation.navigate("ActivityTab", {itemId: item.id })}
     >
       <View style={Styles.imageContainer}>
         <Image
@@ -17,7 +17,7 @@ export default function CardSmallComponent() {
       </View>
       <View style={Styles.textContainer}>
         <Text numberOfLines={1} style={Styles.title}>
-          DIY: faire une tête de dragon
+          {item.name}
         </Text>
         <Text style={Styles.date}>Il y a 1 mois</Text>
       </View>

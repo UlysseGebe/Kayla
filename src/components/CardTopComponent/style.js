@@ -27,7 +27,7 @@ export default StyleSheet.create({
   },
   text: {
     color: "#005B85",
-    marginVertical: 16,
+    marginVertical: 12,
     fontSize: 14,
     fontFamily: "Avenir",
   },

@@ -31,14 +31,14 @@ export default function FilterComponent() {
             {search}
           </TextInput>
           <Pressable style={Styles.loupeContainer}>
-            <Icon icon="time" size={20} color="#005B85" />
+            <Icon icon="loupe" size={20} color="#005B85" />
           </Pressable>
         </View>
         <Pressable
           style={Styles.filter}
           onPress={() => swipeUpDownRef.current.showFull()}
         >
-          <Icon icon="time" size={20} color="#005B85" />
+          <Icon icon="filtre" size={20} color="#005B85" />
         </Pressable>
       </View>
       <SwipeUpDown

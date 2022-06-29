@@ -333,7 +333,7 @@ export default function FilterComponent() {
         showsHorizontalScrollIndicator={false}
         scrollEnabled={false}
         horizontal
-        data={[{ id: 0 }, { id: 1 }]}
+        data={[{ id: 0 }]}
         pagingEnabled
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Content item={item} />}

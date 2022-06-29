@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   SafeAreaView,
@@ -11,17 +11,20 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
+import axios from "axios";
 const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import FilterComponent from "../../components/FilterComponent";
 import CardMainComponent from "../../components/CardMainComponent";
 import CardSmallComponent from "../../components/CardSmallComponent";
 import CardTopComponent from "../../components/CardTopComponent";
+import Data from "./data"
 
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function HomeScreen({ navigation }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -44,7 +47,7 @@ export default function HomeScreen({ navigation }) {
             onMomentumScrollEnd={updateCurrentSlideIndex}
             pagingEnabled
             horizontal
-            data={cards}
+            data={[Data[0], Data[1], Data[2], Data[3]]}
             keyExtractor={(item) => "CardMain" + item.id}
             renderItem={({ item }) => <CardMainComponent item={item} />}
           />
@@ -75,7 +78,7 @@ export default function HomeScreen({ navigation }) {
             style={{ overflow: "visible", marginHorizontal: 5 }}
             showsHorizontalScrollIndicator={false}
             horizontal
-            data={cards}
+            data={[Data[4], Data[5], Data[6], Data[7]]}
             keyExtractor={(item) => "CardSmall" + item.id}
             renderItem={({ item }) => <CardSmallComponent item={item} />}
           />
@@ -86,12 +89,12 @@ export default function HomeScreen({ navigation }) {
             style={{ overflow: "visible", marginHorizontal: 8 }}
             showsHorizontalScrollIndicator={false}
             horizontal
-            data={cards}
+            data={[Data[8], Data[9], Data[10], Data[11]]}
             keyExtractor={(item) => "CardTop" + item.id}
             renderItem={({ item }) => <CardTopComponent item={item} />}
           />
         </View>
-        <View style={{height: 100}}></View>
+        <View style={{ height: 100 }}></View>
       </ScrollView>
     </SafeAreaView>
   );

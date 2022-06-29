@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
   Image,
   FlatList,
@@ -11,13 +11,12 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-import NumericInput from "react-native-numeric-input";
-import SelectMultiple from "react-native-select-multiple";
+import axios from "axios";
 import Icon from "../../components/CustomIcon";
 
 const { width, height } = Dimensions.get("window");
 
-import slides from "./slides.js";
+// import slides from "./slides.js";
 import Styles from "./style.js";
 
 const Slide = ({ item }) => {
@@ -31,7 +30,7 @@ const Slide = ({ item }) => {
       }}
     >
       <View>
-        <Image source={item.image} />
+        {/* <Image source={item.image} /> */}
         <Text>{item.text}</Text>
       </View>
     </View>
@@ -41,6 +40,8 @@ const Slide = ({ item }) => {
 const StepsScreen = ({ route, navigation }) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
+  const [activity, setActivity] = useState("");
+  const [slides, setSlides] = useState([]);
   const ref = useRef();
   const { itemId } = route.params;
 
@@ -75,6 +76,29 @@ const StepsScreen = ({ route, navigation }) => {
       setCurrentSlideIndex(currentSlideIndex + 1);
     }
   };
+
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    const url = "https://kayla-project.herokuapp.com/api/activities/";
+    const fetchAdvice = async () => {
+      try {
+        const response = await axios.get(url + itemId + "?populate=Steps");
+        if (response.status === 200) {
+          setActivity(response.data.data);
+          setSlides(response.data.data.Steps)
+          return;
+        } else {
+          throw new Error("Failed to fetch activity");
+        }
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Data fetching cancelled");
+        }
+      }
+    };
+    fetchAdvice();
+    return () => source.cancel("Data fetching cancelled");
+  }, [activity]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FDFF" }}>
@@ -156,7 +180,7 @@ const StepsScreen = ({ route, navigation }) => {
                     },
                   ]}
                 >
-                  {slide.id}
+                  {index + 1}
                 </Text>
               </Pressable>
             </View>
@@ -190,7 +214,7 @@ const StepsScreen = ({ route, navigation }) => {
               style={Styles.btn}
               onPress={
                 currentSlideIndex == slides.length - 1
-                  ? () => navigation.navigate("ActivityEnd", {itemId: 0})
+                  ? () => navigation.navigate("ActivityEnd", { itemId: 0 })
                   : goToNextSlide
               }
             >

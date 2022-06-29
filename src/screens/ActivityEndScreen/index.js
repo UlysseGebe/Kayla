@@ -70,7 +70,7 @@ export default function ActivityEndScreen({ navigation }) {
           <Text style={Styles.imgText}>Choisir l’image à mettre ici</Text>
           {image && <Image source={{ uri: image }} style={Styles.img} />}
         </Pressable>
-        <Pressable style={Styles.finish}>
+        <Pressable style={Styles.finish} onPress={()=>{navigation.navigate('HomeTab')}}>
           <Text style={Styles.finishText}>Terminer</Text>
         </Pressable>
       </View>
