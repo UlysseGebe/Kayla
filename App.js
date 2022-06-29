@@ -38,9 +38,9 @@ function Tabs() {
     >
       <Tab.Screen name="HomeTab" component={HomeScreen} />
       <Tab.Screen name="CalendarTab" component={HomeScreen} />
-      <Stack.Screen name="ActivityTab" component={ActivityScreen} />
+      <Tab.Screen name="ActivityTab" component={HomeScreen} initialParams={{ openFilter: true }} />
       <Tab.Screen name="FavoriteTab" component={HomeScreen} />
-      <Stack.Screen name="ProfilTab" component={HomeScreen} />
+      <Tab.Screen name="ProfilTab" component={HomeScreen} />
     </Tab.Navigator>
   );
 }
@@ -66,7 +66,7 @@ export default function App() {
         <PaperProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName={isAppFirstLaunched ? "Onboarding" : "Home"}
+              initialRouteName={!isAppFirstLaunched ? "Onboarding" : "Home"}
               screenOptions={({ route }) => ({
                 header: () => null,
                 cardStyle: {
@@ -83,8 +83,8 @@ export default function App() {
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Favorite" component={Tabs} />
               <Stack.Screen name="Profil" component={Tabs} />
-              <Stack.Screen name="Activity" component={Tabs} />
-              {/* <Stack.Screen name="Calendar" component={Tabs} /> */}
+              <Stack.Screen name="Activity" component={ActivityScreen} />
+              <Stack.Screen name="Calendar" component={Tabs} />
               <Stack.Screen name="Login" component={LoginScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />
               <Stack.Screen

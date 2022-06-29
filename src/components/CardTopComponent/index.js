@@ -19,7 +19,7 @@ export default function CardTopComponent({ item }) {
   return (
     <Pressable
       style={Styles.container}
-      onPress={() => navigation.navigate("ActivityTab", {itemId: item.id })}
+      onPress={() => navigation.navigate("Activity", {itemId: item.id })}
     >
       <View style={Styles.titleContainer}>
         <Pressable>

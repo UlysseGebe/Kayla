@@ -313,7 +313,7 @@ const Register = ({ navigation }) => {
         >
           <Text style={Styles.connexionText}>Inscription</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.goBack()} style={Styles.lost}>
+        <Pressable onPress={() => navigation.navigate("Home")} style={Styles.lost}>
           <Text style={Styles.lostText}>Ne pas s’inscrire</Text>
         </Pressable>
       </>

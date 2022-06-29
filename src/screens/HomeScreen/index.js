@@ -22,7 +22,7 @@ import Data from "./data"
 
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ route }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const ref = useRef();
@@ -38,7 +38,7 @@ export default function HomeScreen({ navigation }) {
         style={Styles.background}
       />
       <ScrollView>
-        <FilterComponent />
+        <FilterComponent openFilter={route.params ? true : false} />
         <View>
           <Text style={Styles.subTitle}>Ton activité du jour !</Text>
           <FlatList

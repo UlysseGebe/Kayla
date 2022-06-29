@@ -7,7 +7,7 @@ export default function CardSmallComponent({ item }) {
   return (
     <Pressable
       style={Styles.container}
-      onPress={() => navigation.navigate("ActivityTab", {itemId: item.id })}
+      onPress={() => navigation.navigate("Activity", {itemId: item.id })}
     >
       <View style={Styles.imageContainer}>
         <Image
