@@ -52,6 +52,7 @@ const Item = ({ item }) => {
       style={{
         width: 103,
         marginBottom: 16,
+        marginRight: 8,
         flexDirection: "column",
         alignItems: "center",
       }}
@@ -142,7 +143,7 @@ export default function ActivityScreen({ route, navigation }) {
           </Pressable>
         </View>
       </View>
-      <ScrollView>
+      <ScrollView nestedScrollEnabled={true} style={{ width: "100%" }}>
         <TouchableWithoutFeedback>
           <View style={{ marginTop: 25 }}>
             <View style={{ width: "100%", justifyContent: "center" }}>
@@ -202,15 +203,17 @@ export default function ActivityScreen({ route, navigation }) {
             </View>
             <View style={Styles.matContainer}>
               <Text>Matériel nécessaire</Text>
-              <FlatList
-                columnWrapperStyle={{ justifyContent: "space-between" }}
-                data={activity.materials}
-                numColumns={3}
-                showsHorizontalScrollIndicator={false}
-                scrollEnabled={false}
-                keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <Item item={item} />}
-              />
+              <ScrollView horizontal={true} style={{ width: "100%" }}>
+                <FlatList
+                  columnWrapperStyle={{ justifyContent: "space-around" }}
+                  data={activity.materials}
+                  style={{ width: "100%" }}
+                  numColumns={3}
+                  scrollEnabled={false}
+                  keyExtractor={(item) => item.id}
+                  renderItem={({ item }) => <Item item={item} />}
+                />
+              </ScrollView>
             </View>
             <View>
               <Pressable
