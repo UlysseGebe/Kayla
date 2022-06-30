@@ -19,11 +19,15 @@ const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function FavoriteScreen({ navigation }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [freezer, setFreezer] = useState(false);
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
     const currentIndex = Math.round(contentOffsetX / width);
     setCurrentSlideIndex(currentIndex);
+  };
+  const freezeFN = (val) => {
+    setFreezer(val);
   };
   return (
     <SafeAreaView style={Styles.container}>
@@ -37,7 +41,7 @@ export default function FavoriteScreen({ navigation }) {
         ListHeaderComponent={() => {
           return (
             <>
-              <FilterComponent />
+              <FilterComponent openFilter={false} freeze={freezeFN} />
               <Text style={Styles.subTitle}>Ton activité du jour !</Text>
             </>
           );

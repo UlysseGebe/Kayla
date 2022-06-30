@@ -1,11 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import { View, Pressable, TextInput, TouchableWithoutFeedback } from "react-native";
+import {
+  View,
+  Pressable,
+  TextInput,
+  TouchableWithoutFeedback,
+} from "react-native";
 import Styles from "./style";
 import SwipeUpDown from "react-native-swipe-up-down";
 import Icon from "../CustomIcon";
 import Filter from "./Filter";
 
-export default function FilterComponent({ openFilter }) {
+export default function FilterComponent({ openFilter, freeze }) {
   const [search, setSearch] = useState("");
   const [isFocusedEmail, setIsFocusedEmail] = useState({});
   const swipeUpDownRef = useRef();
@@ -43,16 +48,18 @@ export default function FilterComponent({ openFilter }) {
           <Icon icon="filtre" size={20} color="#005B85" />
         </Pressable>
       </View>
-        <SwipeUpDown
-          animation="spring"
-          disableSwipeIcon
-          extraMarginTop={50}
-          iconColor="yellow"
-          iconSize={30}
-          style={{ backgroundColor: "white" }}
-          itemFull={<Filter />}
-          ref={swipeUpDownRef}
-        />
+      <SwipeUpDown
+        animation="spring"
+        disableSwipeIcon
+        extraMarginTop={50}
+        iconColor="yellow"
+        iconSize={30}
+        style={{ backgroundColor: "white" }}
+        itemFull={<Filter />}
+        onShowMini={() => freeze(false)}
+        onShowFull={() => freeze(true)}
+        ref={swipeUpDownRef}
+      />
     </View>
   );
 }

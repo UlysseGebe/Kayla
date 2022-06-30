@@ -16,6 +16,7 @@ import SelectMultiple from "react-native-select-multiple";
 import NumericInput from "react-native-numeric-input";
 import SwipeUpDown from "react-native-swipe-up-down";
 const { width } = Dimensions.get("window");
+import { useNavigation } from "@react-navigation/native";
 
 export default function FilterComponent() {
   const [expandedAge, setExpandedAge] = useState(false);
@@ -36,6 +37,7 @@ export default function FilterComponent() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef();
   const swipe = useRef();
+  const navigation = useNavigation();
 
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -334,6 +336,9 @@ export default function FilterComponent() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Content item={item} />}
       />
+      <Pressable style={Styles.btnSearch} onPress={() => navigation.navigate("Search")}>
+        <Text style={Styles.btnSearchText}>Rechercher</Text>
+      </Pressable>
     </View>
   );
 }

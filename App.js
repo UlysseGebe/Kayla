@@ -12,6 +12,7 @@ import HomeScreen from "./src/screens/HomeScreen";
 import FavoriteScreen from "./src/screens/FavoriteScreen";
 import CalendarScreen from "./src/screens/CalendarScreen";
 import ProfilScreen from "./src/screens/ProfilScreen";
+import SearchScreen from "./src/screens/SearchScreen";
 import ActivityScreen from "./src/screens/ActivityScreen";
 import ActivityEndScreen from "./src/screens/ActivityEndScreen";
 import StepsScreen from "./src/screens/StepsScreen";
@@ -41,6 +42,8 @@ function Tabs() {
       <Tab.Screen name="ActivityTab" component={HomeScreen} initialParams={{ openFilter: true }} />
       <Tab.Screen name="FavoriteTab" component={HomeScreen} initialParams={{ openFilter: false }} />
       <Tab.Screen name="ProfilTab" component={HomeScreen} initialParams={{ openFilter: false }} />
+      <Stack.Screen name="Search" component={SearchScreen} />
+      <Stack.Screen name="Activity" component={ActivityScreen} />
     </Tab.Navigator>
   );
 }
@@ -86,7 +89,8 @@ export default function App() {
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Favorite" component={Tabs} />
               <Stack.Screen name="Profil" component={Tabs} />
-              <Stack.Screen name="Activity" component={ActivityScreen} />
+              {/* <Stack.Screen name="Activity" component={ActivityScreen} /> */}
+              {/* <Stack.Screen name="Search" component={SearchScreen} /> */}
               <Stack.Screen name="Calendar" component={Tabs} />
               <Stack.Screen name="Login" component={LoginScreen} />
               <Stack.Screen name="Register" component={RegisterScreen} />

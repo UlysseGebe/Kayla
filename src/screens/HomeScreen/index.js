@@ -23,6 +23,7 @@ const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function HomeScreen({ route }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [freezer, setFreezer] = useState(false);
 
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
@@ -31,16 +32,21 @@ export default function HomeScreen({ route }) {
     setCurrentSlideIndex(currentIndex);
   };
 
+  const freezeFN = (val) => {
+    setFreezer(val);
+  };
+
   return (
     <SafeAreaView style={Styles.container}>
       <Image
         source={require("../../assets/images/background.png")}
         style={Styles.background}
       />
-      <ScrollView>
-        <TouchableWithoutFeedback>
-          <FilterComponent openFilter={route.params.openFilter} />
-        </TouchableWithoutFeedback>
+      <ScrollView scrollEnabled={!freezer}>
+        <FilterComponent
+          openFilter={route.params.openFilter}
+          freeze={freezeFN}
+        />
         <View>
           <Text style={Styles.subTitle}>Ton activité du jour !</Text>
           <FlatList

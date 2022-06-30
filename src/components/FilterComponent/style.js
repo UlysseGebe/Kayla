@@ -71,6 +71,8 @@ export default StyleSheet.create({
   },
   listContainer: {
     width: width,
+    paddingHorizontal: 16,
+    paddingTop: 16,
   },
   btn2: {
     width: 157,
@@ -92,7 +94,7 @@ export default StyleSheet.create({
     color: "#005B85",
   },
   objectContainer: {
-    padding: 20
+    padding: 20,
   },
   object: {
     width: 104,
@@ -132,5 +134,21 @@ export default StyleSheet.create({
   },
   input_focusedObject: {
     borderColor: "#005B85",
+  },
+  btnSearch: {
+    width: 255,
+    height: 48,
+    backgroundColor: "#005B85",
+    borderRadius: 30,
+    justifyContent: "center",
+    alignItems: "center",
+    marginLeft: "auto",
+    marginRight: "auto"
+  },
+  btnSearchText: {
+    color: "white",
+    fontFamily: "Avenir",
+    fontWeight: "900",
+    fontSize: 16,
   },
 });
