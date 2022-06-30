@@ -76,11 +76,14 @@ export default function FilterComponent() {
               <List.Section>
                 <List.Accordion
                   title="Âge des enfants"
+                  style={{ backgroundColor: "#FFF" }}
+                  theme={{ colors: { text: "#554559", primary: "#554559" } }}
                   expanded={expandedAge}
                   onPress={() => setExpandedAge(!expandedAge)}
                 >
                   <List.Item
                     title="Enfant(s) de 3 à 5 ans"
+                    titleStyle={{ color: "#005B85" }}
                     right={(props) => (
                       <NumericInput
                         value={child3to5}
@@ -99,7 +102,8 @@ export default function FilterComponent() {
                     )}
                   />
                   <List.Item
-                    title="Enfant(s) de 6 à 8 ans "
+                    title="Enfant(s) de 6 à 8 ans"
+                    titleStyle={{ color: "#005B85" }}
                     right={(props) => (
                       <NumericInput
                         value={child6to8}
@@ -119,7 +123,8 @@ export default function FilterComponent() {
                     )}
                   />
                   <List.Item
-                    title="Enfant(s) de 9 ans & plus "
+                    title="Enfant(s) de 9 ans & plus"
+                    titleStyle={{ color: "#005B85" }}
                     right={(props) => (
                       <NumericInput
                         value={child9to}
@@ -142,6 +147,12 @@ export default function FilterComponent() {
 
                 <List.Accordion
                   title="Budget"
+                  theme={{ colors: { text: "#554559", primary: "#554559" } }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    borderTopWidth: 1,
+                    borderColor: "E5E5E5",
+                  }}
                   expanded={expandedPrice}
                   onPress={() => setExpandedPrice(!expandedPrice)}
                 >
@@ -173,6 +184,12 @@ export default function FilterComponent() {
 
                 <List.Accordion
                   title="Temps de l’activité"
+                  theme={{ colors: { text: "#554559", primary: "#554559" } }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    borderTopWidth: 1,
+                    borderColor: "E5E5E5",
+                  }}
                   expanded={expandedTime}
                   onPress={() => setExpandedTime(!expandedTime)}
                 >
@@ -205,6 +222,12 @@ export default function FilterComponent() {
 
                 <List.Accordion
                   title="Type d’activité"
+                  theme={{ colors: { text: "#554559", primary: "#554559" } }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    borderTopWidth: 1,
+                    borderColor: "E5E5E5",
+                  }}
                   expanded={expandedType}
                   onPress={() => setExpandedType(!expandedType)}
                 >
@@ -244,6 +267,12 @@ export default function FilterComponent() {
 
                 <List.Accordion
                   title="Lieu de l’activité"
+                  theme={{ colors: { text: "#554559", primary: "#554559" } }}
+                  style={{
+                    backgroundColor: "#FFF",
+                    borderTopWidth: 1,
+                    borderColor: "E5E5E5",
+                  }}
                   expanded={expandedPlace}
                   onPress={() => setExpandedPlace(!expandedPlace)}
                 >
@@ -276,6 +305,13 @@ export default function FilterComponent() {
               </List.Section>
             </>
           </TouchableWithoutFeedback>
+          <Pressable
+            style={Styles.btnSearch}
+            onPress={() => navigation.navigate("Search")}
+          >
+            <Text style={Styles.btnSearchText}>Rechercher</Text>
+          </Pressable>
+          <View style={{ height: 275 }}></View>
         </ScrollView>
       );
     if (item.id == 1)
@@ -336,9 +372,6 @@ export default function FilterComponent() {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Content item={item} />}
       />
-      <Pressable style={Styles.btnSearch} onPress={() => navigation.navigate("Search")}>
-        <Text style={Styles.btnSearchText}>Rechercher</Text>
-      </Pressable>
     </View>
   );
 }

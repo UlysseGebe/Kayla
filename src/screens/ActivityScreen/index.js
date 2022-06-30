@@ -6,6 +6,8 @@ import {
   View,
   Image,
   FlatList,
+  ScrollView,
+  TouchableWithoutFeedback,
 } from "react-native";
 import axios from "axios";
 import Icon from "../../components/CustomIcon";
@@ -46,8 +48,18 @@ const Slide = ({ item }) => {
 
 const Item = ({ item }) => {
   return (
-    <View style={{ width: 103, marginBottom: 16, flexDirection: "column", alignItems: "center" }}>
-      <Image source={require("../../assets/images/mat.png")} style={{ width: 103, height: 48 }} />
+    <View
+      style={{
+        width: 103,
+        marginBottom: 16,
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <Image
+        source={require("../../assets/images/mat.png")}
+        style={{ width: 103, height: 48 }}
+      />
       <Text style={{ width: 80, textAlign: "center" }}>{item.name}</Text>
     </View>
   );
@@ -59,7 +71,7 @@ export default function ActivityScreen({ route, navigation }) {
   const [duration, setDuration] = useState("");
   const ref = useRef();
   const { itemId } = route.params;
-  
+
   useEffect(() => {
     const source = axios.CancelToken.source();
     const url = "https://kayla-project.herokuapp.com/api/activities/";
@@ -130,66 +142,89 @@ export default function ActivityScreen({ route, navigation }) {
           </Pressable>
         </View>
       </View>
-      <View style={{ marginTop: 25, width: "100%", justifyContent: "center" }}>
-        <FlatList
-          ref={ref}
-          style={{
-            width: 343,
-            marginLeft: "auto",
-            marginRight: "auto",
-            borderRadius: 12,
-          }}
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyles={{ width: "100%" }}
-          scrollEnabled={true}
-          horizontal
-          data={slides}
-          pagingEnabled={true}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Slide item={item} />}
-        />
-      </View>
-      <View style={Styles.statContainer}>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>
-            {duration.maximum || duration.minimum} min
-          </Text>
-        </View>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>3 à 10 ans</Text>
-        </View>
-        <View style={Styles.stat}>
-          <Icon style={Styles.statIcon} icon="eye" size={22} color="#005B85" />
-          <Text style={Styles.statText}>
-            {price.maximum || price.minimum} euros
-          </Text>
-        </View>
-      </View>
-      <View style={Styles.descriptionContainer}>
-        <Text style={Styles.description}>{activity.description}</Text>
-      </View>
-      <View style={Styles.matContainer}>
-        <Text>Matériel nécessaire</Text>
-        <FlatList
-          columnWrapperStyle={{ justifyContent: "space-between" }}
-          data={activity.materials}
-          numColumns={3}
-          keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Item item={item} />}
-        />
-      </View>
-      <View>
-        <Pressable
-          style={Styles.start}
-          mode="contained"
-          onPress={() => navigation.navigate("Steps", { itemId: itemId })}
-        >
-          <Text style={Styles.startText}>Commencer l’activité</Text>
-        </Pressable>
-      </View>
-      <View style={{ height: 100 }}></View>
+      <ScrollView>
+        <TouchableWithoutFeedback>
+          <View style={{ marginTop: 25 }}>
+            <View style={{ width: "100%", justifyContent: "center" }}>
+              <FlatList
+                ref={ref}
+                style={{
+                  width: 343,
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                  borderRadius: 12,
+                }}
+                showsHorizontalScrollIndicator={false}
+                contentContainerStyles={{ width: "100%" }}
+                scrollEnabled={true}
+                horizontal
+                data={slides}
+                pagingEnabled={true}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => <Slide item={item} />}
+              />
+            </View>
+            <View style={Styles.statContainer}>
+              <View style={Styles.stat}>
+                <Icon
+                  style={Styles.statIcon}
+                  icon="eye"
+                  size={22}
+                  color="#005B85"
+                />
+                <Text style={Styles.statText}>
+                  {duration.maximum || duration.minimum} min
+                </Text>
+              </View>
+              <View style={Styles.stat}>
+                <Icon
+                  style={Styles.statIcon}
+                  icon="eye"
+                  size={22}
+                  color="#005B85"
+                />
+                <Text style={Styles.statText}>3 à 10 ans</Text>
+              </View>
+              <View style={Styles.stat}>
+                <Icon
+                  style={Styles.statIcon}
+                  icon="eye"
+                  size={22}
+                  color="#005B85"
+                />
+                <Text style={Styles.statText}>
+                  {price.maximum || price.minimum} euros
+                </Text>
+              </View>
+            </View>
+            <View style={Styles.descriptionContainer}>
+              <Text style={Styles.description}>{activity.description}</Text>
+            </View>
+            <View style={Styles.matContainer}>
+              <Text>Matériel nécessaire</Text>
+              <FlatList
+                columnWrapperStyle={{ justifyContent: "space-between" }}
+                data={activity.materials}
+                numColumns={3}
+                showsHorizontalScrollIndicator={false}
+                scrollEnabled={false}
+                keyExtractor={(item) => item.id}
+                renderItem={({ item }) => <Item item={item} />}
+              />
+            </View>
+            <View>
+              <Pressable
+                style={Styles.start}
+                mode="contained"
+                onPress={() => navigation.navigate("Steps", { itemId: itemId })}
+              >
+                <Text style={Styles.startText}>Commencer l’activité</Text>
+              </Pressable>
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
+        <View style={{ height: 100 }}></View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
