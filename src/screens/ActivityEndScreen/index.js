@@ -56,7 +56,7 @@ export default function ActivityEndScreen({ navigation }) {
         source={require("../../assets/images/background.png")}
         style={Styles.background}
       />
-      <View>
+      <View style={{paddingHorizontal: 16}}>
         <Text style={Styles.title}>Bravo</Text>
         <Text style={Styles.subtitle}>Vous avez terminé l’activité</Text>
         <Text style={Styles.text}>
