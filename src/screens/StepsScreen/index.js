@@ -30,7 +30,17 @@ const Slide = ({ item }) => {
       }}
     >
       <View>
-        {/* <Image source={item.image} /> */}
+        <Image
+          source={
+            item.media
+              ? {
+                  uri: `https://kayla-project.herokuapp.com${item.media[0].url}`,
+                }
+              : require("../../assets/images/step.png")
+          }
+          style={{ width: 343, height: 200 }}
+        />
+        <View style={{ height: 20 }}></View>
         <Text>{item.text}</Text>
       </View>
     </View>
@@ -82,10 +92,12 @@ const StepsScreen = ({ route, navigation }) => {
     const url = "https://kayla-project.herokuapp.com/api/activities/";
     const fetchAdvice = async () => {
       try {
-        const response = await axios.get(url + itemId + "?populate=Steps");
+        const response = await axios.get(
+          url + itemId + "?populate[Steps][populate]=media"
+        );
         if (response.status === 200) {
           setActivity(response.data.data);
-          setSlides(response.data.data.Steps)
+          setSlides(response.data.data.Steps);
           return;
         } else {
           throw new Error("Failed to fetch activity");
@@ -127,7 +139,7 @@ const StepsScreen = ({ route, navigation }) => {
           </Pressable>
         </View>
         <View>
-          <Text style={Styles.title}>Title</Text>
+          <Text style={Styles.title}>{activity.name}</Text>
         </View>
         <View>
           <Pressable

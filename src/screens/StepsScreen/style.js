@@ -65,6 +65,7 @@ export default StyleSheet.create({
     lineHeight: 35,
     fontWeight: "800",
     color: "#3586AB",
+    maxWidth: 275,
   },
   subtitle: {
     marginTop: 17,
