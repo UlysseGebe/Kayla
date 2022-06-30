@@ -17,9 +17,6 @@ export default function CardMainComponent({ item }) {
     }
   });
 
-  if (item.thumbnail) {
-    console.log(item.thumbnail.url);
-  }
   return (
     <Pressable
       style={Styles.container}
