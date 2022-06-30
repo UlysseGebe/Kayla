@@ -40,7 +40,14 @@ const Slide = ({ item }) => {
   return (
     <View>
       <View>
-        <Image source={item.image} />
+        <Image
+          source={
+            item.url
+              ? { uri: `https://kayla-project.herokuapp.com${item.url}` }
+              : item.image
+          }
+          style={{ width: 343, height: 200 }}
+        />
       </View>
     </View>
   );
@@ -159,7 +166,7 @@ export default function ActivityScreen({ route, navigation }) {
                 contentContainerStyles={{ width: "100%" }}
                 scrollEnabled={true}
                 horizontal
-                data={slides}
+                data={activity.thumbnail ? [activity.thumbnail] : slides}
                 pagingEnabled={true}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <Slide item={item} />}
@@ -198,9 +205,11 @@ export default function ActivityScreen({ route, navigation }) {
                 </Text>
               </View>
             </View>
-            <View style={Styles.descriptionContainer}>
-              <Text style={Styles.description}>{activity.description}</Text>
-            </View>
+            {activity.description ? (
+              <View style={Styles.descriptionContainer}>
+                <Text style={Styles.description}>{activity.description}</Text>
+              </View>
+            ) : null}
             <View style={Styles.matContainer}>
               <Text>Matériel nécessaire</Text>
               <ScrollView horizontal={true} style={{ width: "100%" }}>
