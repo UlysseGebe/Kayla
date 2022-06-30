@@ -224,9 +224,9 @@ export default function ActivityScreen({ route, navigation }) {
                 <Text style={Styles.startText}>Commencer l’activité</Text>
               </Pressable>
             </View>
+            <View style={{ height: 100 }}></View>
           </View>
         </TouchableWithoutFeedback>
-        <View style={{ height: 100 }}></View>
       </ScrollView>
     </SafeAreaView>
   );
