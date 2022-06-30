@@ -87,7 +87,6 @@ export default StyleSheet.create({
     marginLeft: "auto",
     marginRight: "auto",
     marginTop: 14,
-    marginBottom: 14,
     paddingTop: 23,
     paddingBottom: 23,
     paddingRight: 84,

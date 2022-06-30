@@ -98,7 +98,7 @@ const StepsScreen = ({ route, navigation }) => {
     };
     fetchAdvice();
     return () => source.cancel("Data fetching cancelled");
-  }, [activity]);
+  }, [activity, itemId]);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: "#F8FDFF" }}>

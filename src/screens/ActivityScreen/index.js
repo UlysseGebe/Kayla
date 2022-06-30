@@ -1,20 +1,15 @@
 import React, { useState, useRef, useEffect } from "react";
 import {
   SafeAreaView,
-  Button,
   Pressable,
   Text,
   View,
   Image,
   FlatList,
-  ScrollView,
-  Dimensions,
 } from "react-native";
 import axios from "axios";
 import Icon from "../../components/CustomIcon";
 import Styles from "./style";
-import { initialWindowMetrics } from "react-native-safe-area-context";
-const { width, height } = Dimensions.get("window");
 
 const slides = [
   {
@@ -59,12 +54,12 @@ const Item = ({ item }) => {
 };
 
 export default function ActivityScreen({ route, navigation }) {
-  const { itemId } = route.params;
   const [activity, setActivity] = useState("");
   const [price, setPrice] = useState("");
   const [duration, setDuration] = useState("");
   const ref = useRef();
-
+  const { itemId } = route.params;
+  
   useEffect(() => {
     const source = axios.CancelToken.source();
     const url = "https://kayla-project.herokuapp.com/api/activities/";
@@ -93,7 +88,7 @@ export default function ActivityScreen({ route, navigation }) {
     };
     fetchAdvice();
     return () => source.cancel("Data fetching cancelled");
-  }, [activity]);
+  }, [activity, itemId]);
 
   return (
     <SafeAreaView style={Styles.main}>
@@ -135,7 +130,6 @@ export default function ActivityScreen({ route, navigation }) {
           </Pressable>
         </View>
       </View>
-      {/* <ScrollView> */}
       <View style={{ marginTop: 25, width: "100%", justifyContent: "center" }}>
         <FlatList
           ref={ref}
@@ -196,7 +190,6 @@ export default function ActivityScreen({ route, navigation }) {
         </Pressable>
       </View>
       <View style={{ height: 100 }}></View>
-      {/* </ScrollView> */}
     </SafeAreaView>
   );
 }

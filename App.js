@@ -36,28 +36,31 @@ function Tabs() {
       })}
       tabBar={(props) => <NavigationComponent {...props} />}
     >
-      <Tab.Screen name="HomeTab" component={HomeScreen} />
-      <Tab.Screen name="CalendarTab" component={HomeScreen} />
+      <Tab.Screen name="HomeTab" component={HomeScreen} initialParams={{ openFilter: false }} />
+      <Tab.Screen name="CalendarTab" component={HomeScreen} initialParams={{ openFilter: false }} />
       <Tab.Screen name="ActivityTab" component={HomeScreen} initialParams={{ openFilter: true }} />
-      <Tab.Screen name="FavoriteTab" component={HomeScreen} />
-      <Tab.Screen name="ProfilTab" component={HomeScreen} />
+      <Tab.Screen name="FavoriteTab" component={HomeScreen} initialParams={{ openFilter: false }} />
+      <Tab.Screen name="ProfilTab" component={HomeScreen} initialParams={{ openFilter: false }} />
     </Tab.Navigator>
   );
 }
 
 export default function App() {
   const [isAppFirstLaunched, setIsAppFirstLaunched] = useState(null);
-  useEffect(async () => {
-    const appData = await AsyncStorage.getItem("isAppFirstLaunched");
-    if (appData == null) {
-      setIsAppFirstLaunched(true);
-      // AsyncStorage.setItem("isAppFirstLaunched", "true");
-      AsyncStorage.setItem("isAppFirstLaunched", "false");
-    } else {
-      // setIsAppFirstLaunched(true);
-      setIsAppFirstLaunched(false);
+  useEffect(() => {
+    async function fetchData() {
+      const appData = await AsyncStorage.getItem("isAppFirstLaunched");
+      if (appData == null) {
+        setIsAppFirstLaunched(true);
+        // AsyncStorage.setItem("isAppFirstLaunched", "true");
+        AsyncStorage.setItem("isAppFirstLaunched", "false");
+      } else {
+        // setIsAppFirstLaunched(true);
+        setIsAppFirstLaunched(false);
+      }
+      // AsyncStorage.removeItem('isAppFirstLaunched');
     }
-    // AsyncStorage.removeItem('isAppFirstLaunched');
+    fetchData();
   }, []);
 
   return (

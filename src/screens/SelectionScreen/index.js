@@ -126,7 +126,7 @@ const Slide = ({ item }) => {
       <View
         style={{ justifyContent: "center", alignItems: "center", width: width }}
       >
-        <View>
+        <View style={{ paddingHorizontal: 16 }}>
           <Text style={Styles.title}>{item.title}</Text>
           <Text style={Styles.subtitle}>{item.subtitle}</Text>
         </View>
@@ -221,6 +221,7 @@ const SelectionScreen = ({ navigation }) => {
                     backgroundColor: "transparent",
                     paddingTop: 0,
                     paddingBottom: 0,
+                    marginBottom: 28,
                   },
                 ]}
               >
@@ -253,6 +254,7 @@ const SelectionScreen = ({ navigation }) => {
                     backgroundColor: "transparent",
                     paddingTop: 0,
                     paddingBottom: 0,
+                    marginBottom: 28,
                   },
                 ]}
                 onPress={skip}

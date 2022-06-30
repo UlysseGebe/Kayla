@@ -2,9 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   SafeAreaView,
-  Button,
   ScrollView,
-  Pressable,
+  TouchableWithoutFeedback,
   Text,
   View,
   Image,
@@ -18,7 +17,7 @@ import FilterComponent from "../../components/FilterComponent";
 import CardMainComponent from "../../components/CardMainComponent";
 import CardSmallComponent from "../../components/CardSmallComponent";
 import CardTopComponent from "../../components/CardTopComponent";
-import Data from "./data"
+import Data from "./data";
 
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
@@ -31,6 +30,7 @@ export default function HomeScreen({ route }) {
     const currentIndex = Math.round(contentOffsetX / width);
     setCurrentSlideIndex(currentIndex);
   };
+
   return (
     <SafeAreaView style={Styles.container}>
       <Image
@@ -38,7 +38,9 @@ export default function HomeScreen({ route }) {
         style={Styles.background}
       />
       <ScrollView>
-        <FilterComponent openFilter={route.params ? true : false} />
+        <TouchableWithoutFeedback>
+          <FilterComponent openFilter={route.params.openFilter} />
+        </TouchableWithoutFeedback>
         <View>
           <Text style={Styles.subTitle}>Ton activité du jour !</Text>
           <FlatList
@@ -69,9 +71,6 @@ export default function HomeScreen({ route }) {
             })}
           </View>
         </View>
-        {/* <View style={{ flexDirection: "column" }}>
-          <Text style={Styles.subTitle}>Tes statistiques</Text>
-        </View> */}
         <View style={{ flexDirection: "column" }}>
           <Text style={Styles.subTitle}>Notre sélection</Text>
           <FlatList

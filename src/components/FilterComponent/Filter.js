@@ -2,22 +2,20 @@ import React, { useState, useRef } from "react";
 import {
   View,
   ScrollView,
-  Image,
   FlatList,
   Text,
   Pressable,
-  TextInput,
   Dimensions,
+  TouchableWithoutFeedback,
 } from "react-native";
 import Styles from "./style";
 import Obj from "./Object";
-import Icon from "../CustomIcon";
+// import Icon from "../CustomIcon";
 import { List } from "react-native-paper";
-import { useNavigation } from "@react-navigation/native";
 import SelectMultiple from "react-native-select-multiple";
 import NumericInput from "react-native-numeric-input";
 import SwipeUpDown from "react-native-swipe-up-down";
-const { width, height } = Dimensions.get("window");
+const { width } = Dimensions.get("window");
 
 export default function FilterComponent() {
   const [expandedAge, setExpandedAge] = useState(false);
@@ -38,7 +36,6 @@ export default function FilterComponent() {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef();
   const swipe = useRef();
-  //   console.log(navigation.getState().routes[0].name);
 
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -72,207 +69,211 @@ export default function FilterComponent() {
     if (item.id == 0)
       return (
         <ScrollView style={Styles.listContainer}>
-          <List.Section>
-            <List.Accordion
-              title="Âge des enfants"
-              expanded={expandedAge}
-              onPress={() => setExpandedAge(!expandedAge)}
-            >
-              <List.Item
-                title="Enfant(s) de 3 à 5 ans"
-                right={(props) => (
-                  <NumericInput
-                    value={child3to5}
-                    onChange={(value) => {
-                      setChild3to5(value);
-                    }}
-                    type="plus-minus"
-                    minValue={0}
-                    rounded
-                    textColor="#005B85"
-                    iconStyle={{ color: "#3586AB" }}
-                    borderColor="transparent"
-                    leftButtonBackgroundColor="#E5EFF3"
-                    rightButtonBackgroundColor="#E5EFF3"
+          <TouchableWithoutFeedback>
+            <>
+              <List.Section>
+                <List.Accordion
+                  title="Âge des enfants"
+                  expanded={expandedAge}
+                  onPress={() => setExpandedAge(!expandedAge)}
+                >
+                  <List.Item
+                    title="Enfant(s) de 3 à 5 ans"
+                    right={(props) => (
+                      <NumericInput
+                        value={child3to5}
+                        onChange={(value) => {
+                          setChild3to5(value);
+                        }}
+                        type="plus-minus"
+                        minValue={0}
+                        rounded
+                        textColor="#005B85"
+                        iconStyle={{ color: "#3586AB" }}
+                        borderColor="transparent"
+                        leftButtonBackgroundColor="#E5EFF3"
+                        rightButtonBackgroundColor="#E5EFF3"
+                      />
+                    )}
                   />
-                )}
-              />
-              <List.Item
-                title="Enfant(s) de 6 à 8 ans "
-                right={(props) => (
-                  <NumericInput
-                    value={child6to8}
-                    onChange={(value) => {
-                      setExpandedAge(true);
-                      setChild6to8(value);
-                    }}
-                    type="plus-minus"
-                    minValue={0}
-                    rounded
-                    textColor="#005B85"
-                    iconStyle={{ color: "#3586AB" }}
-                    borderColor="transparent"
-                    leftButtonBackgroundColor="#E5EFF3"
-                    rightButtonBackgroundColor="#E5EFF3"
+                  <List.Item
+                    title="Enfant(s) de 6 à 8 ans "
+                    right={(props) => (
+                      <NumericInput
+                        value={child6to8}
+                        onChange={(value) => {
+                          setExpandedAge(true);
+                          setChild6to8(value);
+                        }}
+                        type="plus-minus"
+                        minValue={0}
+                        rounded
+                        textColor="#005B85"
+                        iconStyle={{ color: "#3586AB" }}
+                        borderColor="transparent"
+                        leftButtonBackgroundColor="#E5EFF3"
+                        rightButtonBackgroundColor="#E5EFF3"
+                      />
+                    )}
                   />
-                )}
-              />
-              <List.Item
-                title="Enfant(s) de 9 ans & plus "
-                right={(props) => (
-                  <NumericInput
-                    value={child9to}
-                    onChange={(value) => {
-                      setExpandedAge(true);
-                      setChild9to(value);
-                    }}
-                    type="plus-minus"
-                    minValue={0}
-                    rounded
-                    textColor="#005B85"
-                    iconStyle={{ color: "#3586AB" }}
-                    borderColor="transparent"
-                    leftButtonBackgroundColor="#E5EFF3"
-                    rightButtonBackgroundColor="#E5EFF3"
+                  <List.Item
+                    title="Enfant(s) de 9 ans & plus "
+                    right={(props) => (
+                      <NumericInput
+                        value={child9to}
+                        onChange={(value) => {
+                          setExpandedAge(true);
+                          setChild9to(value);
+                        }}
+                        type="plus-minus"
+                        minValue={0}
+                        rounded
+                        textColor="#005B85"
+                        iconStyle={{ color: "#3586AB" }}
+                        borderColor="transparent"
+                        leftButtonBackgroundColor="#E5EFF3"
+                        rightButtonBackgroundColor="#E5EFF3"
+                      />
+                    )}
                   />
-                )}
-              />
-            </List.Accordion>
+                </List.Accordion>
 
-            <List.Accordion
-              title="Budget"
-              expanded={expandedPrice}
-              onPress={() => setExpandedPrice(!expandedPrice)}
-            >
-              <List.Item
-                title={(props) => (
-                  <SelectMultiple
-                    items={["Gratuit", "10 €", "20 €"]}
-                    checkboxStyle={{ display: "none" }}
-                    flatListProps={{ numColumns: "3" }}
-                    selectedLabelStyle={{
-                      backgroundColor: "#005B85",
-                      color: "white",
-                    }}
-                    rowStyle={{
-                      borderBottomColor: "transparent",
-                      backgroundColor: "transparent",
-                      padding: 0,
-                      justifyContent: "center",
-                    }}
-                    renderLabel={Btn3}
-                    selectedItems={selectedPrice}
-                    onSelectionsChange={(value) => {
-                      setSelectedPrice(value);
-                    }}
+                <List.Accordion
+                  title="Budget"
+                  expanded={expandedPrice}
+                  onPress={() => setExpandedPrice(!expandedPrice)}
+                >
+                  <List.Item
+                    title={(props) => (
+                      <SelectMultiple
+                        items={["Gratuit", "10 €", "20 €"]}
+                        checkboxStyle={{ display: "none" }}
+                        flatListProps={{ numColumns: "3" }}
+                        selectedLabelStyle={{
+                          backgroundColor: "#005B85",
+                          color: "white",
+                        }}
+                        rowStyle={{
+                          borderBottomColor: "transparent",
+                          backgroundColor: "transparent",
+                          padding: 0,
+                          justifyContent: "center",
+                        }}
+                        renderLabel={Btn3}
+                        selectedItems={selectedPrice}
+                        onSelectionsChange={(value) => {
+                          setSelectedPrice(value);
+                        }}
+                      />
+                    )}
                   />
-                )}
-              />
-            </List.Accordion>
+                </List.Accordion>
 
-            <List.Accordion
-              title="Temps de l’activité"
-              expanded={expandedTime}
-              onPress={() => setExpandedTime(!expandedTime)}
-            >
-              <List.Item
-                title={(props) => (
-                  <SelectMultiple
-                    items={["30 min", "1h", "1h30", "2h", "3h", "+ 3h"]}
-                    checkboxStyle={{ display: "none" }}
-                    flatListProps={{ numColumns: "3" }}
-                    selectedLabelStyle={{
-                      backgroundColor: "#005B85",
-                      color: "white",
-                    }}
-                    rowStyle={{
-                      borderBottomColor: "transparent",
-                      backgroundColor: "transparent",
-                      padding: 0,
-                      marginVertical: 6,
-                      justifyContent: "center",
-                    }}
-                    renderLabel={Btn3}
-                    selectedItems={selectedTime}
-                    onSelectionsChange={(value) => {
-                      setSelectedTime(value);
-                    }}
+                <List.Accordion
+                  title="Temps de l’activité"
+                  expanded={expandedTime}
+                  onPress={() => setExpandedTime(!expandedTime)}
+                >
+                  <List.Item
+                    title={(props) => (
+                      <SelectMultiple
+                        items={["30 min", "1h", "1h30", "2h", "3h", "+ 3h"]}
+                        checkboxStyle={{ display: "none" }}
+                        flatListProps={{ numColumns: "3" }}
+                        selectedLabelStyle={{
+                          backgroundColor: "#005B85",
+                          color: "white",
+                        }}
+                        rowStyle={{
+                          borderBottomColor: "transparent",
+                          backgroundColor: "transparent",
+                          padding: 0,
+                          marginVertical: 6,
+                          justifyContent: "center",
+                        }}
+                        renderLabel={Btn3}
+                        selectedItems={selectedTime}
+                        onSelectionsChange={(value) => {
+                          setSelectedTime(value);
+                        }}
+                      />
+                    )}
                   />
-                )}
-              />
-            </List.Accordion>
+                </List.Accordion>
 
-            <List.Accordion
-              title="Type d’activité"
-              expanded={expandedType}
-              onPress={() => setExpandedType(!expandedType)}
-            >
-              <List.Item
-                title={(props) => (
-                  <SelectMultiple
-                    items={[
-                      "Créative",
-                      "Manuelle",
-                      "Sportive",
-                      "Éducative",
-                      "Amusante",
-                      "Jeu de société",
-                    ]}
-                    checkboxStyle={{ display: "none" }}
-                    flatListProps={{ numColumns: "2" }}
-                    selectedLabelStyle={{
-                      backgroundColor: "#005B85",
-                      color: "white",
-                    }}
-                    rowStyle={{
-                      borderBottomColor: "transparent",
-                      backgroundColor: "transparent",
-                      padding: 0,
-                      marginVertical: 6,
-                      justifyContent: "center",
-                    }}
-                    renderLabel={Btn2}
-                    selectedItems={selectedType}
-                    onSelectionsChange={(value) => {
-                      setSelectedType(value);
-                    }}
+                <List.Accordion
+                  title="Type d’activité"
+                  expanded={expandedType}
+                  onPress={() => setExpandedType(!expandedType)}
+                >
+                  <List.Item
+                    title={(props) => (
+                      <SelectMultiple
+                        items={[
+                          "Créative",
+                          "Manuelle",
+                          "Sportive",
+                          "Éducative",
+                          "Amusante",
+                          "Jeu de société",
+                        ]}
+                        checkboxStyle={{ display: "none" }}
+                        flatListProps={{ numColumns: "2" }}
+                        selectedLabelStyle={{
+                          backgroundColor: "#005B85",
+                          color: "white",
+                        }}
+                        rowStyle={{
+                          borderBottomColor: "transparent",
+                          backgroundColor: "transparent",
+                          padding: 0,
+                          marginVertical: 6,
+                          justifyContent: "center",
+                        }}
+                        renderLabel={Btn2}
+                        selectedItems={selectedType}
+                        onSelectionsChange={(value) => {
+                          setSelectedType(value);
+                        }}
+                      />
+                    )}
                   />
-                )}
-              />
-            </List.Accordion>
+                </List.Accordion>
 
-            <List.Accordion
-              title="Lieu de l’activité"
-              expanded={expandedPlace}
-              onPress={() => setExpandedPlace(!expandedPlace)}
-            >
-              <List.Item
-                title={(props) => (
-                  <SelectMultiple
-                    items={["Intérieur", "Extérieur"]}
-                    checkboxStyle={{ display: "none" }}
-                    flatListProps={{ numColumns: "2" }}
-                    selectedLabelStyle={{
-                      backgroundColor: "#005B85",
-                      color: "white",
-                    }}
-                    rowStyle={{
-                      borderBottomColor: "transparent",
-                      backgroundColor: "transparent",
-                      padding: 0,
-                      marginVertical: 6,
-                      justifyContent: "center",
-                    }}
-                    renderLabel={Btn2}
-                    selectedItems={selectedPlace}
-                    onSelectionsChange={(value) => {
-                      setSelectedPlace(value);
-                    }}
+                <List.Accordion
+                  title="Lieu de l’activité"
+                  expanded={expandedPlace}
+                  onPress={() => setExpandedPlace(!expandedPlace)}
+                >
+                  <List.Item
+                    title={(props) => (
+                      <SelectMultiple
+                        items={["Intérieur", "Extérieur"]}
+                        checkboxStyle={{ display: "none" }}
+                        flatListProps={{ numColumns: "2" }}
+                        selectedLabelStyle={{
+                          backgroundColor: "#005B85",
+                          color: "white",
+                        }}
+                        rowStyle={{
+                          borderBottomColor: "transparent",
+                          backgroundColor: "transparent",
+                          padding: 0,
+                          marginVertical: 6,
+                          justifyContent: "center",
+                        }}
+                        renderLabel={Btn2}
+                        selectedItems={selectedPlace}
+                        onSelectionsChange={(value) => {
+                          setSelectedPlace(value);
+                        }}
+                      />
+                    )}
                   />
-                )}
-              />
-            </List.Accordion>
-          </List.Section>
+                </List.Accordion>
+              </List.Section>
+            </>
+          </TouchableWithoutFeedback>
         </ScrollView>
       );
     if (item.id == 1)
@@ -304,7 +305,7 @@ export default function FilterComponent() {
             iconColor="yellow"
             iconSize={30}
             style={{ backgroundColor: "white" }}
-            itemFull={()=> <Obj />}
+            itemFull={() => <Obj />}
             ref={swipe}
           />
         </View>
@@ -328,7 +329,7 @@ export default function FilterComponent() {
         showsHorizontalScrollIndicator={false}
         scrollEnabled={false}
         horizontal
-        data={[{ id: 0 }]}
+        data={[{ id: 0 }, { id: 1 }]}
         pagingEnabled
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => <Content item={item} />}
