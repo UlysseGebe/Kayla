@@ -1,3 +1,4 @@
+import React from 'react';
 import { Pressable, View, Image } from "react-native";
 import Styles from "./style";
 import Icon from "../CustomIcon";

@@ -3,8 +3,7 @@ import React from 'react';
 // navigation components
 import {createSwitchNavigator, createAppContainer} from 'react-navigation';
 
-import Login from '../screens/Login';
-import Overview from '../screens/Overview';
+import Login from '../../screens/Authentication/Login';
 import {store} from '../../redux/Store';
 
 const Authentication = () => {
@@ -17,9 +16,6 @@ const Authentication = () => {
       {
         Login: {
           screen: Login,
-        },
-        Overview: {
-          screen: Overview,
         },
       },
       {

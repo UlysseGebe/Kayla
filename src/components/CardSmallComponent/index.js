@@ -1,3 +1,4 @@
+import React from 'react';
 import { View, Image, Text, Pressable } from "react-native";
 import Styles from "./style";
 import { useNavigation } from "@react-navigation/native";

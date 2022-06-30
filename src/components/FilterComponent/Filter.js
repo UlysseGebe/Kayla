@@ -34,15 +34,10 @@ export default function FilterComponent() {
   const [selectedTime, setSelectedTime] = useState([]);
   const [selectedType, setSelectedType] = useState([]);
   const [selectedPlace, setSelectedPlace] = useState([]);
-  
-  const [isFocusedObject, setIsFocusedObject] = useState(Styles.input);
-  const [object, setObject] = useState();
 
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef();
   const swipe = useRef();
-  const handlePress = () => setExpanded(!expanded);
-  const navigation = useNavigation();
   //   console.log(navigation.getState().routes[0].name);
 
   const updateCurrentSlideIndex = (e) => {

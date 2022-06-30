@@ -87,7 +87,6 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: 35,
     fontFamily: "Avenir",
-    lineHeight: 35,
     fontWeight: "700",
     color: "#005B85",
   },

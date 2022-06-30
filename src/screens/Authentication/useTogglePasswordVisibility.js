@@ -1,5 +1,5 @@
 import { useState } from 'react';
-export default useTogglePasswordVisibility = () => {
+export default () => {
   const [passwordVisibility, setPasswordVisibility] = useState(true);
   const [rightIcon, setRightIcon] = useState("eye");
 
@@ -19,5 +19,3 @@ export default useTogglePasswordVisibility = () => {
     handlePasswordVisibility,
   };
 };
-
-// export default useTogglePasswordVisibility;

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import {
   View,
-  StatusBar,
   Pressable,
   TextInput,
   Text,
   Image,
 } from "react-native";
 import {
-  Headline,
   Paragraph,
-  Button,
   Snackbar,
   Portal,
 } from "react-native-paper";
@@ -117,7 +114,7 @@ const Register = ({ navigation }) => {
       </View>
 
       <View style={Styles.header}>
-        <Headline style={Styles.appTitle}>S’inscrire</Headline>
+        <Text style={Styles.appTitle}>S’inscrire</Text>
         <Paragraph style={Styles.appDesc}>
           Entrez vos informations personnelles pour vous inscrire
         </Paragraph>
