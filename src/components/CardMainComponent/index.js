@@ -16,6 +16,10 @@ export default function CardMainComponent({ item }) {
       duration = element;
     }
   });
+
+  if (item.thumbnail) {
+    console.log(item.thumbnail.url);
+  }
   return (
     <Pressable
       style={Styles.container}
@@ -27,7 +31,7 @@ export default function CardMainComponent({ item }) {
         </Pressable>
         <Image
           style={Styles.image}
-          source={require("../../assets/images/preview.png")}
+          source={item.thumbnail ? {uri: `https://kayla-project.herokuapp.com${item.thumbnail.url}`} : require("../../assets/images/preview.png")}
         />
       </View>
       <View style={Styles.textContainer}>

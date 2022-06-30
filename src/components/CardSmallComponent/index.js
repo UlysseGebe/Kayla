@@ -13,7 +13,7 @@ export default function CardSmallComponent({ item }) {
       <View style={Styles.imageContainer}>
         <Image
           style={Styles.image}
-          source={require("../../assets/images/preview.png")}
+          source={item.thumbnail ? {uri: `https://kayla-project.herokuapp.com${item.thumbnail.url}`} : require("../../assets/images/preview.png")}
         />
       </View>
       <View style={Styles.textContainer}>
