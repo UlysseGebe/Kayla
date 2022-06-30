@@ -41,9 +41,10 @@ export default StyleSheet.create({
     textAlign: "center",
     fontSize: 20,
     fontFamily: "Avenir",
-    lineHeight: 35,
+    lineHeight: 25,
     fontWeight: "800",
     color: "#3586AB",
+    maxWidth: 250,
   },
   subtitle: {
     marginTop: 17,
