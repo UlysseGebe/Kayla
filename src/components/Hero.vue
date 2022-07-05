@@ -2,12 +2,12 @@
   <div class="hero">
     <div class="text">
       <div class="content">
-        <h1>Les activités au bout des doigts avec <span>Kayla !</span></h1>
+        <h1>Les activités au bout des doigts avec <span>Kailya !</span></h1>
         <h2>Profitez de la vie familiale à plein temps : nous vous proposons des activités qui épanouiront vos enfants, et qui vous épanouiront ! </h2>
       </div>
     </div>
     <div class="image">
-      <img alt="kayla phone" src="../assets/images/kayla_phone.svg" fit="inside" style="width:18.04em;height:30.982em;">
+      <img alt="kailya phone" src="../assets/images/kailya_phone.svg" fit="inside" style="width:18.04em;height:30.982em;">
     </div>
   </div>
 </template>

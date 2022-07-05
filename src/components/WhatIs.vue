@@ -1,6 +1,6 @@
 <template>
   <div class="whatis">
-    <h2>Kayla c’est...</h2>
+    <h2>Kailya c’est...</h2>
     <div class="cards">
       <div v-for="(what, index) in whats" :key="index" class="card" :index="index" :style="{backgroundImage: 'url('+what.img+')', width: what.width, height: what.height}">
         <img class="icone" :src="what.icone" :style="{width: what.widthI, height: what.heightI}">

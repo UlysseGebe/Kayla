@@ -31,7 +31,7 @@ query {
 <script>
 export default {
   metaInfo: {
-    title: 'Kayla',
+    title: 'Kailya',
     titleTemplate: false,
     htmlAttrs: {
       lang: 'fr',

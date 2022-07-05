@@ -5,7 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Kayla',
+  siteName: 'Kailya',
   siteLanguage: "fr",
   plugins: [
     {
@@ -48,7 +48,7 @@ module.exports = {
             title: "Matomo/Piwik",
             purposes: ["analytics"],
             cookies: [
-              "[/^_pk_.*$/g, '/', 'app-kayla.netlify.app']",
+              "[/^_pk_.*$/g, '/', 'app-kailya.netlify.app']",
               "[/^_pk_.*$/g, '/', 'localhost']",
               'piwik_ignore',
             ],
