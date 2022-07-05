@@ -71,6 +71,24 @@
     },
     "last_name": {
       "type": "string"
+    },
+    "child3to5": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "child6to8": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "child9to": {
+      "type": "integer",
+      "default": 0,
+      "min": 0
+    },
+    "selectedChild": {
+      "type": "json"
     }
   }
 }
