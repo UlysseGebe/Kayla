@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-07-05T11:29:13.774Z"
+    "x-generation-date": "2022-07-06T16:38:52.222Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -20255,6 +20255,9 @@
                                                 "type": "integer"
                                               },
                                               "selectedChild": {},
+                                              "payed": {
+                                                "type": "boolean"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -20866,6 +20869,9 @@
                                               "type": "integer"
                                             },
                                             "selectedChild": {},
+                                            "payed": {
+                                              "type": "boolean"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -21220,6 +21226,9 @@
                                                               "type": "integer"
                                                             },
                                                             "selectedChild": {},
+                                                            "payed": {
+                                                              "type": "boolean"
+                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
@@ -21860,6 +21869,9 @@
                                                             "type": "integer"
                                                           },
                                                           "selectedChild": {},
+                                                          "payed": {
+                                                            "type": "boolean"
+                                                          },
                                                           "createdAt": {
                                                             "type": "string",
                                                             "format": "date-time"
@@ -22397,7 +22409,10 @@
               "child9to": {
                 "type": "integer"
               },
-              "selectedChild": {}
+              "selectedChild": {},
+              "payed": {
+                "type": "boolean"
+              }
             }
           }
         }
@@ -22865,6 +22880,9 @@
                                                 "type": "integer"
                                               },
                                               "selectedChild": {},
+                                              "payed": {
+                                                "type": "boolean"
+                                              },
                                               "createdAt": {
                                                 "type": "string",
                                                 "format": "date-time"
@@ -22981,6 +22999,9 @@
                       "type": "integer"
                     },
                     "selectedChild": {},
+                    "payed": {
+                      "type": "boolean"
+                    },
                     "createdAt": {
                       "type": "string",
                       "format": "date-time"
@@ -23514,6 +23535,9 @@
                                               "type": "integer"
                                             },
                                             "selectedChild": {},
+                                            "payed": {
+                                              "type": "boolean"
+                                            },
                                             "createdAt": {
                                               "type": "string",
                                               "format": "date-time"
@@ -23630,6 +23654,9 @@
                     "type": "integer"
                   },
                   "selectedChild": {},
+                  "payed": {
+                    "type": "boolean"
+                  },
                   "createdAt": {
                     "type": "string",
                     "format": "date-time"

@@ -89,6 +89,10 @@
     },
     "selectedChild": {
       "type": "json"
+    },
+    "payed": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
