@@ -2,6 +2,7 @@ import * as React from "react";
 import { SafeAreaView, Image, Text, Pressable, View } from "react-native";
 import Icon from "../../components/CustomIcon";
 import Styles from "./style.js";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const OnboardingScreen = ({ navigation }) => {
   return (

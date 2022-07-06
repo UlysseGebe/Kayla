@@ -10,7 +10,7 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
-import axios from "axios";
+import {store} from '../../redux/Store';
 const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import FilterComponent from "../../components/FilterComponent";

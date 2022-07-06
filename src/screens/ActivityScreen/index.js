@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
 } from "react-native";
 import axios from "axios";
+import { store } from "../../redux/Store";
 import Icon from "../../components/CustomIcon";
 import Styles from "./style";
 
@@ -225,13 +226,17 @@ export default function ActivityScreen({ route, navigation }) {
               </ScrollView>
             </View>
             <View>
-              <Pressable
-                style={Styles.start}
-                mode="contained"
-                onPress={() => navigation.navigate("Steps", { itemId: itemId })}
-              >
-                <Text style={Styles.startText}>Commencer l’activité</Text>
-              </Pressable>
+              {store.getState().jwt ? (
+                <Pressable
+                  style={Styles.start}
+                  mode="contained"
+                  onPress={() =>
+                    navigation.navigate("Steps", { itemId: itemId })
+                  }
+                >
+                  <Text style={Styles.startText}>Commencer l’activité</Text>
+                </Pressable>
+              ) : null}
             </View>
             <View style={{ height: 100 }}></View>
           </View>

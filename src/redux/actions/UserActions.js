@@ -12,8 +12,14 @@ export const saveUser = (jwt, user) => {
   });
 };
 
-export const createUser = () => {
-  store.dispatch({ type: "USER_CREATE" });
+export const createUser = (jwt, user) => {
+  store.dispatch({
+    type: "USER_CREATE",
+    payload: {
+      jwt,
+      user,
+    },
+  });
 };
 
 export const deleteUser = () => {

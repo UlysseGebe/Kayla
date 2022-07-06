@@ -15,16 +15,23 @@ const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import CardSmallComponent from "../../components/CardSmallComponent";
 import BadgeComponent from "../../components/BadgeComponent";
+import UserModel from "../../models/UserModel";
+import { store } from "../../redux/Store";
 
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function HomeScreen({ navigation }) {
+  console.log(store.getState().jwt);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
     const currentIndex = Math.round(contentOffsetX / width);
     setCurrentSlideIndex(currentIndex);
+  };
+  const logout = async () => {
+    const user = new UserModel();
+    await user.logout();
   };
   return (
     <SafeAreaView style={Styles.container}>
@@ -60,14 +67,9 @@ export default function HomeScreen({ navigation }) {
         </View>
         <Text>Open up App.js to start working on your app!</Text>
         <StatusBar style="auto" />
-        <Button
-          title="Go to Activity"
-          onPress={() => navigation.navigate("Activity")}
-        />
-        <Button
-          title="Go to Login"
-          onPress={() => navigation.navigate("Login")}
-        />
+        {store.getState().jwt ? (
+          <Button title="Logout" onPress={() => logout()} />
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );

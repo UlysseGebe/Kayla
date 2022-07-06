@@ -2,13 +2,14 @@ import { StyleSheet, Dimensions } from "react-native";
 const { width, height } = Dimensions.get("window");
 
 export default StyleSheet.create({
-  base: {
+  main: {
     flex: 1,
     paddingLeft: 16,
     paddingRight: 16,
     alignContent: "center",
     justifyContent: "center",
     backgroundColor: "#F8FDFF",
+    position: "relative"
   },
   top: {
     position: "absolute",
@@ -54,41 +55,6 @@ export default StyleSheet.create({
     color: "#005B85",
     paddingHorizontal: 24,
   },
-  header: {
-    marginTop: 50,
-  },
-  input: {
-    color: "#005B85",
-    borderBottomWidth: 2,
-    borderColor: "#AECCDA",
-    fontSize: 18,
-    fontFamily: "Avenir",
-    fontWeight: "900",
-    paddingBottom: 5,
-  },
-  input_focused: {
-    borderColor: "#005B85",
-    color: "#005B85",
-    fontSize: 18,
-    fontFamily: "Avenir",
-    fontWeight: "900",
-    paddingBottom: 5,
-    borderBottomWidth: 2,
-  },
-  inputPwdContainer: {
-    position: "relative",
-  },
-  inputContainer: {
-    position: "relative",
-  },
-  inputEye: {
-    position: "absolute",
-    right: 0,
-  },
-  validate: {
-    position: "absolute",
-    right: 0,
-  },
   appTitle: {
     textAlign: "center",
     fontSize: 35,
@@ -96,39 +62,77 @@ export default StyleSheet.create({
     fontWeight: "700",
     color: "#005B85",
   },
-  connexion: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: 14,
-    marginBottom: 14,
-    paddingTop: 14,
-    paddingBottom: 14,
-    paddingRight: 84,
-    paddingLeft: 84,
-    borderRadius: 50,
+  header: {
+    marginTop: 50,
   },
-  connexionText: {
-    color: "#FFFFFF",
-    fontSize: 16,
+  itemContainer: {
+    width,
+    padding: 26,
+  },
+  itemContent: {
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: "#E3F2F8",
+    borderRadius: 12,
+    paddingTop: 47,
+    paddingBottom: 43,
+    paddingHorizontal: 19,
+  },
+  itemPrice: {
     fontFamily: "Avenir",
-    lineHeight: 21.86,
-    fontWeight: "900",
+    fontWeight: "800",
+    fontSize: 32,
+    color: "#3586AB",
+    marginBottom: 28,
   },
-  lost: {
-    marginLeft: "auto",
-    marginRight: "auto",
-    marginTop: 14,
-    marginBottom: 14,
-  },
-  lostText: {
+  itemList: {
+    fontFamily: "Avenir",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 24,
     color: "#005B85",
-    fontSize: 16,
-    fontFamily: "Avenir",
-    lineHeight: 21.86,
-    fontWeight: "900",
+    marginBottom: 8,
   },
-  image: {
-    flex: 1,
+  itemBtn: {
+    marginTop: 17,
+    width: 255,
+    height: 48,
+    borderRadius: 30,
     justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#005B85",
   },
+  itemBtnText: {
+    fontFamily: "Avenir",
+    fontWeight: "900",
+    fontSize: 16,
+    color: "#FFFFFF",
+  },
+  nav: {
+    flexDirection: "row",
+    justifyContent: "center",
+    position: "absolute",
+    bottom: 43.5,
+    left: 0,
+    right: 0,
+  },
+  navContainer: {
+    width: 8,
+    height: 8,
+    borderRadius: 50,
+    marginHorizontal: 9,
+  },
+  footer: {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 50,
+    alignItems: "center",
+  },
+  footerText: {
+    fontFamily: "Avenir",
+    fontWeight: "900",
+    fontSize: 16,
+    color: "#005B85",
+  }
 });

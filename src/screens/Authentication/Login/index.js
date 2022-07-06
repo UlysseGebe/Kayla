@@ -51,13 +51,14 @@ const Login = ({ navigation }) => {
 
       try {
         await user.login();
+        navigation.navigate("Home");
       } catch (err) {
-        setError(err.message);
+        setError("Email ou mot de passe invalide");
         setVisible(true);
         setLoading(false);
       }
     } else {
-      setError("Please fill out all *required fields");
+      setError("Please fill out all * required fields");
       setVisible(true);
       setLoading(false);
     }
@@ -75,7 +76,12 @@ const Login = ({ navigation }) => {
           style={Styles.return}
           onPress={() => navigation.goBack()}
         >
-          <Icon style={Styles.returnIcon} icon="fleche" size={30} color="#005B85" />
+          <Icon
+            style={Styles.returnIcon}
+            icon="fleche"
+            size={30}
+            color="#005B85"
+          />
           <Text style={Styles.returnText}>Retour</Text>
         </Pressable>
       </View>
@@ -132,8 +138,15 @@ const Login = ({ navigation }) => {
         <View style={Styles.divider} />
         <Pressable
           loading={loading}
-          disabled={loading}
-          style={Styles.connexion}
+          disabled={!(identifier && password)}
+          style={[
+            Styles.connexion,
+            {
+              backgroundColor: !(identifier && password)
+                ? "#90BDD0"
+                : "#005B85",
+            },
+          ]}
           onPress={() => authenticateUser()}
           mode="contained"
         >

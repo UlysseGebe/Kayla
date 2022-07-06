@@ -1,4 +1,5 @@
-import { saveUser, deleteUser } from "../redux/actions/UserActions";
+import { saveUser, createUser, deleteUser } from "../redux/actions/UserActions";
+import axios from "axios";
 
 /**
  * if you have an instance of Strapi running on your local
@@ -9,26 +10,20 @@ import { saveUser, deleteUser } from "../redux/actions/UserActions";
  * 2. You have to change the access IP from localhost
  * to the IP of the machine Strapi is running on.
  */
-const url = "http://192.168.0.57:1337";
+const url = "https://kayla-project.herokuapp.com";
 
 /**
  * @param {UserModel} user
  */
 export const login = async (user) => {
   const requestConfig = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      identifier: user.identifier,
-      password: user.password,
-    }),
+    identifier: user.identifier,
+    password: user.password,
   };
 
   try {
-    const response = await fetch(`${url}/auth/local`, requestConfig);
-    const json = await response.json();
+    const response = await axios.post(`${url}/api/auth/local`, requestConfig);
+    const json = await response.data;
 
     if (json.error) {
       return false;
@@ -38,7 +33,7 @@ export const login = async (user) => {
 
     return true;
   } catch (err) {
-    alert(err);
+    // alert(err);
     return false;
   }
 };
@@ -48,29 +43,30 @@ export const login = async (user) => {
  */
 export const register = async (user) => {
   const requestConfig = {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: user.name,
-      last_name: user.last_name,
-      identifier: user.identifier,
-      email: user.identifier,
-      zip_code: user.zip_code,
-      password: user.password,
-    }),
+    email: user.identifier,
+    username: user.identifier,
+    last_name: user.last_name,
+    name: user.name,
+    zip_code: user.zip_code,
+    password: user.password,
+    selectedChild: user.selectedChild || [],
+    child3to5: user.child3to5 || 0,
+    child6to8: user.child6to8 || 0,
+    child9to: user.child9to || 0,
   };
 
   try {
-    const response = await fetch(`${url}/auth/local/register`, requestConfig);
-    const json = await response.json();
+    const response = await axios.post(
+      `${url}/api/auth/local/register`,
+      requestConfig
+    );
+    const json = await response.data;
 
     if (json.error) {
       return false;
     }
 
-    // saveUser(json.jwt, json.user);
+    createUser(json.jwt, json.user);
 
     return true;
   } catch (err) {
@@ -82,6 +78,7 @@ export const register = async (user) => {
 /**
  * @param {UserModel} user
  */
-export const logout = async (user) => {
+export const logout = () => {
   deleteUser();
+  return true;
 };

@@ -25,7 +25,10 @@ const UserReducer = (state = defaultState, action) => {
     }
 
     case "USER_CREATE": {
-      return defaultState;
+      return {
+        ...state,
+        ...{ jwt: action.payload.jwt, user: action.payload.user },
+      };
     }
 
     case "USER_DELETE": {

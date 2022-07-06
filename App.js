@@ -19,6 +19,7 @@ import StepsScreen from "./src/screens/StepsScreen";
 import DetailsScreen from "./src/screens/DetailsScreen";
 import OnboardingScreen from "./src/screens/OnboardingScreen";
 import SelectionScreen from "./src/screens/SelectionScreen";
+import PayScreen from "./src/screens/PayScreen";
 import LoginScreen from "./src/screens/Authentication/Login";
 import RegisterScreen from "./src/screens/Authentication/Register";
 import NavigationComponent from "./src/components/NavigationComponent";
@@ -41,7 +42,7 @@ function Tabs() {
       <Tab.Screen name="CalendarTab" component={HomeScreen} initialParams={{ openFilter: false }} />
       <Tab.Screen name="ActivityTab" component={HomeScreen} initialParams={{ openFilter: true }} />
       <Tab.Screen name="FavoriteTab" component={HomeScreen} initialParams={{ openFilter: false }} />
-      <Tab.Screen name="ProfilTab" component={HomeScreen} initialParams={{ openFilter: false }} />
+      <Tab.Screen name="ProfilTab" component={ProfilScreen} />
       <Stack.Screen name="Search" component={SearchScreen} />
       <Stack.Screen name="Activity" component={ActivityScreen} />
     </Tab.Navigator>
@@ -72,7 +73,7 @@ export default function App() {
         <PaperProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName={!isAppFirstLaunched ? "Onboarding" : "Home"}
+              initialRouteName={!store.getState().jwt ? "Onboarding" : "Pay"}
               screenOptions={({ route }) => ({
                 header: () => null,
                 cardStyle: {
@@ -86,6 +87,7 @@ export default function App() {
                 component={OnboardingScreen}
               />
               <Stack.Screen name="Selection" component={SelectionScreen} />
+              <Stack.Screen name="Pay" component={PayScreen} />
               <Stack.Screen name="Home" component={Tabs} />
               <Stack.Screen name="Favorite" component={Tabs} />
               <Stack.Screen name="Profil" component={Tabs} />

@@ -1,22 +1,13 @@
 import React, { useState } from "react";
-import {
-  View,
-  Pressable,
-  TextInput,
-  Text,
-  Image,
-} from "react-native";
-import {
-  Paragraph,
-  Snackbar,
-  Portal,
-} from "react-native-paper";
+import { View, Pressable, TextInput, Text, Image } from "react-native";
+import { Paragraph, Snackbar, Portal } from "react-native-paper";
 import UserModel from "../../../models/UserModel";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import useTogglePasswordVisibility from "../useTogglePasswordVisibility";
 import Icon from "../../../components/CustomIcon";
 import Styles from "./style";
 
-const Register = ({ navigation }) => {
+const Register = ({ route, navigation }) => {
   const { passwordVisibility, rightIcon, handlePasswordVisibility } =
     useTogglePasswordVisibility();
   const [name, setName] = useState("");
@@ -66,29 +57,39 @@ const Register = ({ navigation }) => {
   };
 
   const authenticateUser = async () => {
-    navigation.navigate("Home")
-    // if (validateInput()) {
-    //   setLoading(true);
-    //   const user = new UserModel(
-    //     identifier,
-    //     password,
-    //     name,
-    //     last_name,
-    //     zip_code
-    //   );
+    const selectedChild = await AsyncStorage.getItem("selectedChild");
+    const child3to5 = await AsyncStorage.getItem("child3to5");
+    const child6to8 = await AsyncStorage.getItem("child6to8");
+    const child9to = await AsyncStorage.getItem("child9to");
 
-    //   try {
-    //     await user.register();
-    //   } catch (err) {
-    //     setError(err.message);
-    //     setVisible(true);
-    //     setLoading(false);
-    //   }
-    // } else {
-    //   setError("Please fill out all *required fields");
-    //   setVisible(true);
-    //   setLoading(false);
-    // }
+    if (validateInput()) {
+      setLoading(true);
+      const user = new UserModel(
+        identifier,
+        password,
+        name,
+        last_name,
+        zip_code,
+        JSON.parse(selectedChild),
+        child3to5,
+        child6to8,
+        child9to
+      );
+
+      try {
+        await user.register();
+        navigation.navigate("Pay");
+      } catch (err) {
+        setError("Email existant");
+        setIdentifier("");
+        setVisible(true);
+        setLoading(false);
+      }
+    } else {
+      setError("Please fill out all * required fields");
+      setVisible(true);
+      setLoading(false);
+    }
   };
 
   return (
@@ -196,6 +197,7 @@ const Register = ({ navigation }) => {
             onFocus={() => setIsFocusedEmail(Styles.input_focused)}
             onBlur={() => setIsFocusedEmail(Styles.input)}
             label="Adresse mail"
+            autoCorrect={false}
             autoComplete="email"
             keyboardType="email-address"
             textContentType="emailAddress"
@@ -263,14 +265,19 @@ const Register = ({ navigation }) => {
           </TextInput>
           <Pressable
             onPress={handlePasswordVisibility}
-            style={[Styles.inputEye, { right: passwordV == password && passwordV ? 35 : 0 }]}
+            style={[
+              Styles.inputEye,
+              { right: passwordV == password && passwordV ? 35 : 0 },
+            ]}
           >
             <Icon icon={rightIcon} size={22} color="#90BDD0" />
           </Pressable>
           <Icon
             icon="validate"
             size={22}
-            color={passwordV == password && passwordV ? "#37AD00" : "transparent"}
+            color={
+              passwordV == password && passwordV ? "#37AD00" : "transparent"
+            }
             style={Styles.validate}
           />
         </View>
@@ -281,14 +288,12 @@ const Register = ({ navigation }) => {
         <Pressable
           loading={loading}
           disabled={
-            !(
-              name &&
-              last_name &&
-              zip_code &&
-              identifier &&
-              password &&
-              password == passwordV
-            )
+            !(name &&
+            last_name &&
+            zip_code &&
+            identifier &&
+            password &&
+            password == passwordV)
           }
           style={[
             Styles.connexion,
@@ -310,7 +315,10 @@ const Register = ({ navigation }) => {
         >
           <Text style={Styles.connexionText}>Inscription</Text>
         </Pressable>
-        <Pressable onPress={() => navigation.navigate("Home")} style={Styles.lost}>
+        <Pressable
+          onPress={() => navigation.navigate("Home")}
+          style={Styles.lost}
+        >
           <Text style={Styles.lostText}>Ne pas s’inscrire</Text>
         </Pressable>
       </>
