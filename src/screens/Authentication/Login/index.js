@@ -153,7 +153,7 @@ const Login = ({ navigation }) => {
           <Text style={Styles.connexionText}>Connexion</Text>
         </Pressable>
         <Pressable
-          onPress={() => navigation.navigate("Login")}
+          onPress={() => navigation.navigate("Home")}
           style={Styles.lost}
         >
           <Text style={Styles.lostText}>Mot de passe oublié ?</Text>

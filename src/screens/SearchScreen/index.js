@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { StatusBar } from "expo-status-bar";
 import {
   SafeAreaView,
@@ -10,6 +10,7 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
+import axios from "axios";
 const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import FilterComponent from "../../components/FilterComponent";
@@ -19,6 +20,7 @@ import Data from "./data";
 export default function SearchScreen({ navigation }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const [freezer, setFreezer] = useState(false);
+  const [activity, setActivity] = useState([]);
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -28,6 +30,28 @@ export default function SearchScreen({ navigation }) {
   const freezeFN = (val) => {
     setFreezer(val);
   };
+
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    const url = "https://kayla-project.herokuapp.com/api/activities";
+    const fetchAdvice = async () => {
+      try {
+        const response = await axios.get(url + "?filters[id][$eq][0]=4&filters[id][$eq][1]=9&filters[id][$eq][2]=10&populate=*");
+        if (response.status === 200) {
+          setActivity(response.data.data);
+          return;
+        } else {
+          throw new Error("Failed to fetch activity");
+        }
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Data fetching cancelled");
+        }
+      }
+    };
+    fetchAdvice();
+    return () => source.cancel("Data fetching cancelled");
+  }, [activity]);
   return (
     <SafeAreaView style={Styles.container}>
       <Image
@@ -37,10 +61,11 @@ export default function SearchScreen({ navigation }) {
       <FilterComponent openFilter={false} freeze={freezeFN} />
       <Text style={Styles.subTitle}>Résultat</Text>
       <FlatList
+        style={{marginBottom: 30}}
         ref={ref}
         onMomentumScrollEnd={updateCurrentSlideIndex}
         pagingEnabled
-        data={[Data[15], Data[16], Data[17], Data[18], Data[19], Data[20]]}
+        data={activity}
         keyExtractor={(item) => "CardMain" + item.id}
         renderItem={({ item }) => <CardMainComponent item={item} />}
       />

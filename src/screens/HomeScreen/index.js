@@ -10,19 +10,18 @@ import {
   FlatList,
   Dimensions,
 } from "react-native";
-import {store} from '../../redux/Store';
+import axios from "axios";
 const { width, height } = Dimensions.get("window");
 import Styles from "./style";
 import FilterComponent from "../../components/FilterComponent";
 import CardMainComponent from "../../components/CardMainComponent";
 import CardSmallComponent from "../../components/CardSmallComponent";
 import CardTopComponent from "../../components/CardTopComponent";
-import Data from "./data";
-
-const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
+import Section from "./section"
 
 export default function HomeScreen({ route }) {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
+  const [activity, setActivity] = useState([]);
   const [freezer, setFreezer] = useState(false);
 
   const ref = useRef();
@@ -36,6 +35,28 @@ export default function HomeScreen({ route }) {
     setFreezer(val);
   };
 
+  useEffect(() => {
+    const source = axios.CancelToken.source();
+    const url = "https://kayla-project.herokuapp.com/api/activities";
+    const fetchAdvice = async () => {
+      try {
+        const response = await axios.get(url + "?pagination[pageSize]=11&populate=*");
+        if (response.status === 200) {
+          setActivity(response.data.data);
+          return;
+        } else {
+          throw new Error("Failed to fetch activity");
+        }
+      } catch (error) {
+        if (axios.isCancel(error)) {
+          console.log("Data fetching cancelled");
+        }
+      }
+    };
+    fetchAdvice();
+    return () => source.cancel("Data fetching cancelled");
+  }, [activity]);
+
   return (
     <SafeAreaView style={Styles.container}>
       <Image
@@ -47,43 +68,14 @@ export default function HomeScreen({ route }) {
           openFilter={route.params.openFilter}
           freeze={freezeFN}
         />
-        <View>
-          <Text style={Styles.subTitle}>Ton activité du jour !</Text>
-          <FlatList
-            showsHorizontalScrollIndicator={false}
-            ref={ref}
-            onMomentumScrollEnd={updateCurrentSlideIndex}
-            pagingEnabled
-            horizontal
-            data={[Data[0], Data[1], Data[2], Data[3]]}
-            keyExtractor={(item) => "CardMain" + item.id}
-            renderItem={({ item }) => <CardMainComponent item={item} />}
-          />
-          <View style={Styles.nav}>
-            {cards.map((card, index) => {
-              return (
-                <View
-                  key={index}
-                  style={[
-                    Styles.navContainer,
-                    {
-                      width: index == currentSlideIndex ? 40 : 8,
-                      backgroundColor:
-                        index == currentSlideIndex ? "#005B85" : "#90BDD0",
-                    },
-                  ]}
-                ></View>
-              );
-            })}
-          </View>
-        </View>
+        <Section activity={activity.splice(0,4)} />
         <View style={{ flexDirection: "column" }}>
           <Text style={Styles.subTitle}>Notre sélection</Text>
           <FlatList
             style={{ overflow: "visible", marginHorizontal: 5 }}
             showsHorizontalScrollIndicator={false}
             horizontal
-            data={[Data[4], Data[5], Data[6], Data[7]]}
+            data={activity.splice(0,4)}
             keyExtractor={(item) => "CardSmall" + item.id}
             renderItem={({ item }) => <CardSmallComponent item={item} />}
           />
@@ -94,7 +86,7 @@ export default function HomeScreen({ route }) {
             style={{ overflow: "visible", marginHorizontal: 8 }}
             showsHorizontalScrollIndicator={false}
             horizontal
-            data={[Data[8], Data[9], Data[10], Data[11]]}
+            data={activity.splice(0,4)}
             keyExtractor={(item) => "CardTop" + item.id}
             renderItem={({ item }) => <CardTopComponent item={item} />}
           />
