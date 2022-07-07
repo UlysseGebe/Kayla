@@ -73,7 +73,7 @@ export default function App() {
         <PaperProvider>
           <NavigationContainer>
             <Stack.Navigator
-              initialRouteName={!store.getState().jwt ? "Onboarding" : "Pay"}
+              initialRouteName={!store.getState().jwt ? "Onboarding" : "Home"}
               screenOptions={({ route }) => ({
                 header: () => null,
                 cardStyle: {
