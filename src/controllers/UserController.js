@@ -16,8 +16,8 @@ import axios from "axios";
  * 2. You have to change the access IP from localhost
  * to the IP of the machine Strapi is running on.
  */
-// const url = "https://kayla-project.herokuapp.com";
-const url = "http://127.0.0.1:1337";
+const url = "https://kayla-project.herokuapp.com";
+// const url = "http://127.0.0.1:1337";
 
 /**
  * @param {UserModel} user
