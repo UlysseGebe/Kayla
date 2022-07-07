@@ -177,7 +177,7 @@ export default function ActivityScreen({ route, navigation }) {
               <View style={Styles.stat}>
                 <Icon
                   style={Styles.statIcon}
-                  icon="eye"
+                  icon="time"
                   size={22}
                   color="#005B85"
                 />
@@ -188,7 +188,7 @@ export default function ActivityScreen({ route, navigation }) {
               <View style={Styles.stat}>
                 <Icon
                   style={Styles.statIcon}
-                  icon="eye"
+                  icon="personne"
                   size={22}
                   color="#005B85"
                 />
@@ -197,7 +197,7 @@ export default function ActivityScreen({ route, navigation }) {
               <View style={Styles.stat}>
                 <Icon
                   style={Styles.statIcon}
-                  icon="eye"
+                  icon="price"
                   size={22}
                   color="#005B85"
                 />
@@ -226,7 +226,7 @@ export default function ActivityScreen({ route, navigation }) {
               </ScrollView>
             </View>
             <View>
-              {store.getState().jwt ? (
+              {store.getState().jwt && store.getState().user.payed ? (
                 <Pressable
                   style={Styles.start}
                   mode="contained"
