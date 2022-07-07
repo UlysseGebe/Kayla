@@ -31,6 +31,13 @@ const UserReducer = (state = defaultState, action) => {
       };
     }
 
+    case "USER_UPDATE": {
+      return {
+        ...state,
+        ...{ jwt: action.payload.jwt, user: action.payload.user },
+      };
+    }
+
     case "USER_DELETE": {
       return defaultState;
     }

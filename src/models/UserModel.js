@@ -2,7 +2,7 @@
  * User model as defined in Strapi
  */
 
-import { login, register, logout } from "../controllers/UserController";
+import { login, register, update, logout } from "../controllers/UserController";
 
 class UserModel {
   constructor(
@@ -14,7 +14,7 @@ class UserModel {
     selectedChild,
     child3to5,
     child6to8,
-    child9to
+    child9to,
   ) {
     this.identifier = identifier;
     this.password = password;
@@ -47,8 +47,18 @@ class UserModel {
     return true;
   }
 
-  async logout() {
-    const result = await logout(this);
+  async update(data) {
+    const result = await update(data);
+
+    if (!result) {
+      throw new Error("Unable to update user.");
+    }
+
+    return true;
+  }
+
+  logout() {
+    const result = logout(this);
 
     if (!result) {
       throw new Error("Unable to logout user.");

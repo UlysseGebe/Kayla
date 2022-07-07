@@ -1,4 +1,10 @@
-import { saveUser, createUser, deleteUser } from "../redux/actions/UserActions";
+import {
+  saveUser,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../redux/actions/UserActions";
+import { store } from "../redux/Store";
 import axios from "axios";
 
 /**
@@ -10,7 +16,8 @@ import axios from "axios";
  * 2. You have to change the access IP from localhost
  * to the IP of the machine Strapi is running on.
  */
-const url = "https://kayla-project.herokuapp.com";
+// const url = "https://kayla-project.herokuapp.com";
+const url = "http://127.0.0.1:1337";
 
 /**
  * @param {UserModel} user
@@ -68,6 +75,36 @@ export const register = async (user) => {
 
     createUser(json.jwt, json.user);
 
+    return true;
+  } catch (err) {
+    alert(err);
+    return false;
+  }
+};
+
+/**
+ * @param {UserModel} user
+ */
+export const update = async (data) => {
+  const header = {
+    headers: {
+      Authorization: `Bearer ${store.getState().jwt}`,
+    },
+  };
+
+  try {
+    const response = await axios.put(
+      `${url}/api/users/${store.getState().user.id}`,
+      data,
+      header
+    );
+    const json = await response.data;
+
+    if (json.error) {
+      return false;
+    }
+
+    updateUser(store.getState().jwt, json);
     return true;
   } catch (err) {
     alert(err);

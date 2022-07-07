@@ -8,17 +8,24 @@ import {
   Image,
   Dimensions,
 } from "react-native";
-import { Paragraph, List } from "react-native-paper";
+import { Paragraph } from "react-native-paper";
 import Icon from "../../components/CustomIcon";
 import { store } from "../../redux/Store";
+import UserModel from "../../models/UserModel";
 const { width } = Dimensions.get("window");
 import Styles from "./style";
 import Data from "./price";
 
-const Content = ({ item }) => {
+const Content = ({ item, navigation }) => {
   const SelectOffer = async () => {
-    
-  }
+    const user = new UserModel();
+    try {
+      await user.update({ payed: true });
+      navigation.navigate("Home");
+    } catch (err) {
+      console.log(err);
+    }
+  };
   return (
     <View style={Styles.itemContainer}>
       <View style={Styles.itemContent}>
@@ -85,28 +92,34 @@ export default function PayScreen({ navigation }) {
           data={Data}
           pagingEnabled
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => <Content item={item} />}
+          renderItem={({ item }) => (
+            <Content item={item} navigation={navigation} />
+          )}
         />
         <View style={Styles.nav}>
-            {Data.map((item, index) => {
-              return (
-                <View
-                  key={index}
-                  style={[
-                    Styles.navContainer,
-                    {
-                      width: index == currentSlideIndex ? 40 : 8,
-                      backgroundColor:
-                        index == currentSlideIndex ? "#005B85" : "#90BDD0",
-                    },
-                  ]}
-                ></View>
-              );
-            })}
-          </View>
+          {Data.map((item, index) => {
+            return (
+              <View
+                key={index}
+                style={[
+                  Styles.navContainer,
+                  {
+                    width: index == currentSlideIndex ? 40 : 8,
+                    backgroundColor:
+                      index == currentSlideIndex ? "#005B85" : "#90BDD0",
+                  },
+                ]}
+              ></View>
+            );
+          })}
+        </View>
       </View>
       <View style={Styles.footer}>
-        <Pressable onPress={() => {navigation.navigate("Home")}}>
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        >
           <Text style={Styles.footerText}>Peut-être plus tard</Text>
         </Pressable>
       </View>

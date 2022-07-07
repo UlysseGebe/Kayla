@@ -22,6 +22,16 @@ export const createUser = (jwt, user) => {
   });
 };
 
+export const updateUser = (jwt, user) => {
+  store.dispatch({
+    type: "USER_UPDATE",
+    payload: {
+      jwt,
+      user,
+    },
+  });
+};
+
 export const deleteUser = () => {
   store.dispatch({ type: "USER_DELETE" });
 };

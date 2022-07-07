@@ -21,7 +21,7 @@ import { store } from "../../redux/Store";
 const cards = [{ id: 0 }, { id: 2 }, { id: 3 }, { id: 4 }];
 
 export default function HomeScreen({ navigation }) {
-  console.log(store.getState().jwt);
+  console.log(store.getState().user);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
   const ref = useRef();
   const updateCurrentSlideIndex = (e) => {
@@ -31,7 +31,10 @@ export default function HomeScreen({ navigation }) {
   };
   const logout = async () => {
     const user = new UserModel();
-    await user.logout();
+    let response = await user.logout();
+    if (response) {
+      navigation.navigate("Home")
+    }
   };
   return (
     <SafeAreaView style={Styles.container}>
